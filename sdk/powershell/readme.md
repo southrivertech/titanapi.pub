@@ -24,6 +24,9 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
 # Documentation
 Documentation is a work in progress and the best way to see how to do something is with the provided samples. You can get help on each command in powershell with Get-Help <command> you can view however you can also view online documentation [here](https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/docs/TitanApi.md)
 
+# Identifying Servers / Users / Groups
+
+Most objects on Titan Server are identified by unique guids which can be queried by listing servers/users/groups. Alternatively you can often just pass the name of the server/user/group as a replacement for the guid 
 
 # Authenticating to Server
 * Login/Authenticate to the server before issuing any commands. The login response from the server will contain the session token which can be set as an environment variable so it will be added to future commands in the Authorization header for https requests.
@@ -38,5 +41,94 @@ Documentation is a work in progress and the best way to see how to do something 
 * List servers
     >$serverList = Get-SvrList
     >$serverList.Response.ServerList | Format-List
-* Get server status / state
+
+* Get server state - Returns information about the srever like is it running, which protocols are currently running etc.
     >(Get-SvrState -serverGUID johnserver).Response | Format-List
+
+* Set server state - Modify the server state by performing an action. Valid actions are ("stop" | "start" | "restart" | "rotatelog" | "quota" | "smstest"
+    >$actionReq.Action = "restart"
+    >Set-SvrState -serverGUID <your-servername> -Body $actionReq
+
+* Create a server - Creates a new server instance. The new server params object is returned in $r.Response, with this you can then modify any specific settings you want and then save the settings.
+    >$newServer = new-object Titan.API.Models.SrtApiModelsApiServerCreateRequest
+    >$newServer.ServerName = "mynewserver"
+    >$newServer.General.ServerDesc = "This is my new server"
+    >
+    >$r = New-Svr -Body $newServer
+    >$r.Response | Format-List
+
+* Delete a server
+    >Remove-Svr -serverGUID mynewserver
+* Get a list of server variables useful for using in events. The level parameter can be either "user", "group", "server", or "domain"
+    > (Get-SvrVar -level user).Response.vars.AdditionalProperties | format-list
+
+* Get Server Parameters
+    > $sp = Get-SvrParam -ServerGuid mynewserver
+    > $sp.Response | Format-List
+    > $sp.Response.Ftp | Format-List
+
+* Set Server Parameters - It's generally best to only set parameters for a specific poco or section of the settings rather than the entire server params object as shown below.
+    >$ftp = new-object Titan.API.Models.SrtApiModelsApiServerParamsFtpPoco
+    >$sp.Response.Ftp.AllowPasv = 1
+	>$r = Set-SvrParam -serverGUID myserver -Ftp $sp.Response.Ftp
+
+# User Related Commands
+
+* List users - List all users for the specified auth provider native.
+    >(Get-UsrList -ServerGuid myserver -AuthGuid native).Response.UserList | Format-List
+
+* Create User - To create a user we need to supply user parameters to the sever however we only need to fill in a few of the settings.
+    >$newUser = new-object Titan.API.Models.SrtApiModelsApiUserParamsPoco
+    >$newUser.Username = "mytestuser"
+    >$newUser.Password = "password"
+    >$user = New-Usr -ServerGuid myserver -AuthGuid native -Body $newUser
+    >$user.Response | Format-List
+
+* Delete User - Removes a user from the specified server instance, specify the flag -byUserName to pass in actual user name rather than guid
+    >Remove-Usr -ServerGuid myserver -AuthGuid native -UserGuid mytestuser -byUserName
+
+* Get users home directory
+    >r = Start-UsrAction -ServerGuid myserver -AuthGuid native -UserGuid myuser -byUserName -Action getHomeDir
+    >$r.Response | Format-List
+
+* Set User Password - This directly sets the users password to a new value
+    >$actionRequest = new-object Titan.API.Models.SrtApiModelsApiUserActionRequest
+    >$actionRequest.Password = "newpass"
+    >$r = Start-UsrAction -ServerGuid myserver -AuthGuid native -UserGuid mytestuser -byUserName -Action setpassword -Body $actionRequest
+
+* Reset User Password - This will send an email to the user with a link so the user can reset their password
+    >$r = Start-UsrAction -ServerGuid myserver -AuthGuid native -UserGuid myuser -byUserName -Action resetpassword
+
+* Get User Parameters
+    >$up = Get-UsrParam -ServerGuid myserver -AuthGuid native -UserGuid myuser -byUserName
+    >$up.Response | Format-List
+
+* Set User Parameters - It's generally best to only set parameters for a specific poco or section of the settings rather than the entire server params object as shown below.
+    > $up2 = Set-UsrParam -serverGUID myserver -authGUID native -userGUID myuser -Ftp $up.Response.Ftp -byUserName
+
+# Group Related Commands
+
+* List Groups - List all groups for the specified auth provider native.
+    >(Get-GrpList -ServerGuid myserver -AuthGuid native).Response.GroupList | Format-List
+
+* Create Group - To create a group we need to supply group parameters to the sever however we only need to fill in a few of the settings.
+    >$newGroup = new-object Titan.API.Models.SrtApiModelsApiGroupParamsPoco
+    >$newGroup.GroupName = "mytestgroup"
+    >$r = New-Grp -ServerGuid myserver -AuthGuid native -Body $newGroup
+    >$r.Response | Format-List
+
+* Delete Group - Removes a group from the specified server instance, specify the flag -byGroupName to pass in actual group name rather than guid
+    >Remove-Grp -ServerGuid myserver -AuthGuid native -GroupGuid mytestgroup -byGroupName
+
+* Get Group Parameters
+    >$gp = Get-GrpParam -ServerGuid myserver -AuthGuid native -GroupGuid MyGroupName -byGroupName
+    >$gp.Response | Format-List
+
+* Set Group Parameters - It's generally best to only set parameters for a specific poco or section of the settings rather than the entire server params object as shown below.
+    >$gp = new-object Titan.API.Models.SrtApiModelsApiGroupParamsPoco
+    >$banList = @("*.zzz", "*.dork")
+    >$gp.FileDir.BanFileTypesList = $banList
+    >$r = Set-GrpParam -ServerGUID myserver -AuthGUID native -GroupGUID MyGroupName -FileDir $gp.FileDir -byGroupName
+
+
+
