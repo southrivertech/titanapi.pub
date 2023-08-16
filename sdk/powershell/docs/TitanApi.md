@@ -1,6 +1,6 @@
 ---
 Module Name: TitanApi
-Module Guid: ef24ca3e-95da-4072-a9bb-887a104d1dcb
+Module Guid: 38c504e8-ea79-42e3-9193-99e3ec9d5858
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,23 +11,29 @@ Locale: en-US
 
 
 ## TitanApi Cmdlets
-### [Add-Lic](Add-Lic.md)
-Add a license/regcode and activate it
-
 ### [Export-SvrPgpKey](Export-SvrPgpKey.md)
 Exports the Pgp key identified by PgpKeyGUID
 
 ### [Export-SvrReport](Export-SvrReport.md)
 Export a report
 
+### [Export-SvrSshKey](Export-SvrSshKey.md)
+Exports the ssh key identified by sshKeyGUID
+
 ### [Export-SvrTlKey](Export-SvrTlKey.md)
 Exports the certificate identified by tlsKeyGUID
 
+### [Get-DomInfo](Get-DomInfo.md)
+Return domain information for the specified domainGUID
+
+### [Get-DomIPAddressList](Get-DomIPAddressList.md)
+List IP addresses for the specified domain
+
+### [Get-DomList](Get-DomList.md)
+List domain servers along with their status
+
 ### [Get-DomParam](Get-DomParam.md)
 Return domain settings for the specified domainGUID
-
-### [Get-DomSvr](Get-DomSvr.md)
-List domain servers along with their status
 
 ### [Get-FileInfo](Get-FileInfo.md)
 Get metadata information for a file
@@ -43,22 +49,19 @@ Use the fields query string parameter to limit the results.
 You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
 You can specify\r\nmultiple fields by using a comma as a delimeter.
 
-### [Get-IPAddress](Get-IPAddress.md)
-List IP addresses for the current machine
-
-### [Get-IPBanList](Get-IPBanList.md)
-List IP Bans for the specified server
-
-### [Get-Lic](Get-Lic.md)
-List licenses
-
 ### [Get-LicEntitlement](Get-LicEntitlement.md)
 Get license entitlements
 
-### [Get-Svr](Get-Svr.md)
-Get a specific node settings
+### [Get-LicList](Get-LicList.md)
+List current licenses / registration codes
 
-### [Get-SvrAuth](Get-SvrAuth.md)
+### [Get-Svr](Get-Svr.md)
+Get disk usage statistics
+
+### [Get-SvrAuthConnectorList](Get-SvrAuthConnectorList.md)
+Get a list of the authentication connectors
+
+### [Get-SvrAuthConnectorParam](Get-SvrAuthConnectorParam.md)
 Get user authentication connector settings
 
 ### [Get-SvrDirAccessGroupList](Get-SvrDirAccessGroupList.md)
@@ -70,8 +73,23 @@ List directory access entries at the server level
 ### [Get-SvrDirAccessUserList](Get-SvrDirAccessUserList.md)
 List directory access entries at the user level
 
-### [Get-SvrEvent](Get-SvrEvent.md)
+### [Get-SvrEventHandlerActionTree](Get-SvrEventHandlerActionTree.md)
+Get event handler action tree
+
+### [Get-SvrEventHandlerConditionMeta](Get-SvrEventHandlerConditionMeta.md)
+Get event handler condition meta
+
+### [Get-SvrEventHandlerConditionTree](Get-SvrEventHandlerConditionTree.md)
+Get event handler condition tree
+
+### [Get-SvrEventHandlerEventTree](Get-SvrEventHandlerEventTree.md)
+Get event handler event tree
+
+### [Get-SvrEventList](Get-SvrEventList.md)
 Get a list of events
+
+### [Get-SvrIpbanList](Get-SvrIpbanList.md)
+List IP Bans for the specified server
 
 ### [Get-SvrList](Get-SvrList.md)
 List all servers along with their status
@@ -79,8 +97,11 @@ List all servers along with their status
 ### [Get-SvrMyShare](Get-SvrMyShare.md)
 List my shares
 
-### [Get-SvrNode](Get-SvrNode.md)
+### [Get-SvrNodeList](Get-SvrNodeList.md)
 Get a list of server nodes
+
+### [Get-SvrNodeParam](Get-SvrNodeParam.md)
+Get a specific node settings
 
 ### [Get-SvrParam](Get-SvrParam.md)
 Use \"default\" as the serverGUID to return \r\nserver settings for the current server you connected to.
@@ -88,14 +109,17 @@ Use the fields query \r\nstring parameter to limit the results.
 You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
 You can specify\r\nmultiple fields by using a comma as a delimeter.
 
-### [Get-SvrPgpKey](Get-SvrPgpKey.md)
+### [Get-SvrPgpKeyList](Get-SvrPgpKeyList.md)
 Get a list of Pgp keys
 
 ### [Get-SvrReport](Get-SvrReport.md)
 Get a list of reports
 
-### [Get-SvrSession](Get-SvrSession.md)
+### [Get-SvrSessionList](Get-SvrSessionList.md)
 List sessions
+
+### [Get-SvrSessionParam](Get-SvrSessionParam.md)
+Get session params
 
 ### [Get-SvrSharedWithme](Get-SvrSharedWithme.md)
 List items shared with me
@@ -115,13 +139,13 @@ Get a list of UNC paths
 ### [Get-SvrVar](Get-SvrVar.md)
 Returns macro variables at either the server, user or group level
 
-### [Get-SvrVirtualFolder](Get-SvrVirtualFolder.md)
+### [Get-SvrVirtualFolderList](Get-SvrVirtualFolderList.md)
 List virtual folders at the server level
 
-### [Get-SvrVirtualFolderGroup](Get-SvrVirtualFolderGroup.md)
+### [Get-SvrVirtualFolderListGroup](Get-SvrVirtualFolderListGroup.md)
 List virtual folders at the group level
 
-### [Get-SvrVirtualFolderUser](Get-SvrVirtualFolderUser.md)
+### [Get-SvrVirtualFolderListUser](Get-SvrVirtualFolderListUser.md)
 List virtual folders at the user level
 
 ### [Get-UsrList](Get-UsrList.md)
@@ -145,9 +169,6 @@ Imports the ssh key data that is submitted in the request
 ### [Import-SvrTlKey](Import-SvrTlKey.md)
 Imports the certificate data that is submitted in the request
 
-### [Invoke-ActionSvr](Invoke-ActionSvr.md)
-Get event handler action tree
-
 ### [Invoke-CloudSvr](Invoke-CloudSvr.md)
 List cloud folders at the user leevel
 
@@ -158,20 +179,15 @@ Get cloud costs for the specific cloud drive
 Supply the new cloud folder poco in the body of the request.
 A new CloudGUID will be created
 
-### [Invoke-CloudSvrDelete](Invoke-CloudSvrDelete.md)
-Supply a list of cloud folder pocos with the CloudGUID set to the ones you wish to delete
-
 ### [Invoke-CloudSvrList](Invoke-CloudSvrList.md)
 List cloud folders at the server leevel
 
 ### [Invoke-CloudSvrUpdate](Invoke-CloudSvrUpdate.md)
 Supply a list of cloud folder pocos to update
 
-### [Invoke-ConditionSvr](Invoke-ConditionSvr.md)
-Get event handler condition tree
-
-### [Invoke-DatabaseDataSource](Invoke-DatabaseDataSource.md)
-Generates a list of sqlserver instances
+### [Invoke-DbSqlUtil](Invoke-DbSqlUtil.md)
+Database utility method that can be uased to list instances, databases, or server instances.
+The following\r\nmethods are allowed by setting \"Method\" to \"datasources\" | \"instlist\" | \"dblist\" | \"svrlist\" | \"test\"
 
 ### [Invoke-DoGrpAction](Invoke-DoGrpAction.md)
 This endpoint has very few requirements aside from authentication.
@@ -180,6 +196,9 @@ The goal of this endpoint is to\r\nallow the client to pass-thru a list of gener
 ### [Invoke-DoUsrAction](Invoke-DoUsrAction.md)
 This endpoint has very few requirements aside from authentication.
 The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
+
+### [Invoke-DownloadSvrReport](Invoke-DownloadSvrReport.md)
+Download a report output file
 
 ### [Invoke-ExecuteSvrRequest](Invoke-ExecuteSvrRequest.md)
 This endpoint has very few requirements aside from authentication.
@@ -191,9 +210,6 @@ Download a file
 ### [Invoke-FileGetList](Invoke-FileGetList.md)
 List files
 
-### [Invoke-InstanceDataSource](Invoke-InstanceDataSource.md)
-Generates a list of sqlserver instances
-
 ### [Invoke-Login](Invoke-Login.md)
 Send login credentials and an optional ticket ID and receive an access token in return for subsequent api calls.\r\nYou will need to send this token in the Authorization header as a Bearer token, \r\ni.e.
 \"Authorization: Bearer token
@@ -201,29 +217,11 @@ Send login credentials and an optional ticket ID and receive an access token in 
 ### [Invoke-Logout](Invoke-Logout.md)
 Logout with access token
 
-### [Invoke-OutputServerReport](Invoke-OutputServerReport.md)
-Download a report output file
-
 ### [Invoke-OutputSvr](Invoke-OutputSvr.md)
 Deletes the specified report output file specified in the Document.Name property and returns a list of current reports
 
 ### [Invoke-OutputSvrReportList](Invoke-OutputSvrReportList.md)
 Get a list generated report output files
-
-### [Invoke-ServerDataSource](Invoke-ServerDataSource.md)
-Generates a list of sqlserver instances
-
-### [Invoke-ServerReport](Invoke-ServerReport.md)
-Run a report
-
-### [Invoke-ServerSshKey](Invoke-ServerSshKey.md)
-Exports the ssh key identified by sshKeyGUID
-
-### [Invoke-ServerVirtualFolder](Invoke-ServerVirtualFolder.md)
-Update settings for a virtual folder at either the server, user or group level by specifying the proper ownerGUID
-
-### [Invoke-TreeSvrEvent](Invoke-TreeSvrEvent.md)
-Get event handler event tree
 
 ### [New-FileDirectory](New-FileDirectory.md)
 Create a new folder.
@@ -233,11 +231,14 @@ Specify the folder name in the ApiFileDirectoryCreateRequest body along with the
 Specify the Group name in the request object.
 If successful the new group paramaters will be returned
 
+### [New-Lic](New-Lic.md)
+Add a license/regcode and activate it
+
 ### [New-Svr](New-Svr.md)
 Create a new server.
 a ServerName must be supplied
 
-### [New-SvrAuth](New-SvrAuth.md)
+### [New-SvrAuthConnector](New-SvrAuthConnector.md)
 Supply the ApiServerParamsAuthPoco poco for the auth connector you are creating.
 The AuthConfig member can be one of the \r\n            following pocos, ApiAuthDataLdapPoco, NxAuthDataAdsiPoco, NxAuthDataNtSamPoco
 
@@ -248,7 +249,7 @@ Create a directory access entry at either the server, user or group level by spe
 Supply the ApiEeventHandler object in the body of the request
 
 ### [New-SvrNode](New-SvrNode.md)
-Create a server node
+Create a server node for a cluster
 
 ### [New-SvrPgpKey](New-SvrPgpKey.md)
 Creates a new Pgp key and returns the current list of Pgp keys
@@ -284,8 +285,11 @@ Delete a license/regcode.
 ### [Remove-Svr](Remove-Svr.md)
 Delete a server.
 
-### [Remove-SvrAuth](Remove-SvrAuth.md)
+### [Remove-SvrAuthConnector](Remove-SvrAuthConnector.md)
 Delete user authentication connector
+
+### [Remove-SvrCloud](Remove-SvrCloud.md)
+Supply a list of cloud folder pocos with the CloudGUID set to the ones you wish to delete
 
 ### [Remove-SvrDirAccess](Remove-SvrDirAccess.md)
 Delete a dir access entry at either the server, user or group level by specifying the proper ownerGUID
@@ -298,6 +302,9 @@ Deletes a Pgp key and returns the current list of Pgp keys
 
 ### [Remove-SvrReport](Remove-SvrReport.md)
 Deletes the specified report and returns a list of current reports
+
+### [Remove-SvrSession](Remove-SvrSession.md)
+Kick a session or user
 
 ### [Remove-SvrSshKey](Remove-SvrSshKey.md)
 Deletes a ssh key and returns the current list of ssh keys
@@ -320,35 +327,43 @@ Set domain settings
 ### [Set-GrpParam](Set-GrpParam.md)
 Update the specified group parameters with the supplied settings in the patch body.
 
-### [Set-IPBanList](Set-IPBanList.md)
-Update IPBan list
-
 ### [Set-LicState](Set-LicState.md)
 Perform an action on a license
 
-### [Set-Svr](Set-Svr.md)
-Set a specific node settings
-
-### [Set-SvrAuth](Set-SvrAuth.md)
+### [Set-SvrAuthConnectorParam](Set-SvrAuthConnectorParam.md)
 Update user authentication connector settings
 
 ### [Set-SvrDirAccess](Set-SvrDirAccess.md)
 Update settings for a directory access entry at either the server, user or group level by specifying the proper ownerGUID
 
+### [Set-SvrEventHandler](Set-SvrEventHandler.md)
+Supply the ApiEeventHandler object in the body of the request
+
+### [Set-SvrIpbanList](Set-SvrIpbanList.md)
+Update IPBan list
+
+### [Set-SvrNodeParam](Set-SvrNodeParam.md)
+Set a specific node settings
+
 ### [Set-SvrParam](Set-SvrParam.md)
 Set server settings
+
+### [Set-SvrSessionParam](Set-SvrSessionParam.md)
+Set session params
 
 ### [Set-SvrState](Set-SvrState.md)
 Perforam verious actions on the server.
 Valid actions are\r\n quota -\> returns the amount of storage currently in use by the server.\r\n start -\> Starts the specified server\r\n stop -\> stops the specified server\r\n restart -\> stops/starts the specified server\r\n backup -\> generates a backup of the server and writes it to the %SVR.BACKUPSDIR% folder\r\n restore -\> restores the backup from the %SVR.BACKUPSDIR% to the existing ServerGUID\r\n import -\> Imports a server configuration as the specified server guid.
 overwrites any existing guid\r\n export -\> Exports the server configuration and returns it as a base64 encoded json blob\r\n rotatelog -\> rotates the server log\r\n prunestats -\> prunes the stats database according to the pruning rules
 
+### [Set-SvrUnc](Set-SvrUnc.md)
+Send in a list of of unc paths to be updated
+
+### [Set-SvrVirtualFolder](Set-SvrVirtualFolder.md)
+Update settings for a virtual folder at either the server, user or group level by specifying the proper ownerGUID
+
 ### [Set-UsrParam](Set-UsrParam.md)
 Update the specified user parameters with the supplied settings in the patch body.
-
-### [Start-DomAction](Start-DomAction.md)
-A valid DomainGUID must be specified.
-Actions are: VARS
 
 ### [Start-DomExec](Start-DomExec.md)
 This endpoint has very few requirements aside from authentication.
@@ -358,6 +373,9 @@ The goal of this endpoint is to\r\nallow the client to pass-thru a list of gener
 Perforam verious actions on the server through the LAS.
 Valid actions are: import (ApiServerParamsPoco)
 
+### [Start-SvrReport](Start-SvrReport.md)
+Run a report
+
 ### [Start-UsrAction](Start-UsrAction.md)
 Specify the action to perform with the action query parameter.
 Valid options are \"getHomeDir\", \"setpassword\",\r\n\"resetpassword\"
@@ -365,12 +383,6 @@ Valid options are \"getHomeDir\", \"setpassword\",\r\n\"resetpassword\"
 ### [Test-SvrEmail](Test-SvrEmail.md)
 Test Email connection
 
-### [Update-SvrEventHandler](Update-SvrEventHandler.md)
-Supply the ApiEeventHandler object in the body of the request
-
 ### [Update-SvrTlKey](Update-SvrTlKey.md)
 Updates the certificate / csr
-
-### [Update-SvrUnc](Update-SvrUnc.md)
-Send in a list of of unc paths to be updated
 

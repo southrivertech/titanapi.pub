@@ -17,7 +17,7 @@ Set domain settings
 Set-DomParam -DomainGuid <String> [-BaseDataDir <String>] [-BaseLogDir <String>]
  [-CompanyInfo <ISrtApiModelsApiCompanyInfo>] [-DomainDesc <String>] [-DomainGuid1 <String>]
  [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>] [-DomNodeName <String>]
- [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
+ [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
  [-TlsLanHost <ISrtApiModelsApiHostPoco>] [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>]
  [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -39,7 +39,7 @@ Set-DomParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDomainParam
 Set-DomParam -InputObject <ITitanApiIdentity> [-DomainGuid <String>] [-BaseDataDir <String>]
  [-BaseLogDir <String>] [-CompanyInfo <ISrtApiModelsApiCompanyInfo>] [-DomainDesc <String>]
  [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>] [-DomNodeName <String>]
- [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
+ [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
  [-TlsLanHost <ISrtApiModelsApiHostPoco>] [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>]
  [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -DomainGuid
-.
+The domain to get settings for
 
 ```yaml
 Type: System.String
@@ -249,6 +249,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsLegacyInstalled
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsRemote
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -390,6 +420,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
+### Titan.API.Models.ISrtApiModelsApiResultDomainParamsPoco
+
 ## NOTES
 
 ALIASES
@@ -415,6 +447,8 @@ BODY <ISrtApiModelsApiDomainParamsPoco>: Add a generic wrapper class on top inca
   - `[DomainDesc <String>]`: User friendly description for the domain
   - `[DomainGuid <String>]`: 
   - `[DomainName <String>]`: 
+  - `[IsLegacyInstalled <Boolean?>]`: 
+  - `[IsRemote <Boolean?>]`: 
   - `[ProductEdition <String>]`: 
   - `[ProductInfo <ISrtApiModelsApiProductInfo>]`: 
     - `[DisplayName <String>]`: 
@@ -460,19 +494,17 @@ COMPANYINFO <ISrtApiModelsApiCompanyInfo>: .
 
 INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
-  - `[DatabaseName <String>]`: 
   - `[DirAccessGuid <String>]`: The dir access Id to update
-  - `[DomainGuid <String>]`: 
+  - `[DomainGuid <String>]`: The domain to get settings for
   - `[FileId <String>]`: The id for the file
   - `[GroupGuid <String>]`: The id for the group
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
-  - `[ReportGuid <String>]`: The report GUID
-  - `[ServerGuid <String>]`: Server GUID
-  - `[ServerInstance <String>]`: 
+  - `[ReportGuid <String>]`: The report GUID to export
+  - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
-  - `[SshKeyGuid <String>]`: Ssh Key GUID
+  - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update

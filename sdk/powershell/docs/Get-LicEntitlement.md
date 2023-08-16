@@ -50,6 +50,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
+### Titan.API.Models.ISrtApiModelsApiResultLicenseEntitlements
+
 ## NOTES
 
 ALIASES

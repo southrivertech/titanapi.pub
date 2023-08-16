@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-SvrNode
 
 ## SYNOPSIS
-Create a server node
+Create a server node for a cluster
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-SvrNode -InputObject <ITitanApiIdentity> [-Dav <ISrtApiModelsApiNodeHostPoco
 ```
 
 ## DESCRIPTION
-Create a server node
+Create a server node for a cluster
 
 ## EXAMPLES
 
@@ -414,19 +414,17 @@ ICAPSVR <ISrtApiModelsApiNodeHostPoco>: .
 
 INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
-  - `[DatabaseName <String>]`: 
   - `[DirAccessGuid <String>]`: The dir access Id to update
-  - `[DomainGuid <String>]`: 
+  - `[DomainGuid <String>]`: The domain to get settings for
   - `[FileId <String>]`: The id for the file
   - `[GroupGuid <String>]`: The id for the group
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
-  - `[ReportGuid <String>]`: The report GUID
-  - `[ServerGuid <String>]`: Server GUID
-  - `[ServerInstance <String>]`: 
+  - `[ReportGuid <String>]`: The report GUID to export
+  - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
-  - `[SshKeyGuid <String>]`: Ssh Key GUID
+  - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update

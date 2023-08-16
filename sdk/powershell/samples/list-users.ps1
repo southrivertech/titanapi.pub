@@ -1,0 +1,1 @@
+(Get-UsrList -ServerGuid "your-server" -AuthGuid native).Response.UserList | Format-List

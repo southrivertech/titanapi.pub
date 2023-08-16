@@ -21,16 +21,23 @@ Returns macro variables at either the server, user or group level
 
 ## EXAMPLES
 
-### Example 1: {{ Get server variables }}
+### Example 1: {{ Add title here }}
 ```powershell
-PS C:\>$vars = Get-SvrVar -level server
-PS C:\>$vars.AdditionalProperties
+PS C:\> {{ Add code here }}
 
-%SVR.SSH.LANHOST.HOST%                          The Host name or IP address for the endpoint
-%SVR.SSH.LANHOST.PORT%                          The port number for the endpoint
+{{ Add output here }}
 ```
 
+{{ Add description here }}
 
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 

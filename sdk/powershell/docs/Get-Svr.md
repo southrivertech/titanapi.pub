@@ -8,34 +8,24 @@ schema: 2.0.0
 # Get-Svr
 
 ## SYNOPSIS
-Get a specific node settings
+Get disk usage statistics
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-Svr -ServerGuid <String> [-EndDate <String>] [-FolderType <String>] [-OwnerGuid <String>]
  [-StartDate <String>] [<CommonParameters>]
 ```
 
-### Get
-```
-Get-Svr -ServerGuid <String> -ServerNodeGuid <String> [<CommonParameters>]
-```
-
 ### GetViaIdentity
-```
-Get-Svr -InputObject <ITitanApiIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity1
 ```
 Get-Svr -InputObject <ITitanApiIdentity> [-EndDate <String>] [-FolderType <String>] [-OwnerGuid <String>]
  [-StartDate <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get a specific node settings
+Get disk usage statistics
 
 ## EXAMPLES
 
@@ -64,7 +54,7 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetViaIdentity1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -79,7 +69,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetViaIdentity1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -95,7 +85,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -110,7 +100,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetViaIdentity1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -122,21 +112,6 @@ Accept wildcard characters: False
 
 ### -ServerGuid
 Server GUID
-
-```yaml
-Type: System.String
-Parameter Sets: Get, Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServerNodeGuid
-Server Node GUID
 
 ```yaml
 Type: System.String
@@ -155,7 +130,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, GetViaIdentity1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -187,19 +162,17 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
-  - `[DatabaseName <String>]`: 
   - `[DirAccessGuid <String>]`: The dir access Id to update
-  - `[DomainGuid <String>]`: 
+  - `[DomainGuid <String>]`: The domain to get settings for
   - `[FileId <String>]`: The id for the file
   - `[GroupGuid <String>]`: The id for the group
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
-  - `[ReportGuid <String>]`: The report GUID
-  - `[ServerGuid <String>]`: Server GUID
-  - `[ServerInstance <String>]`: 
+  - `[ReportGuid <String>]`: The report GUID to export
+  - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
-  - `[SshKeyGuid <String>]`: Ssh Key GUID
+  - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update

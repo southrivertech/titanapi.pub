@@ -829,7 +829,7 @@ ACCT <ISrtApiModelsApiServerParamsAcctPoco>: .
   - `[PasswordHistoryEnabled <Int32?>]`: 
 
 AUTH <ISrtApiModelsApiServerParamsAuthPoco[]>: .
-  - `[AuthConfig <ISrtApiModelsApiAuthDataPoco>]`: 
+  - `[AdHocPoco <ISrtApiModelsApiAuthDataAdHocPoco>]`: 
     - `[AuthDesc <String>]`: 
     - `[AuthGuid <String>]`: 
     - `[AuthType <Int32?>]`: 
@@ -838,7 +838,125 @@ AUTH <ISrtApiModelsApiServerParamsAuthPoco[]>: .
     - `[DomainSuffixRequired <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
     - `[IsDefault <Int32?>]`: 
+  - `[AdsiPoco <ISrtApiModelsApiAuthDataAdsiPoco>]`: 
+    - `[AttrGroupDn <String>]`: 
+    - `[AttrGroupId <String>]`: 
+    - `[AttrGroupMembers <String>]`: 
+    - `[AttrGroupName <String>]`: 
+    - `[AttrUserDn <String>]`: 
+    - `[AttrUserEmail <String>]`: 
+    - `[AttrUserEnabled <String>]`: 
+    - `[AttrUserFullName <String>]`: 
+    - `[AttrUserHomeDir <String>]`: 
+    - `[AttrUserId <String>]`: 
+    - `[AttrUserMemberOf <String>]`: 
+    - `[AttrUserName <String>]`: 
+    - `[AttrUserPrimaryGid <String>]`: 
+    - `[AuthDesc <String>]`: 
+    - `[AuthGuid <String>]`: 
+    - `[AuthType <Int32?>]`: 
+    - `[AuthUserPrecache <Int32?>]`: 
+    - `[BindMethod <Int32?>]`: 
+    - `[Creds <ISrtApiModelsApiCredentials>]`: 
+      - `[Password <String>]`: 
+      - `[Username <String>]`: 
+    - `[DomainName <String>]`: 
+    - `[DomainSuffix <String>]`: 
+    - `[DomainSuffixRequired <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[GroupCacheLife <Int32?>]`: 
+    - `[GroupCategoryFilter <String>]`: 
+    - `[GroupClassFilter <String>]`: 
+    - `[GroupSearchScope <Int32?>]`: 
+    - `[GroupsBaseDn <String>]`: 
+    - `[HideDisabled <Int32?>]`: 
+    - `[IsDefault <Int32?>]`: 
+    - `[Secure <Int32?>]`: 
+    - `[ServerName <String>]`: 
+    - `[ServerPort <Int32?>]`: 
+    - `[ServerTimeout <Int32?>]`: 
+    - `[UseNtHomeDir <Int32?>]`: 
+    - `[UseNtImpersonation <Int32?>]`: 
+    - `[UseNtfsAcls <Int32?>]`: 
+    - `[UserCacheLife <Int32?>]`: 
+    - `[UserCategoryFilter <String>]`: 
+    - `[UserClassFilter <String>]`: 
+    - `[UserSearchScope <Int32?>]`: 
+    - `[UsersBaseDn <String>]`: 
+    - `[Win32LogonProvider <Int32?>]`: 
+    - `[Win32LogonType <Int32?>]`: 
   - `[AuthDesc <String>]`: 
+  - `[AuthType <Int32?>]`: 
+  - `[LdapPoco <ISrtApiModelsApiAuthDataLdapPoco>]`: 
+    - `[AttrGroupDn <String>]`: 
+    - `[AttrGroupId <String>]`: 
+    - `[AttrGroupMembers <String>]`: 
+    - `[AttrGroupName <String>]`: 
+    - `[AttrUserDn <String>]`: 
+    - `[AttrUserEmail <String>]`: 
+    - `[AttrUserEnabled <String>]`: 
+    - `[AttrUserFullName <String>]`: 
+    - `[AttrUserHomeDir <String>]`: 
+    - `[AttrUserId <String>]`: 
+    - `[AttrUserMemberOf <String>]`: 
+    - `[AttrUserName <String>]`: 
+    - `[AttrUserPrimaryGid <String>]`: 
+    - `[AuthDesc <String>]`: 
+    - `[AuthGuid <String>]`: 
+    - `[AuthType <Int32?>]`: 
+    - `[AuthUserPrecache <Int32?>]`: 
+    - `[BindMethod <Int32?>]`: 
+    - `[Creds <ISrtApiModelsApiCredentials>]`: 
+    - `[DomainName <String>]`: 
+    - `[DomainSuffix <String>]`: 
+    - `[DomainSuffixRequired <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[GroupCacheLife <Int32?>]`: 
+    - `[GroupCategoryFilter <String>]`: 
+    - `[GroupClassFilter <String>]`: 
+    - `[GroupSearchScope <Int32?>]`: 
+    - `[GroupsBaseDn <String>]`: 
+    - `[HideDisabled <Int32?>]`: 
+    - `[IsDefault <Int32?>]`: 
+    - `[Secure <Int32?>]`: 
+    - `[ServerName <String>]`: 
+    - `[ServerPort <Int32?>]`: 
+    - `[ServerTimeout <Int32?>]`: 
+    - `[UseNtHomeDir <Int32?>]`: 
+    - `[UserCacheLife <Int32?>]`: 
+    - `[UserCategoryFilter <String>]`: 
+    - `[UserClassFilter <String>]`: 
+    - `[UserSearchScope <Int32?>]`: 
+    - `[UsersBaseDn <String>]`: 
+  - `[NativePoco <ISrtApiModelsApiAuthDataNativePoco>]`: 
+    - `[AuthDesc <String>]`: 
+    - `[AuthGuid <String>]`: 
+    - `[AuthType <Int32?>]`: 
+    - `[DomainName <String>]`: 
+    - `[DomainSuffix <String>]`: 
+    - `[DomainSuffixRequired <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[IsDefault <Int32?>]`: 
+  - `[NtSamPoco <ISrtApiModelsApiAuthDataNtSamPoco>]`: 
+    - `[AuthDesc <String>]`: 
+    - `[AuthGuid <String>]`: 
+    - `[AuthLocalGroups <Int32?>]`: 
+    - `[AuthType <Int32?>]`: 
+    - `[AuthUserPrecache <Int32?>]`: 
+    - `[DomainName <String>]`: 
+    - `[DomainSuffix <String>]`: 
+    - `[DomainSuffixRequired <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[GroupCacheLife <Int32?>]`: 
+    - `[HideDisabled <Int32?>]`: 
+    - `[IsDefault <Int32?>]`: 
+    - `[ServerName <String>]`: 
+    - `[UseNtHomeDir <Int32?>]`: 
+    - `[UseNtImpersonation <Int32?>]`: 
+    - `[UseNtfsAcls <Int32?>]`: 
+    - `[UserCacheLife <Int32?>]`: 
+    - `[Win32LogonProvider <Int32?>]`: 
+    - `[Win32LogonType <Int32?>]`: 
 
 AV <ISrtApiModelsApiServerParamsAvPoco>: AntiVirus-ICAP Settings
   - `[Enabled <Int32?>]`: 
@@ -878,7 +996,7 @@ BODY <ISrtApiModelsApiServerParamsPoco>: .
     - `[PasswordHistoryCnt <Int32?>]`: 
     - `[PasswordHistoryEnabled <Int32?>]`: 
   - `[Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]`: 
-    - `[AuthConfig <ISrtApiModelsApiAuthDataPoco>]`: 
+    - `[AdHocPoco <ISrtApiModelsApiAuthDataAdHocPoco>]`: 
       - `[AuthDesc <String>]`: 
       - `[AuthGuid <String>]`: 
       - `[AuthType <Int32?>]`: 
@@ -887,7 +1005,125 @@ BODY <ISrtApiModelsApiServerParamsPoco>: .
       - `[DomainSuffixRequired <Int32?>]`: 
       - `[Enabled <Int32?>]`: 
       - `[IsDefault <Int32?>]`: 
+    - `[AdsiPoco <ISrtApiModelsApiAuthDataAdsiPoco>]`: 
+      - `[AttrGroupDn <String>]`: 
+      - `[AttrGroupId <String>]`: 
+      - `[AttrGroupMembers <String>]`: 
+      - `[AttrGroupName <String>]`: 
+      - `[AttrUserDn <String>]`: 
+      - `[AttrUserEmail <String>]`: 
+      - `[AttrUserEnabled <String>]`: 
+      - `[AttrUserFullName <String>]`: 
+      - `[AttrUserHomeDir <String>]`: 
+      - `[AttrUserId <String>]`: 
+      - `[AttrUserMemberOf <String>]`: 
+      - `[AttrUserName <String>]`: 
+      - `[AttrUserPrimaryGid <String>]`: 
+      - `[AuthDesc <String>]`: 
+      - `[AuthGuid <String>]`: 
+      - `[AuthType <Int32?>]`: 
+      - `[AuthUserPrecache <Int32?>]`: 
+      - `[BindMethod <Int32?>]`: 
+      - `[Creds <ISrtApiModelsApiCredentials>]`: 
+        - `[Password <String>]`: 
+        - `[Username <String>]`: 
+      - `[DomainName <String>]`: 
+      - `[DomainSuffix <String>]`: 
+      - `[DomainSuffixRequired <Int32?>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[GroupCacheLife <Int32?>]`: 
+      - `[GroupCategoryFilter <String>]`: 
+      - `[GroupClassFilter <String>]`: 
+      - `[GroupSearchScope <Int32?>]`: 
+      - `[GroupsBaseDn <String>]`: 
+      - `[HideDisabled <Int32?>]`: 
+      - `[IsDefault <Int32?>]`: 
+      - `[Secure <Int32?>]`: 
+      - `[ServerName <String>]`: 
+      - `[ServerPort <Int32?>]`: 
+      - `[ServerTimeout <Int32?>]`: 
+      - `[UseNtHomeDir <Int32?>]`: 
+      - `[UseNtImpersonation <Int32?>]`: 
+      - `[UseNtfsAcls <Int32?>]`: 
+      - `[UserCacheLife <Int32?>]`: 
+      - `[UserCategoryFilter <String>]`: 
+      - `[UserClassFilter <String>]`: 
+      - `[UserSearchScope <Int32?>]`: 
+      - `[UsersBaseDn <String>]`: 
+      - `[Win32LogonProvider <Int32?>]`: 
+      - `[Win32LogonType <Int32?>]`: 
     - `[AuthDesc <String>]`: 
+    - `[AuthType <Int32?>]`: 
+    - `[LdapPoco <ISrtApiModelsApiAuthDataLdapPoco>]`: 
+      - `[AttrGroupDn <String>]`: 
+      - `[AttrGroupId <String>]`: 
+      - `[AttrGroupMembers <String>]`: 
+      - `[AttrGroupName <String>]`: 
+      - `[AttrUserDn <String>]`: 
+      - `[AttrUserEmail <String>]`: 
+      - `[AttrUserEnabled <String>]`: 
+      - `[AttrUserFullName <String>]`: 
+      - `[AttrUserHomeDir <String>]`: 
+      - `[AttrUserId <String>]`: 
+      - `[AttrUserMemberOf <String>]`: 
+      - `[AttrUserName <String>]`: 
+      - `[AttrUserPrimaryGid <String>]`: 
+      - `[AuthDesc <String>]`: 
+      - `[AuthGuid <String>]`: 
+      - `[AuthType <Int32?>]`: 
+      - `[AuthUserPrecache <Int32?>]`: 
+      - `[BindMethod <Int32?>]`: 
+      - `[Creds <ISrtApiModelsApiCredentials>]`: 
+      - `[DomainName <String>]`: 
+      - `[DomainSuffix <String>]`: 
+      - `[DomainSuffixRequired <Int32?>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[GroupCacheLife <Int32?>]`: 
+      - `[GroupCategoryFilter <String>]`: 
+      - `[GroupClassFilter <String>]`: 
+      - `[GroupSearchScope <Int32?>]`: 
+      - `[GroupsBaseDn <String>]`: 
+      - `[HideDisabled <Int32?>]`: 
+      - `[IsDefault <Int32?>]`: 
+      - `[Secure <Int32?>]`: 
+      - `[ServerName <String>]`: 
+      - `[ServerPort <Int32?>]`: 
+      - `[ServerTimeout <Int32?>]`: 
+      - `[UseNtHomeDir <Int32?>]`: 
+      - `[UserCacheLife <Int32?>]`: 
+      - `[UserCategoryFilter <String>]`: 
+      - `[UserClassFilter <String>]`: 
+      - `[UserSearchScope <Int32?>]`: 
+      - `[UsersBaseDn <String>]`: 
+    - `[NativePoco <ISrtApiModelsApiAuthDataNativePoco>]`: 
+      - `[AuthDesc <String>]`: 
+      - `[AuthGuid <String>]`: 
+      - `[AuthType <Int32?>]`: 
+      - `[DomainName <String>]`: 
+      - `[DomainSuffix <String>]`: 
+      - `[DomainSuffixRequired <Int32?>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[IsDefault <Int32?>]`: 
+    - `[NtSamPoco <ISrtApiModelsApiAuthDataNtSamPoco>]`: 
+      - `[AuthDesc <String>]`: 
+      - `[AuthGuid <String>]`: 
+      - `[AuthLocalGroups <Int32?>]`: 
+      - `[AuthType <Int32?>]`: 
+      - `[AuthUserPrecache <Int32?>]`: 
+      - `[DomainName <String>]`: 
+      - `[DomainSuffix <String>]`: 
+      - `[DomainSuffixRequired <Int32?>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[GroupCacheLife <Int32?>]`: 
+      - `[HideDisabled <Int32?>]`: 
+      - `[IsDefault <Int32?>]`: 
+      - `[ServerName <String>]`: 
+      - `[UseNtHomeDir <Int32?>]`: 
+      - `[UseNtImpersonation <Int32?>]`: 
+      - `[UseNtfsAcls <Int32?>]`: 
+      - `[UserCacheLife <Int32?>]`: 
+      - `[Win32LogonProvider <Int32?>]`: 
+      - `[Win32LogonType <Int32?>]`: 
   - `[Av <ISrtApiModelsApiServerParamsAvPoco>]`: AntiVirus-ICAP Settings
     - `[Enabled <Int32?>]`: 
     - `[EngineType <Int32?>]`: AV/ICAP Engine Id. 0 = Internal, 1 = CloudEmersive
@@ -1413,19 +1649,17 @@ ICAPSVR <ISrtApiModelsApiServerParamsIcapSvrPoco>: .
 
 INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
-  - `[DatabaseName <String>]`: 
   - `[DirAccessGuid <String>]`: The dir access Id to update
-  - `[DomainGuid <String>]`: 
+  - `[DomainGuid <String>]`: The domain to get settings for
   - `[FileId <String>]`: The id for the file
   - `[GroupGuid <String>]`: The id for the group
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
-  - `[ReportGuid <String>]`: The report GUID
-  - `[ServerGuid <String>]`: Server GUID
-  - `[ServerInstance <String>]`: 
+  - `[ReportGuid <String>]`: The report GUID to export
+  - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
-  - `[SshKeyGuid <String>]`: Ssh Key GUID
+  - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
