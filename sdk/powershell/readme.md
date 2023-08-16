@@ -36,7 +36,7 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
 
 # Documentation
 
-Documentation is a work in progress and the best way to see how to do something is with the provided samples. You can get help on each command in powershell with Get-Help `<command>` you can view however you can also view online documentation [here](https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/docs/TitanApi.md)
+Documentation is a work in progress and the best way to see how to do something is with the provided samples. You can get help on each command in powershell with Get-Help `<command>` you can also view online documentation [here](https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/docs/TitanApi.md)
 
 # Identifying Servers / Users / Groups
 
