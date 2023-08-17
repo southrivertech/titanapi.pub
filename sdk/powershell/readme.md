@@ -153,7 +153,7 @@ Most objects on Titan Server are identified by unique guids which can be queried
 * Get users home directory
 
   ```
-  r = Start-UsrAction -ServerGuid myserver -AuthGuid native -UserGuid myuser -byUserName -Action getHomeDir
+  $r = Start-UsrAction -ServerGuid myserver -AuthGuid native -UserGuid myuser -byUserName -Action getHomeDir
   $r.Response | Format-List
   ```
 
