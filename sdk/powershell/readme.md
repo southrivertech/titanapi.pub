@@ -63,7 +63,7 @@ Most objects on Titan Server are identified by unique guids which can be queried
   >
 * Get server state - Returns information about the srever like is it running, which protocols are currently running etc.
 
-  > (Get-SvrState -serverGUID johnserver).Response | Format-List
+  > (Get-SvrState -serverGUID myserver).Response | Format-List
   >
 * Set server state - Modify the server state by performing an action. Valid actions are ("stop" | "start" | "restart" | "rotatelog" | "quota" | "smstest"
 
