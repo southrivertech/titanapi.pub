@@ -1,6 +1,6 @@
 ---
 Module Name: TitanApi
-Module Guid: 38c504e8-ea79-42e3-9193-99e3ec9d5858
+Module Guid: a3de1fa4-51a6-4f31-8c78-14997a6854c3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
@@ -38,7 +38,10 @@ Return domain settings for the specified domainGUID
 ### [Get-FileInfo](Get-FileInfo.md)
 Get metadata information for a file
 
-### [Get-GetMyCloud](Get-GetMyCloud.md)
+### [Get-FileList](Get-FileList.md)
+List files
+
+### [Get-FileMyCloudList](Get-FileMyCloudList.md)
 Return files at the server level which will consist of a root folder that contains\r\n            all cloud folders defined at the server level
 
 ### [Get-GrpList](Get-GrpList.md)
@@ -55,14 +58,17 @@ Get license entitlements
 ### [Get-LicList](Get-LicList.md)
 List current licenses / registration codes
 
-### [Get-Svr](Get-Svr.md)
-Get disk usage statistics
-
 ### [Get-SvrAuthConnectorList](Get-SvrAuthConnectorList.md)
 Get a list of the authentication connectors
 
 ### [Get-SvrAuthConnectorParam](Get-SvrAuthConnectorParam.md)
 Get user authentication connector settings
+
+### [Get-SvrCloudCost](Get-SvrCloudCost.md)
+Get cloud costs for the specific cloud drive
+
+### [Get-SvrCloudFolderList](Get-SvrCloudFolderList.md)
+List cloud folders at the server leevel
 
 ### [Get-SvrDirAccessGroupList](Get-SvrDirAccessGroupList.md)
 List dir access entries at the group level
@@ -112,8 +118,11 @@ You can specify\r\nmultiple fields by using a comma as a delimeter.
 ### [Get-SvrPgpKeyList](Get-SvrPgpKeyList.md)
 Get a list of Pgp keys
 
-### [Get-SvrReport](Get-SvrReport.md)
+### [Get-SvrReportList](Get-SvrReportList.md)
 Get a list of reports
+
+### [Get-SvrReportOutputList](Get-SvrReportOutputList.md)
+Get a list generated report output files
 
 ### [Get-SvrSessionList](Get-SvrSessionList.md)
 List sessions
@@ -121,19 +130,22 @@ List sessions
 ### [Get-SvrSessionParam](Get-SvrSessionParam.md)
 Get session params
 
-### [Get-SvrSharedWithme](Get-SvrSharedWithme.md)
+### [Get-SvrShared](Get-SvrShared.md)
 List items shared with me
 
 ### [Get-SvrSshKey](Get-SvrSshKey.md)
 Get a list of ssh keys
 
+### [Get-SvrStatDiskUsage](Get-SvrStatDiskUsage.md)
+Get disk usage statistics
+
 ### [Get-SvrState](Get-SvrState.md)
 Get server state
 
-### [Get-SvrTlKey](Get-SvrTlKey.md)
+### [Get-SvrTlKeyList](Get-SvrTlKeyList.md)
 Get a list of certificates
 
-### [Get-SvrUnc](Get-SvrUnc.md)
+### [Get-SvrUncList](Get-SvrUncList.md)
 Get a list of UNC paths
 
 ### [Get-SvrVar](Get-SvrVar.md)
@@ -147,6 +159,9 @@ List virtual folders at the group level
 
 ### [Get-SvrVirtualFolderListUser](Get-SvrVirtualFolderListUser.md)
 List virtual folders at the user level
+
+### [Get-UsrCloudFolderList](Get-UsrCloudFolderList.md)
+List cloud folders at the user leevel
 
 ### [Get-UsrList](Get-UsrList.md)
 List users for the specified server and auth provider
@@ -169,22 +184,6 @@ Imports the ssh key data that is submitted in the request
 ### [Import-SvrTlKey](Import-SvrTlKey.md)
 Imports the certificate data that is submitted in the request
 
-### [Invoke-CloudSvr](Invoke-CloudSvr.md)
-List cloud folders at the user leevel
-
-### [Invoke-CloudSvrCostGet](Invoke-CloudSvrCostGet.md)
-Get cloud costs for the specific cloud drive
-
-### [Invoke-CloudSvrCreate](Invoke-CloudSvrCreate.md)
-Supply the new cloud folder poco in the body of the request.
-A new CloudGUID will be created
-
-### [Invoke-CloudSvrList](Invoke-CloudSvrList.md)
-List cloud folders at the server leevel
-
-### [Invoke-CloudSvrUpdate](Invoke-CloudSvrUpdate.md)
-Supply a list of cloud folder pocos to update
-
 ### [Invoke-DbSqlUtil](Invoke-DbSqlUtil.md)
 Database utility method that can be uased to list instances, databases, or server instances.
 The following\r\nmethods are allowed by setting \"Method\" to \"datasources\" | \"instlist\" | \"dblist\" | \"svrlist\" | \"test\"
@@ -197,6 +196,9 @@ The goal of this endpoint is to\r\nallow the client to pass-thru a list of gener
 This endpoint has very few requirements aside from authentication.
 The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
 
+### [Invoke-DownloadFile](Invoke-DownloadFile.md)
+Download a file
+
 ### [Invoke-DownloadSvrReport](Invoke-DownloadSvrReport.md)
 Download a report output file
 
@@ -204,24 +206,12 @@ Download a report output file
 This endpoint has very few requirements aside from authentication.
 The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
 
-### [Invoke-FileDownload](Invoke-FileDownload.md)
-Download a file
-
-### [Invoke-FileGetList](Invoke-FileGetList.md)
-List files
-
 ### [Invoke-Login](Invoke-Login.md)
 Send login credentials and an optional ticket ID and receive an access token in return for subsequent api calls.\r\nYou will need to send this token in the Authorization header as a Bearer token, \r\ni.e.
 \"Authorization: Bearer token
 
 ### [Invoke-Logout](Invoke-Logout.md)
 Logout with access token
-
-### [Invoke-OutputSvr](Invoke-OutputSvr.md)
-Deletes the specified report output file specified in the Document.Name property and returns a list of current reports
-
-### [Invoke-OutputSvrReportList](Invoke-OutputSvrReportList.md)
-Get a list generated report output files
 
 ### [New-FileDirectory](New-FileDirectory.md)
 Create a new folder.
@@ -241,6 +231,10 @@ a ServerName must be supplied
 ### [New-SvrAuthConnector](New-SvrAuthConnector.md)
 Supply the ApiServerParamsAuthPoco poco for the auth connector you are creating.
 The AuthConfig member can be one of the \r\n            following pocos, ApiAuthDataLdapPoco, NxAuthDataAdsiPoco, NxAuthDataNtSamPoco
+
+### [New-SvrCloudFolder](New-SvrCloudFolder.md)
+Supply the new cloud folder poco in the body of the request.
+A new CloudGUID will be created
 
 ### [New-SvrDirAccess](New-SvrDirAccess.md)
 Create a directory access entry at either the server, user or group level by specifying the proper ownerGUID
@@ -288,7 +282,7 @@ Delete a server.
 ### [Remove-SvrAuthConnector](Remove-SvrAuthConnector.md)
 Delete user authentication connector
 
-### [Remove-SvrCloud](Remove-SvrCloud.md)
+### [Remove-SvrCloudFolder](Remove-SvrCloudFolder.md)
 Supply a list of cloud folder pocos with the CloudGUID set to the ones you wish to delete
 
 ### [Remove-SvrDirAccess](Remove-SvrDirAccess.md)
@@ -302,6 +296,9 @@ Deletes a Pgp key and returns the current list of Pgp keys
 
 ### [Remove-SvrReport](Remove-SvrReport.md)
 Deletes the specified report and returns a list of current reports
+
+### [Remove-SvrReportOutput](Remove-SvrReportOutput.md)
+Deletes the specified report output file specified in the Document.Name property and returns a list of current reports
 
 ### [Remove-SvrSession](Remove-SvrSession.md)
 Kick a session or user
@@ -321,6 +318,9 @@ Delete a virtual folder at either the server, user or group level by specifying 
 ### [Remove-Usr](Remove-Usr.md)
 Delete the specified user.
 
+### [Remove-UsrCloudDelete](Remove-UsrCloudDelete.md)
+Supply a list of cloud folder GUIDs to delete
+
 ### [Set-DomParam](Set-DomParam.md)
 Set domain settings
 
@@ -332,6 +332,9 @@ Perform an action on a license
 
 ### [Set-SvrAuthConnectorParam](Set-SvrAuthConnectorParam.md)
 Update user authentication connector settings
+
+### [Set-SvrCloudFolderParam](Set-SvrCloudFolderParam.md)
+Supply a list of cloud folder pocos to update
 
 ### [Set-SvrDirAccess](Set-SvrDirAccess.md)
 Update settings for a directory access entry at either the server, user or group level by specifying the proper ownerGUID
@@ -356,11 +359,14 @@ Perforam verious actions on the server.
 Valid actions are\r\n quota -\> returns the amount of storage currently in use by the server.\r\n start -\> Starts the specified server\r\n stop -\> stops the specified server\r\n restart -\> stops/starts the specified server\r\n backup -\> generates a backup of the server and writes it to the %SVR.BACKUPSDIR% folder\r\n restore -\> restores the backup from the %SVR.BACKUPSDIR% to the existing ServerGUID\r\n import -\> Imports a server configuration as the specified server guid.
 overwrites any existing guid\r\n export -\> Exports the server configuration and returns it as a base64 encoded json blob\r\n rotatelog -\> rotates the server log\r\n prunestats -\> prunes the stats database according to the pruning rules
 
-### [Set-SvrUnc](Set-SvrUnc.md)
+### [Set-SvrUncParam](Set-SvrUncParam.md)
 Send in a list of of unc paths to be updated
 
 ### [Set-SvrVirtualFolder](Set-SvrVirtualFolder.md)
 Update settings for a virtual folder at either the server, user or group level by specifying the proper ownerGUID
+
+### [Set-UsrCloudFolder](Set-UsrCloudFolder.md)
+Supply a list of cloud folder pocos to update
 
 ### [Set-UsrParam](Set-UsrParam.md)
 Update the specified user parameters with the supplied settings in the patch body.

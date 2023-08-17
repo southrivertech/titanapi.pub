@@ -14,26 +14,26 @@ Creates a report and returns the current list of reports
 
 ### CreateExpanded (Default)
 ```
-New-SvrReport -ServerGuid <String> [-Report <ISrtApiModelsApiServerReport>] [-ServerGuid1 <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-SvrReport -ServerGuid <String> [-Report <ISrtApiModelsApiServerReport>] [-ServerGuid1 <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-SvrReport -ServerGuid <String> -Body <ISrtApiModelsApiServerReportCreate> [-PassThru] [-Confirm] [-WhatIf]
+New-SvrReport -ServerGuid <String> -Body <ISrtApiModelsApiServerReportCreate> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-SvrReport -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerReportCreate> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-SvrReport -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerReportCreate> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-SvrReport -InputObject <ITitanApiIdentity> [-ServerGuid <String>] [-Report <ISrtApiModelsApiServerReport>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +90,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -198,6 +183,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
+### Titan.API.Models.ISrtApiModelsApiResultServerReportList
+
 ## NOTES
 
 ALIASES
@@ -221,7 +208,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
-  - `[FileId <String>]`: The id for the file
+  - `[FileId <String>]`: The folder id
   - `[GroupGuid <String>]`: The id for the group
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)

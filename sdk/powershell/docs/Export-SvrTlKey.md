@@ -15,25 +15,27 @@ Exports the certificate identified by tlsKeyGUID
 ### ExportExpanded (Default)
 ```
 Export-SvrTlKey -ServerGuid <String> -TlsKeyGuid <String> [-ExportCsr] [-ExportPrivateKey]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Export
 ```
 Export-SvrTlKey -ServerGuid <String> -TlsKeyGuid <String> -Body <ISrtApiModelsApiTlsKeyExport> [-ExportCsr]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-SvrTlKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiTlsKeyExport> [-ExportCsr] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Export-SvrTlKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiTlsKeyExport> [-ExportCsr] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentityExpanded
 ```
 Export-SvrTlKey -InputObject <ITitanApiIdentity> [-ExportCsr] [-ExportPrivateKey]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,6 +122,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -245,7 +262,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
-  - `[FileId <String>]`: The id for the file
+  - `[FileId <String>]`: The folder id
   - `[GroupGuid <String>]`: The id for the group
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
