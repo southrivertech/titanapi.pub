@@ -30,9 +30,10 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
    > SubErrorCode : 0
    > SubErrorStr  :
    >
-
 6. Updating to latest version of TitanApi module
-    > Update-Module TitanApi
+
+   > Update-Module TitanApi
+   >
 
 # Documentation
 
@@ -60,7 +61,9 @@ Most objects on Titan Server are identified by unique guids which can be queried
 
   > $serverList = Get-SvrList
   > $serverList.Response.ServerList | Format-List
-  >
+  > or
+  > (Get-SvrList).Response.ServerList | Format-List
+* 
 * Get server state - Returns information about the srever like is it running, which protocols are currently running etc.
 
   > (Get-SvrState -serverGUID myserver).Response | Format-List
@@ -114,6 +117,12 @@ Most objects on Titan Server are identified by unique guids which can be queried
   > $user = New-Usr -ServerGuid myserver -AuthGuid native -Body $newUser
   > $user.Response | Format-List
   >
+  > or the shorthand method without supply user object
+  >
+  > $newUser = New-Usr -AuthGuid native -serverGUID myserver -Username <new username> -Password <your password>
+  >
+
+
 * Delete User - Removes a user from the specified server instance, specify the flag -byUserName to pass in actual user name rather than guid
 
   > Remove-Usr -ServerGuid myserver -AuthGuid native -UserGuid mytestuser -byUserName
