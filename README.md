@@ -37,13 +37,16 @@ Most items in Titan Server are identied by a unique id or guid. For example each
 # Server Responses
 
 The server always response to commands with the following object that will consist of 2 members, "Response" which contains command specific information, and "Result" which contains any error codes if the command fails. You will want to check the return objects Result.ErrorCode value to see if the command was successful. 
-    > $loginResponse = Invoke-Login ...
-    > $serverList.Result | Format-List
-    >
-    > ErrorCode    : 0
-    > ErrorStr     : Success
-    > SubErrorCode : 0
-    > SubErrorStr  :
+
+```
+    $loginResponse = Invoke-Login ...
+    $serverList.Result | Format-List
+
+    ErrorCode    : 0
+    ErrorStr     : Success
+    SubErrorCode : 0
+    SubErrorStr  :
+```
 # Authentication Providers
 
 The server supports various authentication providers such as Native which are managed by the administrator in Titan, or external providers like NTSAM, LDAP, ADSI etc. Many of the user related commands will require an "AuthGuid" to denote which user/provider is being accessed. You can pass in "native" for the default auth provider, however for NTSAM/LDAP it will require the guid which you can get by listing the auth providers.
