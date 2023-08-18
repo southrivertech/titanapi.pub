@@ -1,0 +1,1 @@
+(Get-DomInfo -domainGUID las).Response | Format-List

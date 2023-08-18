@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://docs.microsoft.com/en-us/powershell/module/titanapi/set-svrparam
+online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
 schema: 2.0.0
 ---
 
@@ -75,23 +75,14 @@ Set server settings
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1:
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\>  tbd ...
 
-{{ Add output here }}
+
 ```
 
-{{ Add description here }}
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -1831,4 +1822,5 @@ UNC <ISrtApiModelsApiServerParamsUncPoco[]>: .
   - `[UncSharePath <String>]`: 
 
 ## RELATED LINKS
+
 

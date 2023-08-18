@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://docs.microsoft.com/en-us/powershell/module/titanapi/get-dominfo
+online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
 schema: 2.0.0
 ---
 
@@ -27,23 +27,27 @@ Return domain information for the specified domainGUID
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1:
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\>  (Get-DomInfo -DomainGUID las).Response | Format-List
 
-{{ Add output here }}
+DownloadCookie            :
+IsCornerstoneServer       : True
+IsDmzEdgeServer           : False
+IsIcapServer              : False
+IsMcmServer               : False
+IsSysLogServer            : False
+IsTitanServer             : False
+LastActivationTime        : 1692078352621
+LicenseIsTrial            : True
+LicenseIsValid            : True
+MaintenanceExpirationDate : 1694242800000
+ProductEdition            : Enterprise License
+TrialDaysRemaining        : 23
+
 ```
 
-{{ Add description here }}
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -118,4 +122,5 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
+
 

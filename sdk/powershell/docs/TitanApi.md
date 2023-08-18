@@ -1,6 +1,6 @@
 ---
 Module Name: TitanApi
-Module Guid: a3de1fa4-51a6-4f31-8c78-14997a6854c3
+Module Guid: 5e3a9f09-95e6-4669-942b-f7236f6de851
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
@@ -8,7 +8,7 @@ Locale: en-US
 
 # TitanApi Module
 ## Description
-
+Titan API Powershell SDK
 
 ## TitanApi Cmdlets
 ### [Export-SvrPgpKey](Export-SvrPgpKey.md)
