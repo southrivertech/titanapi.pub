@@ -48,8 +48,19 @@ if (newUser.Result.ErrorCode == 0)
     Console.WriteLine($"Created new user: '{newUser.Response.Username}' GUID: {newUser.Response.UserGUID}");
 
 
-// Update user settings
+// Update user settings, first get current user settings
 var userParams = await titanClient.Usr_Get_ParamsAsync(MYSERVER, "native", MYUSER, null, byUserName: true);
+
+
+// update user permissions to be read only for users home directory
+ApiDirAccessPoco dirAccessPoco = new();
+dirAccessPoco.Level = "Usr";
+dirAccessPoco.Path = userParams.Response.General.HomeDir;
+dirAccessPoco.AllowAce = "R------LI----";
+dirAccessPoco.DenyAce = "";
+dirAccessPoco.UserGroupGUID = userParams.Response.UserGUID;
+//var dirResult = await titanClient.Svr_Create_DirAccessAsync(MYSERVER, userParams.Response.UserGUID, dirAccessPoco);
+
 
 var newParams = new ApiUserParamsPoco();
 
