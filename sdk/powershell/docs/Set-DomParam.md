@@ -14,7 +14,7 @@ Set domain settings
 
 ### SetExpanded (Default)
 ```
-Set-DomParam -DomainGuid <String> [-BaseDataDir <String>] [-BaseLogDir <String>]
+Set-DomParam -DomainGuid <String> [-Fields <String>] [-BaseDataDir <String>] [-BaseLogDir <String>]
  [-CompanyInfo <ISrtApiModelsApiCompanyInfo>] [-DomainDesc <String>] [-DomainGuid1 <String>]
  [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>] [-DomNodeName <String>]
  [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
@@ -24,24 +24,25 @@ Set-DomParam -DomainGuid <String> [-BaseDataDir <String>] [-BaseLogDir <String>]
 
 ### Set
 ```
-Set-DomParam -DomainGuid <String> -Body <ISrtApiModelsApiDomainParamsPoco> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-DomParam -DomainGuid <String> -Body <ISrtApiModelsApiDomainParamsPoco> [-Fields <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-DomParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDomainParamsPoco> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-DomParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDomainParamsPoco> [-Fields <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-DomParam -InputObject <ITitanApiIdentity> [-DomainGuid <String>] [-BaseDataDir <String>]
- [-BaseLogDir <String>] [-CompanyInfo <ISrtApiModelsApiCompanyInfo>] [-DomainDesc <String>]
- [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>] [-DomNodeName <String>]
- [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
- [-TlsLanHost <ISrtApiModelsApiHostPoco>] [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>]
- [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-DomParam -InputObject <ITitanApiIdentity> [-DomainGuid <String>] [-Fields <String>]
+ [-BaseDataDir <String>] [-BaseLogDir <String>] [-CompanyInfo <ISrtApiModelsApiCompanyInfo>]
+ [-DomainDesc <String>] [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>]
+ [-DomNodeName <String>] [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>]
+ [-ProductInfo <ISrtApiModelsApiProductInfo>] [-TlsLanHost <ISrtApiModelsApiHostPoco>]
+ [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>] [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -218,6 +219,21 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Fields
+.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

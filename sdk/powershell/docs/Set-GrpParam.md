@@ -16,11 +16,11 @@ Update the specified group parameters with the supplied settings in the patch bo
 ```
 Set-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName] [-Fields <String>]
  [-Acct <ISrtApiModelsApiGroupParamsAcctPoco>] [-AuthGuid1 <String>] [-Av <ISrtApiModelsApiGroupParamsAvPoco>]
- [-Brand <IAny>] [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>] [-Dav <ISrtApiModelsApiGroupParamsDavPoco>]
+ [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>] [-Dav <ISrtApiModelsApiGroupParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>] [-General <ISrtApiModelsApiGroupParamsGeneralPoco>]
  [-GroupGuid1 <String>] [-GroupName <String>] [-Http <ISrtApiModelsApiGroupParamsHttpPoco>]
- [-IPAccessRules <IAny>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
+ [-IPAccessRules <IAny>] [-MemberUsers <Hashtable>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
  [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>] [-Role <ISrtApiModelsApiGroupParamsRolePoco>]
  [-RoleParams <String>] [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]
  [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>] [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm]
@@ -44,14 +44,15 @@ Set-GrpParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiGroupParams
 ```
 Set-GrpParam -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-GroupGuid <String>] [-ByGroupName]
  [-Fields <String>] [-Acct <ISrtApiModelsApiGroupParamsAcctPoco>] [-Av <ISrtApiModelsApiGroupParamsAvPoco>]
- [-Brand <IAny>] [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>] [-Dav <ISrtApiModelsApiGroupParamsDavPoco>]
+ [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>] [-Dav <ISrtApiModelsApiGroupParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>] [-General <ISrtApiModelsApiGroupParamsGeneralPoco>]
  [-GroupName <String>] [-Http <ISrtApiModelsApiGroupParamsHttpPoco>] [-IPAccessRules <IAny>]
- [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>] [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiGroupParamsRolePoco>] [-RoleParams <String>]
- [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>] [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>]
- [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MemberUsers <Hashtable>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>] [-Role <ISrtApiModelsApiGroupParamsRolePoco>]
+ [-RoleParams <String>] [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]
+ [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>] [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +146,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Brand
-Any object
-
-```yaml
-Type: Titan.API.Models.IAny
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -371,6 +357,21 @@ Any object
 
 ```yaml
 Type: Titan.API.Models.IAny
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MemberUsers
+Dictionary of \<integer\>
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -630,7 +631,6 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
     - `[QuarAction <Int32?>]`: 
     - `[RealTime <Int32?>]`: 
     - `[Timeout <Int32?>]`: 
-  - `[Brand <IAny>]`: Any object
   - `[Cxn <ISrtApiModelsApiGroupParamsCxnPoco>]`: 
     - `[IdleTimeoutCnt <Int32?>]`: 
     - `[IdleTimeoutEnabled <Int32?>]`: 
@@ -690,6 +690,8 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
     - `[Enabled <Int32?>]`: 
     - `[TlsEnabled <Int32?>]`: 
   - `[IPAccessRules <IAny>]`: Any object
+  - `[MemberUsers <ISrtApiModelsApiGroupParamsPocoMemberUsers>]`: Dictionary of <integer>
+    - `[(Any) <Int32>]`: This indicates any property can be added to this object.
   - `[Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]`: 
     - `[AddPgpExtension <Int32?>]`: 
     - `[Enabled <Int32?>]`: 

@@ -5,28 +5,32 @@ online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/pow
 schema: 2.0.0
 ---
 
-# Get-GrpParam
+# Get-SvrParamFiltered
 
 ## SYNOPSIS
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Use \"default\" as the serverGUID to return \r\nserver settings for the current server you connected to.
+Use the fields query \r\nstring parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName] [-Fields <String>]
- [<CommonParameters>]
+Get-SvrParamFiltered -ServerGuid <String> [-Fields <String>] [-NodeId <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-GrpParam -InputObject <ITitanApiIdentity> [-ByGroupName] [-Fields <String>] [<CommonParameters>]
+Get-SvrParamFiltered -InputObject <ITitanApiIdentity> [-Fields <String>] [-NodeId <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Use \"default\" as the serverGUID to return \r\nserver settings for the current server you connected to.
+Use the fields query \r\nstring parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
 
 ## EXAMPLES
 
@@ -41,38 +45,8 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
-### -AuthGuid
-The id for the authentication service
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ByGroupName
-Set this to true to lookup the user by group instead of id
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Fields
-Query string parameter to limit results returned
+Query string parameter to filter the json object returned
 
 ```yaml
 Type: System.String
@@ -80,21 +54,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupGuid
-The id for the group
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -114,6 +73,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NodeId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -143,7 +117,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultGroupParamsPoco
+### Titan.API.Models.ISrtApiModelsApiResultServerParamsFiltered
 
 ## NOTES
 

@@ -5,28 +5,30 @@ online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/pow
 schema: 2.0.0
 ---
 
-# Get-GrpParam
+# Get-GrpParamFiltered
 
 ## SYNOPSIS
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Use the fields query string parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName] [-Fields <String>]
- [<CommonParameters>]
+Get-GrpParamFiltered -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName]
+ [-Fields <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-GrpParam -InputObject <ITitanApiIdentity> [-ByGroupName] [-Fields <String>] [<CommonParameters>]
+Get-GrpParamFiltered -InputObject <ITitanApiIdentity> [-ByGroupName] [-Fields <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Use the fields query string parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
 
 ## EXAMPLES
 
@@ -143,7 +145,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultGroupParamsPoco
+### Titan.API.Models.ISrtApiModelsApiResultGroupParamsFiltered
 
 ## NOTES
 

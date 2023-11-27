@@ -5,28 +5,25 @@ online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/pow
 schema: 2.0.0
 ---
 
-# Get-GrpParam
+# Get-DomParamFiltered
 
 ## SYNOPSIS
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Return domain settings for the specified domainGUID
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName] [-Fields <String>]
- [<CommonParameters>]
+Get-DomParamFiltered -DomainGuid <String> [-Fields <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-GrpParam -InputObject <ITitanApiIdentity> [-ByGroupName] [-Fields <String>] [<CommonParameters>]
+Get-DomParamFiltered -InputObject <ITitanApiIdentity> [-Fields <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Return domain settings for the specified domainGUID
 
 ## EXAMPLES
 
@@ -41,8 +38,8 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
-### -AuthGuid
-The id for the authentication service
+### -DomainGuid
+The domain to get settings for
 
 ```yaml
 Type: System.String
@@ -50,21 +47,6 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ByGroupName
-Set this to true to lookup the user by group instead of id
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -80,21 +62,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupGuid
-The id for the group
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -117,21 +84,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ServerGuid
-The id for the server in question
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -143,7 +95,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultGroupParamsPoco
+### Titan.API.Models.ISrtApiModelsApiResultDomainParamsFiltered
 
 ## NOTES
 

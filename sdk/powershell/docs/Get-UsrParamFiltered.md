@@ -5,28 +5,32 @@ online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/pow
 schema: 2.0.0
 ---
 
-# Get-GrpParam
+# Get-UsrParamFiltered
 
 ## SYNOPSIS
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Use \"default\" as the serverGUID to return \r\nuser settings for the current server you connected to.
+Use the fields query \r\nstring parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName] [-Fields <String>]
- [<CommonParameters>]
+Get-UsrParamFiltered -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName]
+ [-Fields <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-GrpParam -InputObject <ITitanApiIdentity> [-ByGroupName] [-Fields <String>] [<CommonParameters>]
+Get-UsrParamFiltered -InputObject <ITitanApiIdentity> [-ByUserName] [-Fields <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use the fields query string parameter to limit the results at the poco level.
-You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+Use \"default\" as the serverGUID to return \r\nuser settings for the current server you connected to.
+Use the fields query \r\nstring parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
 
 ## EXAMPLES
 
@@ -56,8 +60,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ByGroupName
-Set this to true to lookup the user by group instead of id
+### -ByUserName
+Set this to true to lookup the user by name instead of id
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -80,21 +84,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupGuid
-The id for the group
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -132,6 +121,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserGuid
+The User GUID
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -143,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultGroupParamsPoco
+### Titan.API.Models.ISrtApiModelsApiResultUserParamsFiltered
 
 ## NOTES
 

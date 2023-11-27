@@ -5,7 +5,7 @@ online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/pow
 schema: 2.0.0
 ---
 
-# Invoke-ExecuteSvrRequest
+# Invoke-DoSvrAction
 
 ## SYNOPSIS
 This endpoint has very few requirements aside from authentication.
@@ -13,14 +13,14 @@ The goal of this endpoint is to\r\nallow the client to pass-thru a list of gener
 
 ## SYNTAX
 
-### ExecuteExpanded (Default)
+### DoExpanded (Default)
 ```
-Invoke-ExecuteSvrRequest [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-DoSvrAction [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Execute
+### Do
 ```
-Invoke-ExecuteSvrRequest -Body <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-DoSvrAction -Body <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ExecuteExpanded
+Parameter Sets: DoExpanded
 Aliases:
 
 Required: False
@@ -60,7 +60,7 @@ Dictionary of \<string\>
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Execute
+Parameter Sets: Do
 Aliases:
 
 Required: True

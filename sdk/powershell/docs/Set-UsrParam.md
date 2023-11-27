@@ -16,17 +16,17 @@ Update the specified user parameters with the supplied settings in the patch bod
 ```
 Set-UsrParam -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName] [-CreateHomeDirNow]
  [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-AuthGuid1 <String>]
- [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-Brand <IAny>] [-CreateHomeDirNow1 <Int32>]
+ [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-CreateHomeDirNow1 <Int32>]
  [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>] [-Dav <ISrtApiModelsApiUserParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiUserParamsFtpsPoco>] [-General <ISrtApiModelsApiUserParamsGeneralPoco>]
  [-Http <ISrtApiModelsApiUserParamsHttpPoco>] [-Ident <ISrtApiModelsApiUserParamsIdentPoco>]
- [-IPAccessRules <IAny>] [-Password <String>] [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>]
- [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>] [-Role <ISrtApiModelsApiUserParamsRolePoco>]
- [-RoleParams <String>] [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>] [-Ssh <ISrtApiModelsApiUserParamsSshPoco>]
- [-Stats <ISrtApiModelsApiUserParamsStatsPoco>] [-UserGuid1 <String>] [-Username <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IPAccessRules <IAny>] [-MemberGroups <Hashtable>] [-Password <String>]
+ [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>] [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>]
+ [-Role <ISrtApiModelsApiUserParamsRolePoco>] [-RoleParams <String>]
+ [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>] [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>]
+ [-Ssh <ISrtApiModelsApiUserParamsSshPoco>] [-Stats <ISrtApiModelsApiUserParamsStatsPoco>]
+ [-UserGuid1 <String>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
@@ -45,16 +45,17 @@ Set-UsrParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsP
 ```
 Set-UsrParam -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-UserGuid <String>] [-ByUserName]
  [-CreateHomeDirNow] [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>]
- [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-Brand <IAny>] [-CreateHomeDirNow1 <Int32>]
+ [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-CreateHomeDirNow1 <Int32>]
  [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>] [-Dav <ISrtApiModelsApiUserParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiUserParamsFtpsPoco>] [-General <ISrtApiModelsApiUserParamsGeneralPoco>]
  [-Http <ISrtApiModelsApiUserParamsHttpPoco>] [-Ident <ISrtApiModelsApiUserParamsIdentPoco>]
- [-IPAccessRules <IAny>] [-Password <String>] [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>]
- [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>] [-Role <ISrtApiModelsApiUserParamsRolePoco>]
- [-RoleParams <String>] [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>] [-Ssh <ISrtApiModelsApiUserParamsSshPoco>]
- [-Stats <ISrtApiModelsApiUserParamsStatsPoco>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IPAccessRules <IAny>] [-MemberGroups <Hashtable>] [-Password <String>]
+ [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>] [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>]
+ [-Role <ISrtApiModelsApiUserParamsRolePoco>] [-RoleParams <String>]
+ [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>] [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>]
+ [-Ssh <ISrtApiModelsApiUserParamsSshPoco>] [-Stats <ISrtApiModelsApiUserParamsStatsPoco>]
+ [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -148,21 +149,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Brand
-Any object
-
-```yaml
-Type: Titan.API.Models.IAny
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -375,6 +361,21 @@ Any object
 
 ```yaml
 Type: Titan.API.Models.IAny
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MemberGroups
+Dictionary of \<integer\>
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -710,7 +711,6 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[QuarAction <Int32?>]`: 
     - `[RealTime <Int32?>]`: 
     - `[Timeout <Int32?>]`: 
-  - `[Brand <IAny>]`: Any object
   - `[CreateHomeDirNow <Int32?>]`: 
   - `[Cxn <ISrtApiModelsApiUserParamsCxnPoco>]`: 
     - `[IdleTimeoutCnt <Int32?>]`: 
@@ -786,6 +786,8 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[LastFailedLoginUtc <Int64?>]`: 
     - `[LastLoginUtc <Int64?>]`: 
     - `[LockoutExpiration <Int64?>]`: 
+  - `[MemberGroups <ISrtApiModelsApiUserParamsPocoMemberGroups>]`: Dictionary of <integer>
+    - `[(Any) <Int32>]`: This indicates any property can be added to this object.
   - `[Password <String>]`: 
   - `[Pgp <ISrtApiModelsApiUserParamsPgpPoco>]`: 
     - `[AddPgpExtension <Int32?>]`: 

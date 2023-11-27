@@ -1,6 +1,6 @@
 ---
 Module Name: TitanApi
-Module Guid: 5d834734-0bc2-4e57-8253-1193a458acd4
+Module Guid: 64efb141-2d81-450c-bc63-11a63b4f8c41
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
@@ -35,6 +35,9 @@ List domain servers along with their status
 ### [Get-DomParam](Get-DomParam.md)
 Return domain settings for the specified domainGUID
 
+### [Get-DomParamFiltered](Get-DomParamFiltered.md)
+Return domain settings for the specified domainGUID
+
 ### [Get-FileInfo](Get-FileInfo.md)
 Get metadata information for a file
 
@@ -48,6 +51,10 @@ Return files at the server level which will consist of a root folder that contai
 List groups for the specified server and auth provider
 
 ### [Get-GrpParam](Get-GrpParam.md)
+Use the fields query string parameter to limit the results at the poco level.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings.
+
+### [Get-GrpParamFiltered](Get-GrpParamFiltered.md)
 Use the fields query string parameter to limit the results.
 You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
 You can specify\r\nmultiple fields by using a comma as a delimeter.
@@ -115,6 +122,12 @@ Use the fields query \r\nstring parameter to limit the results.
 You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
 You can specify\r\nmultiple fields by using a comma as a delimeter.
 
+### [Get-SvrParamFiltered](Get-SvrParamFiltered.md)
+Use \"default\" as the serverGUID to return \r\nserver settings for the current server you connected to.
+Use the fields query \r\nstring parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
+
 ### [Get-SvrPgpKeyList](Get-SvrPgpKeyList.md)
 Get a list of Pgp keys
 
@@ -172,6 +185,12 @@ Use the fields query \r\nstring parameter to limit the results.
 You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
 You can specify\r\nmultiple fields by using a comma as a delimeter.
 
+### [Get-UsrParamFiltered](Get-UsrParamFiltered.md)
+Use \"default\" as the serverGUID to return \r\nuser settings for the current server you connected to.
+Use the fields query \r\nstring parameter to limit the results.
+You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
+You can specify\r\nmultiple fields by using a comma as a delimeter.
+
 ### [Get-UsrQuota](Get-UsrQuota.md)
 Use \"default\" as the serverGUID to return \r\nuser settings for the current server you connected to.
 
@@ -188,7 +207,15 @@ Imports the certificate data that is submitted in the request
 Database utility method that can be uased to list instances, databases, or server instances.
 The following\r\nmethods are allowed by setting \"Method\" to \"datasources\" | \"instlist\" | \"dblist\" | \"svrlist\" | \"test\"
 
+### [Invoke-DoDomAction](Invoke-DoDomAction.md)
+This endpoint has very few requirements aside from authentication.
+The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
+
 ### [Invoke-DoGrpAction](Invoke-DoGrpAction.md)
+This endpoint has very few requirements aside from authentication.
+The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
+
+### [Invoke-DoSvrAction](Invoke-DoSvrAction.md)
 This endpoint has very few requirements aside from authentication.
 The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
 
@@ -201,10 +228,6 @@ Download a file
 
 ### [Invoke-DownloadSvrReport](Invoke-DownloadSvrReport.md)
 Download a report output file
-
-### [Invoke-ExecuteSvrRequest](Invoke-ExecuteSvrRequest.md)
-This endpoint has very few requirements aside from authentication.
-The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
 
 ### [Invoke-Login](Invoke-Login.md)
 Send login credentials and an optional ticket ID and receive an access token in return for subsequent api calls.\r\nYou will need to send this token in the Authorization header as a Bearer token, \r\ni.e.
@@ -370,10 +393,6 @@ Supply a list of cloud folder pocos to update
 
 ### [Set-UsrParam](Set-UsrParam.md)
 Update the specified user parameters with the supplied settings in the patch body.
-
-### [Start-DomExec](Start-DomExec.md)
-This endpoint has very few requirements aside from authentication.
-The goal of this endpoint is to\r\nallow the client to pass-thru a list of generic arguments and have the server determine how to act.
 
 ### [Start-SvrAction](Start-SvrAction.md)
 Perforam verious actions on the server through the LAS.

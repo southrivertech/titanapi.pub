@@ -17,16 +17,17 @@ If successful the new user paramaters will be returned
 ```
 New-Usr -AuthGuid <String> -ServerGuid <String> [-Fields <String>]
  [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-AuthGuid1 <String>] [-Av <ISrtApiModelsApiUserParamsAvPoco>]
- [-Brand <IAny>] [-CreateHomeDirNow <Int32>] [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>]
+ [-CreateHomeDirNow <Int32>] [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiUserParamsDavPoco>] [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>]
  [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>] [-Ftps <ISrtApiModelsApiUserParamsFtpsPoco>]
  [-General <ISrtApiModelsApiUserParamsGeneralPoco>] [-Http <ISrtApiModelsApiUserParamsHttpPoco>]
- [-Ident <ISrtApiModelsApiUserParamsIdentPoco>] [-IPAccessRules <IAny>] [-Password <String>]
- [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>] [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiUserParamsRolePoco>] [-RoleParams <String>]
- [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>] [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>]
- [-Ssh <ISrtApiModelsApiUserParamsSshPoco>] [-Stats <ISrtApiModelsApiUserParamsStatsPoco>]
- [-UserGuid <String>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Ident <ISrtApiModelsApiUserParamsIdentPoco>] [-IPAccessRules <IAny>] [-MemberGroups <Hashtable>]
+ [-Password <String>] [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>] [-Role <ISrtApiModelsApiUserParamsRolePoco>]
+ [-RoleParams <String>] [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>]
+ [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>] [-Ssh <ISrtApiModelsApiUserParamsSshPoco>]
+ [-Stats <ISrtApiModelsApiUserParamsStatsPoco>] [-UserGuid <String>] [-Username <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -44,17 +45,18 @@ New-Usr -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsPoco> 
 ### CreateViaIdentityExpanded
 ```
 New-Usr -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-Fields <String>]
- [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-Brand <IAny>]
+ [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-Av <ISrtApiModelsApiUserParamsAvPoco>]
  [-CreateHomeDirNow <Int32>] [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiUserParamsDavPoco>] [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>]
  [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>] [-Ftps <ISrtApiModelsApiUserParamsFtpsPoco>]
  [-General <ISrtApiModelsApiUserParamsGeneralPoco>] [-Http <ISrtApiModelsApiUserParamsHttpPoco>]
- [-Ident <ISrtApiModelsApiUserParamsIdentPoco>] [-IPAccessRules <IAny>] [-Password <String>]
- [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>] [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiUserParamsRolePoco>] [-RoleParams <String>]
- [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>] [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>]
- [-Ssh <ISrtApiModelsApiUserParamsSshPoco>] [-Stats <ISrtApiModelsApiUserParamsStatsPoco>]
- [-UserGuid <String>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Ident <ISrtApiModelsApiUserParamsIdentPoco>] [-IPAccessRules <IAny>] [-MemberGroups <Hashtable>]
+ [-Password <String>] [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>] [-Role <ISrtApiModelsApiUserParamsRolePoco>]
+ [-RoleParams <String>] [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>]
+ [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>] [-Ssh <ISrtApiModelsApiUserParamsSshPoco>]
+ [-Stats <ISrtApiModelsApiUserParamsStatsPoco>] [-UserGuid <String>] [-Username <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -149,21 +151,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Brand
-Any object
-
-```yaml
-Type: Titan.API.Models.IAny
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -346,6 +333,21 @@ Any object
 
 ```yaml
 Type: Titan.API.Models.IAny
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MemberGroups
+Dictionary of \<integer\>
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -666,7 +668,6 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[QuarAction <Int32?>]`: 
     - `[RealTime <Int32?>]`: 
     - `[Timeout <Int32?>]`: 
-  - `[Brand <IAny>]`: Any object
   - `[CreateHomeDirNow <Int32?>]`: 
   - `[Cxn <ISrtApiModelsApiUserParamsCxnPoco>]`: 
     - `[IdleTimeoutCnt <Int32?>]`: 
@@ -742,6 +743,8 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[LastFailedLoginUtc <Int64?>]`: 
     - `[LastLoginUtc <Int64?>]`: 
     - `[LockoutExpiration <Int64?>]`: 
+  - `[MemberGroups <ISrtApiModelsApiUserParamsPocoMemberGroups>]`: Dictionary of <integer>
+    - `[(Any) <Int32>]`: This indicates any property can be added to this object.
   - `[Password <String>]`: 
   - `[Pgp <ISrtApiModelsApiUserParamsPgpPoco>]`: 
     - `[AddPgpExtension <Int32?>]`: 
