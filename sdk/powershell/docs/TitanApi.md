@@ -1,6 +1,6 @@
 ---
 Module Name: TitanApi
-Module Guid: 64efb141-2d81-450c-bc63-11a63b4f8c41
+Module Guid: ad06e2e5-ebd3-4bad-bfcd-4459e6f1f3d8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
