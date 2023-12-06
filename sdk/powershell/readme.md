@@ -4,7 +4,7 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
 
 # Getting Started
 
-1. Install TitanApi by downloading it from the Powershell Gallery
+1. Install or Update TitanApi by downloading it from the Powershell Gallery
 
     ```
     Install-Module -Name TitanApi -Repository PSGallery -Force
