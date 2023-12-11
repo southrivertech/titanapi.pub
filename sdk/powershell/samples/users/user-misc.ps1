@@ -20,11 +20,15 @@ $up2.Response.Ftp | Format-List
 $r = Start-UsrAction -ServerGuid $serverName -AuthGuid native -UserGuid $userName -byUserName -Action getHomeDir
 Write-Host "Homedir: " $r.Response.HomeDir
 
+# Quick way to set a users password
+Start-UsrAction -ServerGuid $serverName -AuthGuid native -UserGuid $userName -byUserName -Action setpassword -Password newpass
+
 # Set a users password
 $actionRequest = new-object Titan.API.Models.SrtApiModelsApiUserActionRequest
 $actionRequest.Password = "newpass"
 $r = Start-UsrAction -ServerGuid $serverName -AuthGuid native -UserGuid $userName -byUserName -Action setpassword -Body $actionRequest
 $r.Result | Format-List
+
 
 # Reset user password request by sending email to user to select a new password
 $r = Start-UsrAction -ServerGuid $serverName -AuthGuid native -UserGuid $userName -byUserName -Action resetpassword
