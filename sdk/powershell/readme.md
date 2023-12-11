@@ -47,6 +47,10 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
 
 Documentation is a work in progress and the best way to see how to do something is with the provided samples. You can get help on each command in powershell with Get-Help `<command>` you can also view online documentation [here](https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/docs/TitanApi.md)
 
+# Samples
+
+The [samples](https://github.com/southrivertech/titanapi.pub/tree/main/sdk/powershell/samples) folder contains many examples of using powershell to query and configure the server. 
+
 # Identifying Servers / Users / Groups
 
 Most objects on Titan Server are identified by unique guids which can be queried by listing servers/users/groups. Alternatively you can often just pass the name of the server/user/group as a replacement for the guid
