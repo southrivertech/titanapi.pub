@@ -1,7 +1,7 @@
 # Add IP access rule to server, Note: this script requires version 2.0.20 of the server or later
 $myserver = "myserver"
 
-
+# Get current server params settings
 $spResult = Get-SvrParam -ServerGuid $myserver -Fields IPAccess
 
 $sp = $spResult.Response
@@ -30,6 +30,7 @@ $ipEntry.IPAddressEnd = "6.7.8.9"
 # DavS = 7
 $ipEntry.Protocols = (3,1,2,5);
 
+# Add this IP access rule to array
 $sp.IPAccess.IPAccessRules += $ipEntry
 
 # Update IP Access poco in server params
