@@ -30,8 +30,8 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
 5. Error handling - Each command will return response object that will consist of 2 members, "Response" which contains command specific information, and "Result" which contains any error codes if the command fails.
 
   ```
-   $loginResponse = Invoke-Login ...`
-   $serverList.Result | Format-List`
+   $loginResponse = Invoke-Login -username admin -password mypass`
+   $loginResponse.Result | Format-List`
    ErrorCode    : 0`
    ErrorStr     : Success`
    SubErrorCode : 0`
