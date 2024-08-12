@@ -1,62 +1,62 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-grpparam
 schema: 2.0.0
 ---
 
 # Set-GrpParam
 
 ## SYNOPSIS
-Update the specified group parameters with the supplied settings in the patch body.
+Set the specified group parameters with the supplied settings in the patch body.
 
 ## SYNTAX
 
 ### SetExpanded (Default)
 ```
-Set-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName] [-Fields <String>]
- [-Acct <ISrtApiModelsApiGroupParamsAcctPoco>] [-AuthGuid1 <String>] [-Av <ISrtApiModelsApiGroupParamsAvPoco>]
- [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>] [-Dav <ISrtApiModelsApiGroupParamsDavPoco>]
- [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>]
- [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>] [-General <ISrtApiModelsApiGroupParamsGeneralPoco>]
- [-GroupGuid1 <String>] [-GroupName <String>] [-Http <ISrtApiModelsApiGroupParamsHttpPoco>]
- [-IPAccessRules <IAny>] [-MemberUsers <Hashtable>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
- [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>] [-Role <ISrtApiModelsApiGroupParamsRolePoco>]
- [-RoleParams <String>] [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>] [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-GrpParam -AdminUrl <String> -AuthGuid <String> -GroupGuid <String> -ServerGuid <String> [-ByGroupName]
+ [-Fields <String>] [-Acct <ISrtApiModelsApiGroupParamsAcctPoco>] [-AuthGuid1 <String>]
+ [-Av <ISrtApiModelsApiGroupParamsAvPoco>] [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>]
+ [-Dav <ISrtApiModelsApiGroupParamsDavPoco>] [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>]
+ [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>] [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>]
+ [-General <ISrtApiModelsApiGroupParamsGeneralPoco>] [-GroupGuid1 <String>] [-GroupName <String>]
+ [-Http <ISrtApiModelsApiGroupParamsHttpPoco>] [-IPAccessRules <IAny>] [-MemberUsers <Hashtable>]
+ [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>] [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>]
+ [-Role <ISrtApiModelsApiGroupParamsRolePoco>] [-RoleParams <String>]
+ [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>] [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>]
+ [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-GrpParam -AuthGuid <String> -GroupGuid <String> -ServerGuid <String>
+Set-GrpParam -AdminUrl <String> -AuthGuid <String> -GroupGuid <String> -ServerGuid <String>
  -Body <ISrtApiModelsApiGroupParamsPoco> [-ByGroupName] [-Fields <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-GrpParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiGroupParamsPoco> [-ByGroupName]
- [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-GrpParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiGroupParamsPoco>
+ [-ByGroupName] [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-GrpParam -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-GroupGuid <String>] [-ByGroupName]
- [-Fields <String>] [-Acct <ISrtApiModelsApiGroupParamsAcctPoco>] [-Av <ISrtApiModelsApiGroupParamsAvPoco>]
- [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>] [-Dav <ISrtApiModelsApiGroupParamsDavPoco>]
- [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>]
- [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>] [-General <ISrtApiModelsApiGroupParamsGeneralPoco>]
- [-GroupName <String>] [-Http <ISrtApiModelsApiGroupParamsHttpPoco>] [-IPAccessRules <IAny>]
- [-MemberUsers <Hashtable>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
- [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>] [-Role <ISrtApiModelsApiGroupParamsRolePoco>]
- [-RoleParams <String>] [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>] [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-GrpParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-GroupGuid <String>]
+ [-ByGroupName] [-Fields <String>] [-Acct <ISrtApiModelsApiGroupParamsAcctPoco>]
+ [-Av <ISrtApiModelsApiGroupParamsAvPoco>] [-Cxn <ISrtApiModelsApiGroupParamsCxnPoco>]
+ [-Dav <ISrtApiModelsApiGroupParamsDavPoco>] [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>]
+ [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>] [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>]
+ [-General <ISrtApiModelsApiGroupParamsGeneralPoco>] [-GroupName <String>]
+ [-Http <ISrtApiModelsApiGroupParamsHttpPoco>] [-IPAccessRules <IAny>] [-MemberUsers <Hashtable>]
+ [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>] [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>]
+ [-Role <ISrtApiModelsApiGroupParamsRolePoco>] [-RoleParams <String>]
+ [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>] [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>]
+ [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the specified group parameters with the supplied settings in the patch body.
+Set the specified group parameters with the supplied settings in the patch body.
 
 ## EXAMPLES
 
@@ -73,7 +73,6 @@ PS C:\>  tbd ...
 
 ### -Acct
 .
-To construct, see NOTES section for ACCT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsAcctPoco
@@ -81,6 +80,21 @@ Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -119,7 +133,6 @@ Accept wildcard characters: False
 
 ### -Av
 .
-To construct, see NOTES section for AV properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsAvPoco
@@ -135,7 +148,6 @@ Accept wildcard characters: False
 
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsPoco
@@ -166,7 +178,6 @@ Accept wildcard characters: False
 
 ### -Cxn
 .
-To construct, see NOTES section for CXN properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsCxnPoco
@@ -182,7 +193,6 @@ Accept wildcard characters: False
 
 ### -Dav
 .
-To construct, see NOTES section for DAV properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsDavPoco
@@ -213,7 +223,6 @@ Accept wildcard characters: False
 
 ### -FileDir
 .
-To construct, see NOTES section for FILEDIR properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsFileDirPoco
@@ -229,7 +238,6 @@ Accept wildcard characters: False
 
 ### -Ftp
 .
-To construct, see NOTES section for FTP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsFtpPoco
@@ -245,7 +253,6 @@ Accept wildcard characters: False
 
 ### -Ftps
 .
-To construct, see NOTES section for FTPS properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsFtpsPoco
@@ -261,7 +268,6 @@ Accept wildcard characters: False
 
 ### -General
 .
-To construct, see NOTES section for GENERAL properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsGeneralPoco
@@ -322,7 +328,6 @@ Accept wildcard characters: False
 
 ### -Http
 .
-To construct, see NOTES section for HTTP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsHttpPoco
@@ -338,7 +343,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -353,7 +357,7 @@ Accept wildcard characters: False
 ```
 
 ### -IPAccessRules
-Any object
+Anything
 
 ```yaml
 Type: Titan.API.Models.IAny
@@ -384,7 +388,6 @@ Accept wildcard characters: False
 
 ### -Pgp
 .
-To construct, see NOTES section for PGP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsPgpPoco
@@ -400,7 +403,6 @@ Accept wildcard characters: False
 
 ### -Quota
 .
-To construct, see NOTES section for QUOTA properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsQuotaPoco
@@ -416,7 +418,6 @@ Accept wildcard characters: False
 
 ### -Role
 .
-To construct, see NOTES section for ROLE properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsRolePoco
@@ -462,7 +463,6 @@ Accept wildcard characters: False
 
 ### -Sfs
 .
-To construct, see NOTES section for SFS properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsSfsPoco
@@ -478,7 +478,6 @@ Accept wildcard characters: False
 
 ### -Sftp
 .
-To construct, see NOTES section for SFTP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsSftpPoco
@@ -494,7 +493,6 @@ Accept wildcard characters: False
 
 ### -Ssh
 .
-To construct, see NOTES section for SSH properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiGroupParamsSshPoco
@@ -556,14 +554,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCT <ISrtApiModelsApiGroupParamsAcctPoco>: .
+`ACCT <ISrtApiModelsApiGroupParamsAcctPoco>`: .
   - `[AcctExpirationCnt <Int64?>]`: 
   - `[AcctExpirationEnabled <Int32?>]`: 
   - `[AcctExpirationInterval <Int32?>]`: 
@@ -591,13 +587,13 @@ ACCT <ISrtApiModelsApiGroupParamsAcctPoco>: .
   - `[PasswordHistoryCnt <Int32?>]`: 
   - `[PasswordHistoryEnabled <Int32?>]`: 
 
-AV <ISrtApiModelsApiGroupParamsAvPoco>: .
+`AV <ISrtApiModelsApiGroupParamsAvPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[QuarAction <Int32?>]`: 
   - `[RealTime <Int32?>]`: 
   - `[Timeout <Int32?>]`: 
 
-BODY <ISrtApiModelsApiGroupParamsPoco>: .
+`BODY <ISrtApiModelsApiGroupParamsPoco>`: .
   - `[Acct <ISrtApiModelsApiGroupParamsAcctPoco>]`: 
     - `[AcctExpirationCnt <Int64?>]`: 
     - `[AcctExpirationEnabled <Int32?>]`: 
@@ -646,9 +642,9 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
     - `[Enabled <Int32?>]`: 
     - `[TlsEnabled <Int32?>]`: 
   - `[FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>]`: 
-    - `[AutoBanFileTypesList <String[]>]`: 
+    - `[AutoBanFileTypesList <List<String>>]`: 
     - `[BanFileTypesEnabled <Int32?>]`: 
-    - `[BanFileTypesList <String[]>]`: 
+    - `[BanFileTypesList <List<String>>]`: 
     - `[DelMetaWithFiles <Int32?>]`: 
     - `[DelPartFiles <Int32?>]`: 
     - `[HideInaccessibleDirs <Int32?>]`: 
@@ -689,13 +685,13 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
   - `[Http <ISrtApiModelsApiGroupParamsHttpPoco>]`: 
     - `[Enabled <Int32?>]`: 
     - `[TlsEnabled <Int32?>]`: 
-  - `[IPAccessRules <IAny>]`: Any object
+  - `[IPAccessRules <IAny>]`: Anything
   - `[MemberUsers <ISrtApiModelsApiGroupParamsPocoMemberUsers>]`: Dictionary of <integer>
     - `[(Any) <Int32>]`: This indicates any property can be added to this object.
   - `[Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]`: 
     - `[AddPgpExtension <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
-    - `[ExemptFiles <String[]>]`: 
+    - `[ExemptFiles <List<String>>]`: 
     - `[HidePgpExtension <Int32?>]`: 
     - `[PgpKeyGuid <String>]`: 
     - `[RetainFileSize <Int32?>]`: 
@@ -703,10 +699,10 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
   - `[Quota <ISrtApiModelsApiGroupParamsQuotaPoco>]`: 
     - `[QuotaCntKb <Int32?>]`: 
     - `[QuotaEnabled <Int32?>]`: 
-    - `[QuotaFreeFileList <String[]>]`: 
+    - `[QuotaFreeFileList <List<String>>]`: 
   - `[Role <ISrtApiModelsApiGroupParamsRolePoco>]`: 
     - `[IsRoleStandard <Int32?>]`: 
-    - `[Roles <String[]>]`: 
+    - `[Roles <List<String>>]`: 
   - `[RoleParams <String>]`: 
   - `[Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]`: 
     - `[AdHocEnabled <Int32?>]`: 
@@ -716,7 +712,7 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
     - `[QlDefExpire <Int32?>]`: 
     - `[QlDefExpireVal <Int64?>]`: 
     - `[QsEnabled <Int32?>]`: 
-    - `[ViewableTypes <String[]>]`: 
+    - `[ViewableTypes <List<String>>]`: 
   - `[Sftp <ISrtApiModelsApiGroupParamsSftpPoco>]`: 
     - `[Enabled <Int32?>]`: 
     - `[LockFileOnWrite <Int32?>]`: 
@@ -728,7 +724,7 @@ BODY <ISrtApiModelsApiGroupParamsPoco>: .
     - `[MfaEnabled <Int32?>]`: 
     - `[MfaMode <Int32?>]`: 
 
-CXN <ISrtApiModelsApiGroupParamsCxnPoco>: .
+`CXN <ISrtApiModelsApiGroupParamsCxnPoco>`: .
   - `[IdleTimeoutCnt <Int32?>]`: 
   - `[IdleTimeoutEnabled <Int32?>]`: 
   - `[MaxConnCnt <Int32?>]`: 
@@ -740,14 +736,14 @@ CXN <ISrtApiModelsApiGroupParamsCxnPoco>: .
   - `[MaxUlNumCnt <Int32?>]`: 
   - `[MaxUlNumEnabled <Int32?>]`: 
 
-DAV <ISrtApiModelsApiGroupParamsDavPoco>: .
+`DAV <ISrtApiModelsApiGroupParamsDavPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-FILEDIR <ISrtApiModelsApiGroupParamsFileDirPoco>: .
-  - `[AutoBanFileTypesList <String[]>]`: 
+`FILEDIR <ISrtApiModelsApiGroupParamsFileDirPoco>`: .
+  - `[AutoBanFileTypesList <List<String>>]`: 
   - `[BanFileTypesEnabled <Int32?>]`: 
-  - `[BanFileTypesList <String[]>]`: 
+  - `[BanFileTypesList <List<String>>]`: 
   - `[DelMetaWithFiles <Int32?>]`: 
   - `[DelPartFiles <Int32?>]`: 
   - `[HideInaccessibleDirs <Int32?>]`: 
@@ -756,7 +752,7 @@ FILEDIR <ISrtApiModelsApiGroupParamsFileDirPoco>: .
   - `[WriteCacheEnabled <Int32?>]`: 
   - `[WriteCacheSizeMb <Int32?>]`: 
 
-FTP <ISrtApiModelsApiGroupParamsFtpPoco>: .
+`FTP <ISrtApiModelsApiGroupParamsFtpPoco>`: .
   - `[AllowMdtm <Int32?>]`: 
   - `[AllowMfct <Int32?>]`: 
   - `[AllowMfmt <Int32?>]`: 
@@ -771,7 +767,7 @@ FTP <ISrtApiModelsApiGroupParamsFtpPoco>: .
   - `[TimeZoneMinutes <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-FTPS <ISrtApiModelsApiGroupParamsFtpsPoco>: .
+`FTPS <ISrtApiModelsApiGroupParamsFtpsPoco>`: .
   - `[AllowCcc <Int32?>]`: 
   - `[AllowProt <Int32?>]`: 
   - `[DefaultProtp <Int32?>]`: 
@@ -781,17 +777,17 @@ FTPS <ISrtApiModelsApiGroupParamsFtpsPoco>: .
   - `[RequireCerts <Int32?>]`: 
   - `[RequireFtps <Int32?>]`: 
 
-GENERAL <ISrtApiModelsApiGroupParamsGeneralPoco>: .
+`GENERAL <ISrtApiModelsApiGroupParamsGeneralPoco>`: .
   - `[GroupDesc <String>]`: 
   - `[GroupHomeDir <String>]`: 
   - `[GroupHomeDirEnabled <Int32?>]`: 
   - `[Notes <String>]`: 
 
-HTTP <ISrtApiModelsApiGroupParamsHttpPoco>: .
+`HTTP <ISrtApiModelsApiGroupParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -800,6 +796,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -808,25 +805,25 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-PGP <ISrtApiModelsApiGroupParamsPgpPoco>: .
+`PGP <ISrtApiModelsApiGroupParamsPgpPoco>`: .
   - `[AddPgpExtension <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
-  - `[ExemptFiles <String[]>]`: 
+  - `[ExemptFiles <List<String>>]`: 
   - `[HidePgpExtension <Int32?>]`: 
   - `[PgpKeyGuid <String>]`: 
   - `[RetainFileSize <Int32?>]`: 
   - `[UseEvents <Int32?>]`: 
 
-QUOTA <ISrtApiModelsApiGroupParamsQuotaPoco>: .
+`QUOTA <ISrtApiModelsApiGroupParamsQuotaPoco>`: .
   - `[QuotaCntKb <Int32?>]`: 
   - `[QuotaEnabled <Int32?>]`: 
-  - `[QuotaFreeFileList <String[]>]`: 
+  - `[QuotaFreeFileList <List<String>>]`: 
 
-ROLE <ISrtApiModelsApiGroupParamsRolePoco>: .
+`ROLE <ISrtApiModelsApiGroupParamsRolePoco>`: .
   - `[IsRoleStandard <Int32?>]`: 
-  - `[Roles <String[]>]`: 
+  - `[Roles <List<String>>]`: 
 
-SFS <ISrtApiModelsApiGroupParamsSfsPoco>: .
+`SFS <ISrtApiModelsApiGroupParamsSfsPoco>`: .
   - `[AdHocEnabled <Int32?>]`: 
   - `[DzEnabled <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
@@ -834,14 +831,14 @@ SFS <ISrtApiModelsApiGroupParamsSfsPoco>: .
   - `[QlDefExpire <Int32?>]`: 
   - `[QlDefExpireVal <Int64?>]`: 
   - `[QsEnabled <Int32?>]`: 
-  - `[ViewableTypes <String[]>]`: 
+  - `[ViewableTypes <List<String>>]`: 
 
-SFTP <ISrtApiModelsApiGroupParamsSftpPoco>: .
+`SFTP <ISrtApiModelsApiGroupParamsSftpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-SSH <ISrtApiModelsApiGroupParamsSshPoco>: .
+`SSH <ISrtApiModelsApiGroupParamsSshPoco>`: .
   - `[AllowPubKeyAuth <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[KickOnBadHostKey <Int32?>]`: 
@@ -849,5 +846,4 @@ SSH <ISrtApiModelsApiGroupParamsSshPoco>: .
   - `[MfaMode <Int32?>]`: 
 
 ## RELATED LINKS
-
 

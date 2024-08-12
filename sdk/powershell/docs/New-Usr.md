@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-usr
 schema: 2.0.0
 ---
 
@@ -15,7 +15,7 @@ If successful the new user paramaters will be returned
 
 ### CreateExpanded (Default)
 ```
-New-Usr -AuthGuid <String> -ServerGuid <String> [-Fields <String>]
+New-Usr -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> [-Fields <String>]
  [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-AuthGuid1 <String>] [-Av <ISrtApiModelsApiUserParamsAvPoco>]
  [-CreateHomeDirNow <Int32>] [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiUserParamsDavPoco>] [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>]
@@ -32,19 +32,19 @@ New-Usr -AuthGuid <String> -ServerGuid <String> [-Fields <String>]
 
 ### Create
 ```
-New-Usr -AuthGuid <String> -ServerGuid <String> -Body <ISrtApiModelsApiUserParamsPoco> [-Fields <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-Usr -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -Body <ISrtApiModelsApiUserParamsPoco>
+ [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-Usr -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsPoco> [-Fields <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-Usr -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsPoco>
+ [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-Usr -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-Fields <String>]
+New-Usr -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-Fields <String>]
  [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-Av <ISrtApiModelsApiUserParamsAvPoco>]
  [-CreateHomeDirNow <Int32>] [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiUserParamsDavPoco>] [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>]
@@ -78,7 +78,6 @@ PS C:\>  tbd ...
 
 ### -Acct
 .
-To construct, see NOTES section for ACCT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsAcctPoco
@@ -86,6 +85,21 @@ Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -124,7 +138,6 @@ Accept wildcard characters: False
 
 ### -Av
 .
-To construct, see NOTES section for AV properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsAvPoco
@@ -140,7 +153,6 @@ Accept wildcard characters: False
 
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsPoco
@@ -171,7 +183,6 @@ Accept wildcard characters: False
 
 ### -Cxn
 .
-To construct, see NOTES section for CXN properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsCxnPoco
@@ -187,7 +198,6 @@ Accept wildcard characters: False
 
 ### -Dav
 .
-To construct, see NOTES section for DAV properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsDavPoco
@@ -218,7 +228,6 @@ Accept wildcard characters: False
 
 ### -FileDir
 .
-To construct, see NOTES section for FILEDIR properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsFileDirPoco
@@ -234,7 +243,6 @@ Accept wildcard characters: False
 
 ### -Ftp
 .
-To construct, see NOTES section for FTP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsFtpPoco
@@ -250,7 +258,6 @@ Accept wildcard characters: False
 
 ### -Ftps
 .
-To construct, see NOTES section for FTPS properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsFtpsPoco
@@ -266,7 +273,6 @@ Accept wildcard characters: False
 
 ### -General
 .
-To construct, see NOTES section for GENERAL properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsGeneralPoco
@@ -282,7 +288,6 @@ Accept wildcard characters: False
 
 ### -Http
 .
-To construct, see NOTES section for HTTP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsHttpPoco
@@ -298,7 +303,6 @@ Accept wildcard characters: False
 
 ### -Ident
 .
-To construct, see NOTES section for IDENT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsIdentPoco
@@ -314,7 +318,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -329,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -IPAccessRules
-Any object
+Anything
 
 ```yaml
 Type: Titan.API.Models.IAny
@@ -375,7 +378,6 @@ Accept wildcard characters: False
 
 ### -Pgp
 .
-To construct, see NOTES section for PGP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsPgpPoco
@@ -391,7 +393,6 @@ Accept wildcard characters: False
 
 ### -Quota
 .
-To construct, see NOTES section for QUOTA properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsQuotaPoco
@@ -407,7 +408,6 @@ Accept wildcard characters: False
 
 ### -Role
 .
-To construct, see NOTES section for ROLE properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsRolePoco
@@ -453,7 +453,6 @@ Accept wildcard characters: False
 
 ### -Sfs
 .
-To construct, see NOTES section for SFS properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsSfsPoco
@@ -469,7 +468,6 @@ Accept wildcard characters: False
 
 ### -Sftp
 .
-To construct, see NOTES section for SFTP properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsSftpPoco
@@ -485,7 +483,6 @@ Accept wildcard characters: False
 
 ### -Ssh
 .
-To construct, see NOTES section for SSH properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsSshPoco
@@ -501,7 +498,6 @@ Accept wildcard characters: False
 
 ### -Stats
 .
-To construct, see NOTES section for STATS properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiUserParamsStatsPoco
@@ -593,14 +589,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCT <ISrtApiModelsApiUserParamsAcctPoco>: .
+`ACCT <ISrtApiModelsApiUserParamsAcctPoco>`: .
   - `[AcctExpirationCnt <Int64?>]`: 
   - `[AcctExpirationEnabled <Int32?>]`: 
   - `[AcctExpirationInterval <Int32?>]`: 
@@ -628,13 +622,13 @@ ACCT <ISrtApiModelsApiUserParamsAcctPoco>: .
   - `[PasswordHistoryCnt <Int32?>]`: 
   - `[PasswordHistoryEnabled <Int32?>]`: 
 
-AV <ISrtApiModelsApiUserParamsAvPoco>: .
+`AV <ISrtApiModelsApiUserParamsAvPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[QuarAction <Int32?>]`: 
   - `[RealTime <Int32?>]`: 
   - `[Timeout <Int32?>]`: 
 
-BODY <ISrtApiModelsApiUserParamsPoco>: .
+`BODY <ISrtApiModelsApiUserParamsPoco>`: .
   - `[Acct <ISrtApiModelsApiUserParamsAcctPoco>]`: 
     - `[AcctExpirationCnt <Int64?>]`: 
     - `[AcctExpirationEnabled <Int32?>]`: 
@@ -685,9 +679,9 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[TlsCertGuid <String>]`: 
     - `[TlsEnabled <Int32?>]`: 
   - `[FileDir <ISrtApiModelsApiUserParamsFileDirPoco>]`: 
-    - `[AutoBanFileTypesList <String[]>]`: 
+    - `[AutoBanFileTypesList <List<String>>]`: 
     - `[BanFileTypesEnabled <Int32?>]`: 
-    - `[BanFileTypesList <String[]>]`: 
+    - `[BanFileTypesList <List<String>>]`: 
     - `[DelMetaWithFiles <Int32?>]`: 
     - `[DelPartFiles <Int32?>]`: 
     - `[HideInaccessibleDirs <Int32?>]`: 
@@ -731,9 +725,9 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[UserDesc <String>]`: 
   - `[Http <ISrtApiModelsApiUserParamsHttpPoco>]`: 
     - `[Enabled <Int32?>]`: 
-    - `[TlsCertGuid <String[]>]`: 
+    - `[TlsCertGuid <List<String>>]`: 
     - `[TlsEnabled <Int32?>]`: 
-  - `[IPAccessRules <IAny>]`: Any object
+  - `[IPAccessRules <IAny>]`: Anything
   - `[Ident <ISrtApiModelsApiUserParamsIdentPoco>]`: 
     - `[AccessFailedCount <Int64?>]`: 
     - `[AcctCreatedDate <Int64?>]`: 
@@ -749,7 +743,7 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
   - `[Pgp <ISrtApiModelsApiUserParamsPgpPoco>]`: 
     - `[AddPgpExtension <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
-    - `[ExemptFiles <String[]>]`: 
+    - `[ExemptFiles <List<String>>]`: 
     - `[HidePgpExtension <Int32?>]`: 
     - `[PgpKeyGuid <String>]`: 
     - `[RetainFileSize <Int32?>]`: 
@@ -758,10 +752,10 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[CurrentUsageKb <Int32?>]`: 
     - `[QuotaCntKb <Int32?>]`: 
     - `[QuotaEnabled <Int32?>]`: 
-    - `[QuotaFreeFileList <String[]>]`: 
+    - `[QuotaFreeFileList <List<String>>]`: 
   - `[Role <ISrtApiModelsApiUserParamsRolePoco>]`: 
     - `[IsRoleStandard <Int32?>]`: 
-    - `[Roles <String[]>]`: 
+    - `[Roles <List<String>>]`: 
   - `[RoleParams <String>]`: 
   - `[Sfs <ISrtApiModelsApiUserParamsSfsPoco>]`: 
     - `[AdHocEnabled <Int32?>]`: 
@@ -771,8 +765,8 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
     - `[QlDefExpire <Int32?>]`: 
     - `[QlDefExpireVal <Int64?>]`: 
     - `[QsEnabled <Int32?>]`: 
-    - `[TlsCertGuid <String[]>]`: 
-    - `[ViewableTypes <String[]>]`: 
+    - `[TlsCertGuid <List<String>>]`: 
+    - `[ViewableTypes <List<String>>]`: 
   - `[Sftp <ISrtApiModelsApiUserParamsSftpPoco>]`: 
     - `[Enabled <Int32?>]`: 
     - `[LockFileOnWrite <Int32?>]`: 
@@ -780,7 +774,7 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
   - `[Ssh <ISrtApiModelsApiUserParamsSshPoco>]`: 
     - `[AllowPubKeyAuth <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
-    - `[HostKeyGuid <String[]>]`: 
+    - `[HostKeyGuid <List<String>>]`: 
     - `[KickOnBadHostKey <Int32?>]`: 
     - `[MfaEnabled <Int32?>]`: 
     - `[MfaMode <Int32?>]`: 
@@ -790,7 +784,7 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
   - `[UserGuid <String>]`: 
   - `[Username <String>]`: 
 
-CXN <ISrtApiModelsApiUserParamsCxnPoco>: .
+`CXN <ISrtApiModelsApiUserParamsCxnPoco>`: .
   - `[IdleTimeoutCnt <Int32?>]`: 
   - `[IdleTimeoutEnabled <Int32?>]`: 
   - `[MaxConnCnt <Int32?>]`: 
@@ -802,15 +796,15 @@ CXN <ISrtApiModelsApiUserParamsCxnPoco>: .
   - `[MaxUlNumCnt <Int32?>]`: 
   - `[MaxUlNumEnabled <Int32?>]`: 
 
-DAV <ISrtApiModelsApiUserParamsDavPoco>: .
+`DAV <ISrtApiModelsApiUserParamsDavPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-FILEDIR <ISrtApiModelsApiUserParamsFileDirPoco>: .
-  - `[AutoBanFileTypesList <String[]>]`: 
+`FILEDIR <ISrtApiModelsApiUserParamsFileDirPoco>`: .
+  - `[AutoBanFileTypesList <List<String>>]`: 
   - `[BanFileTypesEnabled <Int32?>]`: 
-  - `[BanFileTypesList <String[]>]`: 
+  - `[BanFileTypesList <List<String>>]`: 
   - `[DelMetaWithFiles <Int32?>]`: 
   - `[DelPartFiles <Int32?>]`: 
   - `[HideInaccessibleDirs <Int32?>]`: 
@@ -819,7 +813,7 @@ FILEDIR <ISrtApiModelsApiUserParamsFileDirPoco>: .
   - `[WriteCacheEnabled <Int32?>]`: 
   - `[WriteCacheSizeMb <Int32?>]`: 
 
-FTP <ISrtApiModelsApiUserParamsFtpPoco>: .
+`FTP <ISrtApiModelsApiUserParamsFtpPoco>`: .
   - `[AllowMdtm <Int32?>]`: 
   - `[AllowMfct <Int32?>]`: 
   - `[AllowMfmt <Int32?>]`: 
@@ -834,7 +828,7 @@ FTP <ISrtApiModelsApiUserParamsFtpPoco>: .
   - `[TimeZoneMinutes <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-FTPS <ISrtApiModelsApiUserParamsFtpsPoco>: .
+`FTPS <ISrtApiModelsApiUserParamsFtpsPoco>`: .
   - `[AllowCcc <Int32?>]`: 
   - `[AllowProt <Int32?>]`: 
   - `[DefaultProtp <Int32?>]`: 
@@ -845,7 +839,7 @@ FTPS <ISrtApiModelsApiUserParamsFtpsPoco>: .
   - `[RequireFtps <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
 
-GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>: .
+`GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>`: .
   - `[EmailAddress <String>]`: 
   - `[FullName <String>]`: 
   - `[HomeDir <String>]`: 
@@ -856,12 +850,12 @@ GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>: .
   - `[PrimaryGroupGuid <String>]`: 
   - `[UserDesc <String>]`: 
 
-HTTP <ISrtApiModelsApiUserParamsHttpPoco>: .
+`HTTP <ISrtApiModelsApiUserParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
-  - `[TlsCertGuid <String[]>]`: 
+  - `[TlsCertGuid <List<String>>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-IDENT <ISrtApiModelsApiUserParamsIdentPoco>: .
+`IDENT <ISrtApiModelsApiUserParamsIdentPoco>`: .
   - `[AccessFailedCount <Int64?>]`: 
   - `[AcctCreatedDate <Int64?>]`: 
   - `[AcctEnabled <Int32?>]`: 
@@ -871,7 +865,7 @@ IDENT <ISrtApiModelsApiUserParamsIdentPoco>: .
   - `[LastLoginUtc <Int64?>]`: 
   - `[LockoutExpiration <Int64?>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -880,6 +874,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -888,26 +883,26 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-PGP <ISrtApiModelsApiUserParamsPgpPoco>: .
+`PGP <ISrtApiModelsApiUserParamsPgpPoco>`: .
   - `[AddPgpExtension <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
-  - `[ExemptFiles <String[]>]`: 
+  - `[ExemptFiles <List<String>>]`: 
   - `[HidePgpExtension <Int32?>]`: 
   - `[PgpKeyGuid <String>]`: 
   - `[RetainFileSize <Int32?>]`: 
   - `[UseEvents <Int32?>]`: 
 
-QUOTA <ISrtApiModelsApiUserParamsQuotaPoco>: .
+`QUOTA <ISrtApiModelsApiUserParamsQuotaPoco>`: .
   - `[CurrentUsageKb <Int32?>]`: 
   - `[QuotaCntKb <Int32?>]`: 
   - `[QuotaEnabled <Int32?>]`: 
-  - `[QuotaFreeFileList <String[]>]`: 
+  - `[QuotaFreeFileList <List<String>>]`: 
 
-ROLE <ISrtApiModelsApiUserParamsRolePoco>: .
+`ROLE <ISrtApiModelsApiUserParamsRolePoco>`: .
   - `[IsRoleStandard <Int32?>]`: 
-  - `[Roles <String[]>]`: 
+  - `[Roles <List<String>>]`: 
 
-SFS <ISrtApiModelsApiUserParamsSfsPoco>: .
+`SFS <ISrtApiModelsApiUserParamsSfsPoco>`: .
   - `[AdHocEnabled <Int32?>]`: 
   - `[DzEnabled <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
@@ -915,26 +910,25 @@ SFS <ISrtApiModelsApiUserParamsSfsPoco>: .
   - `[QlDefExpire <Int32?>]`: 
   - `[QlDefExpireVal <Int64?>]`: 
   - `[QsEnabled <Int32?>]`: 
-  - `[TlsCertGuid <String[]>]`: 
-  - `[ViewableTypes <String[]>]`: 
+  - `[TlsCertGuid <List<String>>]`: 
+  - `[ViewableTypes <List<String>>]`: 
 
-SFTP <ISrtApiModelsApiUserParamsSftpPoco>: .
+`SFTP <ISrtApiModelsApiUserParamsSftpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-SSH <ISrtApiModelsApiUserParamsSshPoco>: .
+`SSH <ISrtApiModelsApiUserParamsSshPoco>`: .
   - `[AllowPubKeyAuth <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
-  - `[HostKeyGuid <String[]>]`: 
+  - `[HostKeyGuid <List<String>>]`: 
   - `[KickOnBadHostKey <Int32?>]`: 
   - `[MfaEnabled <Int32?>]`: 
   - `[MfaMode <Int32?>]`: 
 
-STATS <ISrtApiModelsApiUserParamsStatsPoco>: .
+`STATS <ISrtApiModelsApiUserParamsStatsPoco>`: .
   - `[BadPassVal <Int64?>]`: 
   - `[LastLoginDate <Int64?>]`: 
 
 ## RELATED LINKS
-
 

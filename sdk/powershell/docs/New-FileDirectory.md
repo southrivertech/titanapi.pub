@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-filedirectory
 schema: 2.0.0
 ---
 
@@ -15,12 +15,14 @@ Specify the folder name in the ApiFileDirectoryCreateRequest body along with the
 
 ### CreateExpanded (Default)
 ```
-New-FileDirectory [-FolderName <String>] [-ParentFolderId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-FileDirectory -AdminUrl <String> [-FolderName <String>] [-ParentFolderId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-FileDirectory -Body <ISrtApiModelsApiFileDirectoryCreateRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-FileDirectory -AdminUrl <String> -Body <ISrtApiModelsApiFileDirectoryCreateRequest> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,9 +42,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiFileDirectoryCreateRequest
@@ -132,17 +148,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiFileDirectoryCreateRequest>: .
+`BODY <ISrtApiModelsApiFileDirectoryCreateRequest>`: .
   - `[FolderName <String>]`: 
   - `[ParentFolderId <String>]`: 
 
 ## RELATED LINKS
-
 

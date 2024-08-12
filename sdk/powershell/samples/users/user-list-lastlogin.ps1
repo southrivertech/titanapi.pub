@@ -2,7 +2,7 @@
 $myserver = "myserver"
 
 # get list of users for native authenticator
-$list = Get-UsrList -ServerGuid $myserver -AuthGuid native
+$list = Get-UsrList -ServerGuid $myserver -AuthGuid native -AdminUrl localhost:31443
 
 $Array = @()
 
@@ -10,7 +10,7 @@ $Array = @()
 foreach($user in $list.Response.UserList) {
 
     # Get user params
-    $upr = Get-UsrParam -ServerGuid $myserver -AuthGuid $user.AuthGuid -UserGuid $user.UserName -byUserName
+    $upr = Get-UsrParam -ServerGuid $myserver -AuthGuid $user.AuthGuid -UserGuid $user.UserName -byUserName -AdminUrl localhost:31443
     $up = $upr.Response
 
     # Create row for the output table

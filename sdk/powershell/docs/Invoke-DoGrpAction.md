@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/invoke-dogrpaction
 schema: 2.0.0
 ---
 
@@ -15,12 +15,13 @@ The goal of this endpoint is to\r\nallow the client to pass-thru a list of gener
 
 ### DoExpanded (Default)
 ```
-Invoke-DoGrpAction [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-DoGrpAction -AdminUrl <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Do
 ```
-Invoke-DoGrpAction -Body <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-DoGrpAction -AdminUrl <String> -Body <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,6 +50,21 @@ Parameter Sets: DoExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -116,8 +132,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 ## RELATED LINKS
-
 

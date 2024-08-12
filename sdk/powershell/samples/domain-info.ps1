@@ -1,1 +1,1 @@
-(Get-DomInfo -domainGUID las).Response | Format-List
+(Get-DomInfo -domainGUID las -AdminUrl localhost:31443).Response | Format-List

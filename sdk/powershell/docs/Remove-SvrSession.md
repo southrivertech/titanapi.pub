@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/remove-svrsession
 schema: 2.0.0
 ---
 
@@ -14,26 +14,26 @@ Kick a session or user
 
 ### RemoveExpanded (Default)
 ```
-Remove-SvrSession -ServerGuid <String> [-BanIP] [-DisableUser] [-KickSession] [-KickUser]
+Remove-SvrSession -AdminUrl <String> -ServerGuid <String> [-BanIP] [-DisableUser] [-KickSession] [-KickUser]
  [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove
 ```
-Remove-SvrSession -ServerGuid <String> -Body <ISrtApiModelsApiSessionKickRequest> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-SvrSession -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiSessionKickRequest>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
-Remove-SvrSession -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiSessionKickRequest> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-SvrSession -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiSessionKickRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentityExpanded
 ```
-Remove-SvrSession -InputObject <ITitanApiIdentity> [-BanIP] [-DisableUser] [-KickSession] [-KickUser]
- [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-SvrSession -AdminUrl <String> -InputObject <ITitanApiIdentity> [-BanIP] [-DisableUser] [-KickSession]
+ [-KickUser] [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,6 +52,21 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BanIP
 .
 
@@ -69,7 +84,6 @@ Accept wildcard characters: False
 
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiSessionKickRequest
@@ -100,7 +114,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -161,7 +174,6 @@ Accept wildcard characters: False
 
 ### -SessionList
 .
-To construct, see NOTES section for SESSIONLIST properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiSessionInfo[]
@@ -223,19 +235,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiSessionKickRequest>: .
+`BODY <ISrtApiModelsApiSessionKickRequest>`: .
   - `[BanIP <Boolean?>]`: 
   - `[DisableUser <Boolean?>]`: 
   - `[KickSession <Boolean?>]`: 
   - `[KickUser <Boolean?>]`: 
-  - `[SessionList <ISrtApiModelsApiSessionInfo[]>]`: 
+  - `[SessionList <List<ISrtApiModelsApiSessionInfo>>]`: 
     - `[ClientIP <String>]`: 
     - `[CreatedAt <Int64?>]`: 
     - `[IdleTimeMS <Int64?>]`: 
@@ -246,7 +256,7 @@ BODY <ISrtApiModelsApiSessionKickRequest>: .
     - `[UserGuid <String>]`: 
     - `[Username <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -255,6 +265,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -263,7 +274,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-SESSIONLIST <ISrtApiModelsApiSessionInfo[]>: .
+`SESSIONLIST <ISrtApiModelsApiSessionInfo[]>`: .
   - `[ClientIP <String>]`: 
   - `[CreatedAt <Int64?>]`: 
   - `[IdleTimeMS <Int64?>]`: 
@@ -275,5 +286,4 @@ SESSIONLIST <ISrtApiModelsApiSessionInfo[]>: .
   - `[Username <String>]`: 
 
 ## RELATED LINKS
-
 

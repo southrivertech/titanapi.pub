@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/remove-svrunc
 schema: 2.0.0
 ---
 
@@ -14,26 +14,26 @@ Send in a list of of unc paths to be deleted
 
 ### DeleteExpanded (Default)
 ```
-Remove-SvrUnc -ServerGuid <String> [-UncParams <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-SvrUnc -AdminUrl <String> -ServerGuid <String> [-UncParams <ISrtApiModelsApiServerParamsUncPoco[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
-Remove-SvrUnc -ServerGuid <String> -Body <ISrtApiModelsApiServerUncList> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-SvrUnc -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiServerUncList> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-SvrUnc -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerUncList> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-SvrUnc -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerUncList>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentityExpanded
 ```
-Remove-SvrUnc -InputObject <ITitanApiIdentity> [-UncParams <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-SvrUnc -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ [-UncParams <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,9 +52,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerUncList
@@ -70,7 +84,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -101,7 +114,6 @@ Accept wildcard characters: False
 
 ### -UncParams
 .
-To construct, see NOTES section for UNCPARAMS properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerParamsUncPoco[]
@@ -163,15 +175,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerUncList>: .
-  - `[UncParams <ISrtApiModelsApiServerParamsUncPoco[]>]`: 
+`BODY <ISrtApiModelsApiServerUncList>`: .
+  - `[UncParams <List<ISrtApiModelsApiServerParamsUncPoco>>]`: 
     - `[BasicCreds <ISrtApiModelsApiCredentialsBasic>]`: 
       - `[Password <String>]`: 
       - `[Username <String>]`: 
@@ -179,7 +189,7 @@ BODY <ISrtApiModelsApiServerUncList>: .
     - `[UncReAuth <Int32?>]`: 
     - `[UncSharePath <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -188,6 +198,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -196,7 +207,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-UNCPARAMS <ISrtApiModelsApiServerParamsUncPoco[]>: .
+`UNCPARAMS <ISrtApiModelsApiServerParamsUncPoco[]>`: .
   - `[BasicCreds <ISrtApiModelsApiCredentialsBasic>]`: 
     - `[Password <String>]`: 
     - `[Username <String>]`: 
@@ -205,5 +216,4 @@ UNCPARAMS <ISrtApiModelsApiServerParamsUncPoco[]>: .
   - `[UncSharePath <String>]`: 
 
 ## RELATED LINKS
-
 

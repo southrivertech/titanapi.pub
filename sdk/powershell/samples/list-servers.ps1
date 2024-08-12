@@ -1,1 +1,1 @@
-(Get-SvrList).Response.ServerList | Format-List
+(Get-SvrList -AdminUrl localhost:31443).Response.ServerList | Format-List

@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/test-svremail
 schema: 2.0.0
 ---
 
@@ -14,28 +14,29 @@ Test Email connection
 
 ### TestExpanded (Default)
 ```
-Test-SvrEmail -ServerGuid <String> [-EmailDefFromAddr <String>] [-EmailPassword <String>]
+Test-SvrEmail -AdminUrl <String> -ServerGuid <String> [-EmailDefFromAddr <String>] [-EmailPassword <String>]
  [-EmailServerHost <ISrtApiModelsApiHostPoco>] [-EmailServerSecure <Int32>] [-EmailUsername <String>]
  [-SmsPoco <ISrtApiModelsApiServerParamsSmsPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Test
 ```
-Test-SvrEmail -ServerGuid <String> -Body <ISrtApiModelsApiServerParamsEmailPoco> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Test-SvrEmail -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiServerParamsEmailPoco> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### TestViaIdentity
 ```
-Test-SvrEmail -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerParamsEmailPoco> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Test-SvrEmail -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiServerParamsEmailPoco> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TestViaIdentityExpanded
 ```
-Test-SvrEmail -InputObject <ITitanApiIdentity> [-EmailDefFromAddr <String>] [-EmailPassword <String>]
- [-EmailServerHost <ISrtApiModelsApiHostPoco>] [-EmailServerSecure <Int32>] [-EmailUsername <String>]
- [-SmsPoco <ISrtApiModelsApiServerParamsSmsPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Test-SvrEmail -AdminUrl <String> -InputObject <ITitanApiIdentity> [-EmailDefFromAddr <String>]
+ [-EmailPassword <String>] [-EmailServerHost <ISrtApiModelsApiHostPoco>] [-EmailServerSecure <Int32>]
+ [-EmailUsername <String>] [-SmsPoco <ISrtApiModelsApiServerParamsSmsPoco>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,9 +55,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerParamsEmailPoco
@@ -102,7 +117,6 @@ Accept wildcard characters: False
 
 ### -EmailServerHost
 Defines the host name and port for a tcp endpoint
-To construct, see NOTES section for EMAILSERVERHOST properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiHostPoco
@@ -148,7 +162,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -179,7 +192,6 @@ Accept wildcard characters: False
 
 ### -SmsPoco
 .
-To construct, see NOTES section for SMSPOCO properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerParamsSmsPoco
@@ -239,14 +251,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerParamsEmailPoco>: .
+`BODY <ISrtApiModelsApiServerParamsEmailPoco>`: .
   - `[EmailDefFromAddr <String>]`: 
   - `[EmailPassword <String>]`: 
   - `[EmailServerHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
@@ -261,11 +271,11 @@ BODY <ISrtApiModelsApiServerParamsEmailPoco>: .
     - `[SourcePhoneNumber <String>]`: 
     - `[TestPhoneNumber <String>]`: 
 
-EMAILSERVERHOST <ISrtApiModelsApiHostPoco>: Defines the host name and port for a tcp endpoint
+`EMAILSERVERHOST <ISrtApiModelsApiHostPoco>`: Defines the host name and port for a tcp endpoint
   - `[Host <String>]`: The Host name or IP address for the endpoint
   - `[Port <Int32?>]`: The port number for the endpoint
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -274,6 +284,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -282,7 +293,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-SMSPOCO <ISrtApiModelsApiServerParamsSmsPoco>: .
+`SMSPOCO <ISrtApiModelsApiServerParamsSmsPoco>`: .
   - `[AccessKey <String>]`: 
   - `[ConnectEndpoint <String>]`: 
   - `[Provider <Int32?>]`: 
@@ -290,5 +301,4 @@ SMSPOCO <ISrtApiModelsApiServerParamsSmsPoco>: .
   - `[TestPhoneNumber <String>]`: 
 
 ## RELATED LINKS
-
 

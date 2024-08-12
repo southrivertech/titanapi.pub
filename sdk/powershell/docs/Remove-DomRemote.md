@@ -1,31 +1,29 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://learn.microsoft.com/powershell/module/titanapi/remove-usr
+online version: https://learn.microsoft.com/powershell/module/titanapi/remove-domremote
 schema: 2.0.0
 ---
 
-# Remove-Usr
+# Remove-DomRemote
 
 ## SYNOPSIS
-Delete the specified user.
+Delete a remote domain from the list of remote domains to administer.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-Usr -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-DomRemote -AdminUrl <String> -RemoteDomainGuid <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-Usr -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ByUserName] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-DomRemote -AdminUrl <String> -InputObject <ITitanApiIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete the specified user.
+Delete a remote domain from the list of remote domains to administer.
 
 ## EXAMPLES
 
@@ -55,36 +53,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AuthGuid
-.
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ByUserName
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 
@@ -100,23 +68,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ServerGuid
-.
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserGuid
-.
+### -RemoteDomainGuid
+the remote domain GUID to delete
 
 ```yaml
 Type: System.String
@@ -171,6 +124,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Titan.API.Models.ISrtApiModelsApiResult
+
+### Titan.API.Models.ISrtApiModelsApiResultDomainList
 
 ## NOTES
 

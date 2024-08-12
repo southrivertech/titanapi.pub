@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-domparam
 schema: 2.0.0
 ---
 
@@ -14,35 +14,36 @@ Set domain settings
 
 ### SetExpanded (Default)
 ```
-Set-DomParam -DomainGuid <String> [-Fields <String>] [-BaseDataDir <String>] [-BaseLogDir <String>]
- [-CompanyInfo <ISrtApiModelsApiCompanyInfo>] [-DomainDesc <String>] [-DomainGuid1 <String>]
- [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>] [-DomNodeName <String>]
- [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
+Set-DomParam -AdminUrl <String> -DomainGuid <String> [-Fields <String>] [-BaseDataDir <String>]
+ [-BaseLogDir <String>] [-CompanyInfo <ISrtApiModelsApiCompanyInfo>] [-DomainDesc <String>]
+ [-DomainGuid1 <String>] [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>]
+ [-DomNodeName <String>] [-IsLegacyInstalled] [-IsRemote] [-LocalRecDesc <String>] [-LocalRecGuid <String>]
+ [-Password <String>] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
  [-TlsLanHost <ISrtApiModelsApiHostPoco>] [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>]
- [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-DomParam -DomainGuid <String> -Body <ISrtApiModelsApiDomainParamsPoco> [-Fields <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-DomParam -AdminUrl <String> -DomainGuid <String> -Body <ISrtApiModelsApiDomainParamsPoco>
+ [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-DomParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDomainParamsPoco> [-Fields <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-DomParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDomainParamsPoco>
+ [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-DomParam -InputObject <ITitanApiIdentity> [-DomainGuid <String>] [-Fields <String>]
+Set-DomParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-DomainGuid <String>] [-Fields <String>]
  [-BaseDataDir <String>] [-BaseLogDir <String>] [-CompanyInfo <ISrtApiModelsApiCompanyInfo>]
  [-DomainDesc <String>] [-DomainName <String>] [-DomNodeDesc <String>] [-DomNodeGuid <String>]
- [-DomNodeName <String>] [-IsLegacyInstalled] [-IsRemote] [-ProductEdition <String>]
- [-ProductInfo <ISrtApiModelsApiProductInfo>] [-TlsLanHost <ISrtApiModelsApiHostPoco>]
- [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>] [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DomNodeName <String>] [-IsLegacyInstalled] [-IsRemote] [-LocalRecDesc <String>] [-LocalRecGuid <String>]
+ [-Password <String>] [-ProductEdition <String>] [-ProductInfo <ISrtApiModelsApiProductInfo>]
+ [-TlsLanHost <ISrtApiModelsApiHostPoco>] [-TlsLasCertGuid <String>] [-TlsRasCertGuid <String>]
+ [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,6 +61,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BaseDataDir
 .
@@ -93,7 +109,6 @@ Accept wildcard characters: False
 
 ### -Body
 Add a generic wrapper class on top incase we need it in the future
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiDomainParamsPoco
@@ -109,7 +124,6 @@ Accept wildcard characters: False
 
 ### -CompanyInfo
 .
-To construct, see NOTES section for COMPANYINFO properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiCompanyInfo
@@ -245,7 +259,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -289,6 +302,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LocalRecDesc
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LocalRecGuid
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Password
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProductEdition
 .
 
@@ -306,7 +364,6 @@ Accept wildcard characters: False
 
 ### -ProductInfo
 .
-To construct, see NOTES section for PRODUCTINFO properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiProductInfo
@@ -322,7 +379,6 @@ Accept wildcard characters: False
 
 ### -TlsLanHost
 Defines the host name and port for a tcp endpoint
-To construct, see NOTES section for TLSLANHOST properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiHostPoco
@@ -352,7 +408,7 @@ Accept wildcard characters: False
 ```
 
 ### -TlsRasCertGuid
-This is my TLSRASCERTGUID TIP
+.
 
 ```yaml
 Type: System.String
@@ -369,10 +425,24 @@ Accept wildcard characters: False
 ### -TlsRasHost
 this version adds an Enabled flag to the data.
 We willbe using this in the Node stuff
-To construct, see NOTES section for TLSRASHOST properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiHostExPoco
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Username
+.
+
+```yaml
+Type: System.String
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -431,14 +501,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiDomainParamsPoco>: Add a generic wrapper class on top incase we need it in the future
+`BODY <ISrtApiModelsApiDomainParamsPoco>`: Add a generic wrapper class on top incase we need it in the future
   - `[BaseDataDir <String>]`: 
   - `[BaseLogDir <String>]`: 
   - `[CompanyInfo <ISrtApiModelsApiCompanyInfo>]`: 
@@ -456,6 +524,9 @@ BODY <ISrtApiModelsApiDomainParamsPoco>: Add a generic wrapper class on top inca
   - `[DomainName <String>]`: 
   - `[IsLegacyInstalled <Boolean?>]`: 
   - `[IsRemote <Boolean?>]`: 
+  - `[LocalRecDesc <String>]`: 
+  - `[LocalRecGuid <String>]`: 
+  - `[Password <String>]`: 
   - `[ProductEdition <String>]`: 
   - `[ProductInfo <ISrtApiModelsApiProductInfo>]`: 
     - `[DisplayName <String>]`: 
@@ -466,7 +537,7 @@ BODY <ISrtApiModelsApiDomainParamsPoco>: Add a generic wrapper class on top inca
     - `[RelNotesUrl <String>]`: 
     - `[ReleaseDate <Int64?>]`: 
     - `[ShortName <String>]`: 
-    - `[Updates <ISrtApiModelsApiProductReleaseInfo[]>]`: 
+    - `[Updates <List<ISrtApiModelsApiProductReleaseInfo>>]`: 
       - `[IsBeta <Boolean?>]`: 
       - `[Linux64Url <String>]`: 
       - `[RelNotesUrl <String>]`: 
@@ -485,13 +556,14 @@ BODY <ISrtApiModelsApiDomainParamsPoco>: Add a generic wrapper class on top inca
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLasCertGuid <String>]`: 
-  - `[TlsRasCertGuid <String>]`: This is my TLSRASCERTGUID TIP
+  - `[TlsRasCertGuid <String>]`: 
   - `[TlsRasHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[Enabled <Int32?>]`: Flag to indicate if the host is enabled
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
+  - `[Username <String>]`: 
 
-COMPANYINFO <ISrtApiModelsApiCompanyInfo>: .
+`COMPANYINFO <ISrtApiModelsApiCompanyInfo>`: .
   - `[ContactUrl <String>]`: 
   - `[LongName <String>]`: 
   - `[SalesEmail <String>]`: 
@@ -499,7 +571,7 @@ COMPANYINFO <ISrtApiModelsApiCompanyInfo>: .
   - `[ShortName <String>]`: 
   - `[WebsiteUrl <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -508,6 +580,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -516,7 +589,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-PRODUCTINFO <ISrtApiModelsApiProductInfo>: .
+`PRODUCTINFO <ISrtApiModelsApiProductInfo>`: .
   - `[DisplayName <String>]`: 
   - `[IsBeta <Boolean?>]`: 
   - `[Linux64Url <String>]`: 
@@ -525,7 +598,7 @@ PRODUCTINFO <ISrtApiModelsApiProductInfo>: .
   - `[RelNotesUrl <String>]`: 
   - `[ReleaseDate <Int64?>]`: 
   - `[ShortName <String>]`: 
-  - `[Updates <ISrtApiModelsApiProductReleaseInfo[]>]`: 
+  - `[Updates <List<ISrtApiModelsApiProductReleaseInfo>>]`: 
     - `[IsBeta <Boolean?>]`: 
     - `[Linux64Url <String>]`: 
     - `[RelNotesUrl <String>]`: 
@@ -541,15 +614,14 @@ PRODUCTINFO <ISrtApiModelsApiProductInfo>: .
   - `[VerPatch <Int32?>]`: 
   - `[Win64Url <String>]`: 
 
-TLSLANHOST <ISrtApiModelsApiHostPoco>: Defines the host name and port for a tcp endpoint
+`TLSLANHOST <ISrtApiModelsApiHostPoco>`: Defines the host name and port for a tcp endpoint
   - `[Host <String>]`: The Host name or IP address for the endpoint
   - `[Port <Int32?>]`: The port number for the endpoint
 
-TLSRASHOST <ISrtApiModelsApiHostExPoco>: this version adds an Enabled flag to the data. We willbe using this in the Node stuff
+`TLSRASHOST <ISrtApiModelsApiHostExPoco>`: this version adds an Enabled flag to the data. We willbe using this in the Node stuff
   - `[Enabled <Int32?>]`: Flag to indicate if the host is enabled
   - `[Host <String>]`: The Host name or IP address for the endpoint
   - `[Port <Int32?>]`: The port number for the endpoint
 
 ## RELATED LINKS
-
 

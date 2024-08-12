@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/import-svrpgpkey
 schema: 2.0.0
 ---
 
@@ -14,26 +14,28 @@ Imports the Pgp key data that is submitted in the request
 
 ### ImportExpanded (Default)
 ```
-Import-SvrPgpKey -ServerGuid <String> [-KeyData <String>] [-Name <String>] [-PrivateKeyPassword <String>]
- [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Import-SvrPgpKey -AdminUrl <String> -ServerGuid <String> [-KeyBlob <String>] [-Name <String>]
+ [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>] [-UserGroupGuid <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Import
 ```
-Import-SvrPgpKey -ServerGuid <String> -Body <ISrtApiModelsApiPgpKeyImport> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Import-SvrPgpKey -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiPgpKeyImport> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### ImportViaIdentity
 ```
-Import-SvrPgpKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiPgpKeyImport> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Import-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiPgpKeyImport>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ImportViaIdentityExpanded
 ```
-Import-SvrPgpKey -InputObject <ITitanApiIdentity> [-KeyData <String>] [-Name <String>]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Import-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-KeyBlob <String>] [-Name <String>]
+ [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>] [-UserGroupGuid <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,9 +54,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiPgpKeyImport
@@ -70,7 +86,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -84,7 +99,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -KeyData
+### -KeyBlob
 .
 
 ```yaml
@@ -115,6 +130,36 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateKeyPassword
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrvKey
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PubKey
 .
 
 ```yaml
@@ -207,20 +252,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiPgpKeyImport>: .
-  - `[KeyData <String>]`: 
+`BODY <ISrtApiModelsApiPgpKeyImport>`: .
+  - `[KeyBlob <String>]`: 
   - `[Name <String>]`: 
   - `[PrivateKeyPassword <String>]`: 
+  - `[PrvKey <String>]`: 
+  - `[PubKey <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -229,6 +274,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -238,5 +284,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

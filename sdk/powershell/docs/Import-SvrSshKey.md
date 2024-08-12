@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/import-svrsshkey
 schema: 2.0.0
 ---
 
@@ -14,25 +14,25 @@ Imports the ssh key data that is submitted in the request
 
 ### ImportExpanded (Default)
 ```
-Import-SvrSshKey -ServerGuid <String> [-KeyData <String>] [-Name <String>] [-PrivateKeyPassword <String>]
- [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Import-SvrSshKey -AdminUrl <String> -ServerGuid <String> [-KeyData <String>] [-Name <String>]
+ [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Import
 ```
-Import-SvrSshKey -ServerGuid <String> -Body <ISrtApiModelsApiSshKeyImport> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Import-SvrSshKey -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiSshKeyImport> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### ImportViaIdentity
 ```
-Import-SvrSshKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiSshKeyImport> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Import-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiSshKeyImport>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ImportViaIdentityExpanded
 ```
-Import-SvrSshKey -InputObject <ITitanApiIdentity> [-KeyData <String>] [-Name <String>]
+Import-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-KeyData <String>] [-Name <String>]
  [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,9 +52,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiSshKeyImport
@@ -70,7 +84,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -207,20 +220,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiSshKeyImport>: .
+`BODY <ISrtApiModelsApiSshKeyImport>`: .
   - `[KeyData <String>]`: 
   - `[Name <String>]`: 
   - `[PrivateKeyPassword <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -229,6 +240,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -238,5 +250,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

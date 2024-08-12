@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/invoke-login
 schema: 2.0.0
 ---
 
@@ -15,13 +15,13 @@ Send login credentials and an optional ticket ID and receive an access token in 
 
 ### LoginExpanded (Default)
 ```
-Invoke-Login [-PassWord <String>] [-Ticket <String>] [-UserName <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-Login -AdminUrl <String> [-PassWord <String>] [-Ticket <String>] [-UserName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Login
 ```
-Invoke-Login -Body <ISrtApiModelsApiAuthRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-Login -AdminUrl <String> -Body <ISrtApiModelsApiAuthRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,9 +41,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 Contains information needed by the /Login endpoint
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiAuthRequest
@@ -148,18 +162,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiAuthRequest>: Contains information needed by the /Login endpoint
+`BODY <ISrtApiModelsApiAuthRequest>`: Contains information needed by the /Login endpoint
   - `[PassWord <String>]`: User's password
   - `[Ticket <String>]`: An optional Ticket ID
   - `[UserName <String>]`: User's username
 
 ## RELATED LINKS
-
 

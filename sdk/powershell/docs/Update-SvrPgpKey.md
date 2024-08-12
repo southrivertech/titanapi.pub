@@ -1,31 +1,45 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://learn.microsoft.com/powershell/module/titanapi/remove-usr
+online version: https://learn.microsoft.com/powershell/module/titanapi/update-svrpgpkey
 schema: 2.0.0
 ---
 
-# Remove-Usr
+# Update-SvrPgpKey
 
 ## SYNOPSIS
-Delete the specified user.
+Update a Pgp key and returns the current list of Pgp keys
 
 ## SYNTAX
 
-### Delete (Default)
+### UpdateExpanded (Default)
 ```
-Remove-Usr -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName]
+Update-SvrPgpKey -AdminUrl <String> -ServerGuid <String> [-UserGroupGuid <String>]
+ [-Document <ISrtApiModelsApiPgpKeyData>] [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Update
 ```
-Remove-Usr -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ByUserName] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-SvrPgpKey -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiPgpKeyInfo>
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiPgpKeyInfo>
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-UserGroupGuid <String>]
+ [-Document <ISrtApiModelsApiPgpKeyData>] [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete the specified user.
+Update a Pgp key and returns the current list of Pgp keys
 
 ## EXAMPLES
 
@@ -55,27 +69,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AuthGuid
+### -Body
 .
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
+Type: Titan.API.Models.ISrtApiModelsApiPgpKeyInfo
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Document
+.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiPgpKeyData
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ByUserName
+### -Fingerprint
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -90,7 +134,7 @@ Identity Parameter
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -101,11 +145,11 @@ Accept wildcard characters: False
 ```
 
 ### -ServerGuid
-.
+Server GUID
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -115,15 +159,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserGuid
+### -UserGroupGuid
+Optional user or group GUID
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserGroupGuid1
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -166,11 +225,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Titan.API.Models.ISrtApiModelsApiPgpKeyInfo
+
 ### Titan.API.Models.ITitanApiIdentity
 
 ## OUTPUTS
 
 ### Titan.API.Models.ISrtApiModelsApiResult
+
+### Titan.API.Models.ISrtApiModelsApiResultPgpKeyList
 
 ## NOTES
 
@@ -178,6 +241,40 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+`BODY <ISrtApiModelsApiPgpKeyInfo>`: .
+  - `[Document <ISrtApiModelsApiPgpKeyData>]`: 
+    - `[KeyAlg <String>]`: 
+    - `[KeyBlob <String>]`: 
+    - `[KeyCreds <ISrtApiModelsApiCredentials>]`: 
+      - `[Password <String>]`: 
+      - `[Username <String>]`: 
+    - `[KeyLen <Int32?>]`: 
+    - `[KeyType <String>]`: 
+    - `[Name <String>]`: 
+    - `[PrvKey <String>]`: 
+    - `[PubKey <String>]`: 
+    - `[SigMd5 <String>]`: 
+    - `[SigSha1 <String>]`: 
+    - `[SigSha256 <String>]`: 
+  - `[Fingerprint <String>]`: 
+  - `[Id <String>]`: 
+  - `[UserGroupGuid <String>]`: 
+
+`DOCUMENT <ISrtApiModelsApiPgpKeyData>`: .
+  - `[KeyAlg <String>]`: 
+  - `[KeyBlob <String>]`: 
+  - `[KeyCreds <ISrtApiModelsApiCredentials>]`: 
+    - `[Password <String>]`: 
+    - `[Username <String>]`: 
+  - `[KeyLen <Int32?>]`: 
+  - `[KeyType <String>]`: 
+  - `[Name <String>]`: 
+  - `[PrvKey <String>]`: 
+  - `[PubKey <String>]`: 
+  - `[SigMd5 <String>]`: 
+  - `[SigSha1 <String>]`: 
+  - `[SigSha256 <String>]`: 
 
 `INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID

@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-svrcloudfolderparam
 schema: 2.0.0
 ---
 
@@ -14,25 +14,25 @@ Supply a list of cloud folder pocos to update
 
 ### SetExpanded (Default)
 ```
-Set-SvrCloudFolderParam -ServerGuid <String> [-CloudFolderList <ISrtApiModelsApiCloudFolderPoco[]>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-SvrCloudFolderParam -AdminUrl <String> -ServerGuid <String>
+ [-CloudFolderList <ISrtApiModelsApiCloudFolderPoco[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-SvrCloudFolderParam -ServerGuid <String> -Body <ISrtApiModelsApiCloudFolderList> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrCloudFolderParam -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiCloudFolderList>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-SvrCloudFolderParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiCloudFolderList> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-SvrCloudFolderParam -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiCloudFolderList> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-SvrCloudFolderParam -InputObject <ITitanApiIdentity>
+Set-SvrCloudFolderParam -AdminUrl <String> -InputObject <ITitanApiIdentity>
  [-CloudFolderList <ISrtApiModelsApiCloudFolderPoco[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,9 +52,23 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 .
-To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiCloudFolderList
@@ -70,7 +84,6 @@ Accept wildcard characters: False
 
 ### -CloudFolderList
 .
-To construct, see NOTES section for CLOUDFOLDERLIST properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiCloudFolderPoco[]
@@ -86,7 +99,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Titan.API.Models.ITitanApiIdentity
@@ -163,18 +175,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiCloudFolderList>: .
-  - `[CloudFolderList <ISrtApiModelsApiCloudFolderPoco[]>]`: 
+`BODY <ISrtApiModelsApiCloudFolderList>`: .
+  - `[CloudFolderList <List<ISrtApiModelsApiCloudFolderPoco>>]`: 
     - `[AccessKey <String>]`: 
     - `[AccessToken <String>]`: 
-    - `[BucketList <String[]>]`: 
+    - `[BucketList <List<String>>]`: 
     - `[BucketRegion <String>]`: 
     - `[CloudGuid <String>]`: 
     - `[CloudName <String>]`: 
@@ -188,15 +198,15 @@ BODY <ISrtApiModelsApiCloudFolderList>: .
     - `[ServerPortEnable <Boolean?>]`: 
     - `[ServerPortNumber <Int32?>]`: 
     - `[ServerUrl <String>]`: 
-    - `[SharePointSites <ISrtApiModelsApiCloudSharePointSite[]>]`: 
+    - `[SharePointSites <List<ISrtApiModelsApiCloudSharePointSite>>]`: 
       - `[Id <String>]`: 
       - `[SiteName <String>]`: 
     - `[Username <String>]`: 
 
-CLOUDFOLDERLIST <ISrtApiModelsApiCloudFolderPoco[]>: .
+`CLOUDFOLDERLIST <ISrtApiModelsApiCloudFolderPoco[]>`: .
   - `[AccessKey <String>]`: 
   - `[AccessToken <String>]`: 
-  - `[BucketList <String[]>]`: 
+  - `[BucketList <List<String>>]`: 
   - `[BucketRegion <String>]`: 
   - `[CloudGuid <String>]`: 
   - `[CloudName <String>]`: 
@@ -210,12 +220,12 @@ CLOUDFOLDERLIST <ISrtApiModelsApiCloudFolderPoco[]>: .
   - `[ServerPortEnable <Boolean?>]`: 
   - `[ServerPortNumber <Int32?>]`: 
   - `[ServerUrl <String>]`: 
-  - `[SharePointSites <ISrtApiModelsApiCloudSharePointSite[]>]`: 
+  - `[SharePointSites <List<ISrtApiModelsApiCloudSharePointSite>>]`: 
     - `[Id <String>]`: 
     - `[SiteName <String>]`: 
   - `[Username <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -224,6 +234,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -233,5 +244,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

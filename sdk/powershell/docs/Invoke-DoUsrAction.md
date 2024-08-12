@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/invoke-dousraction
 schema: 2.0.0
 ---
 
@@ -14,7 +14,8 @@ The goal of this endpoint is to\r\nallow the client to pass-thru a list of gener
 ## SYNTAX
 
 ```
-Invoke-DoUsrAction -Body <IPostContentSchemaItem[]> [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-DoUsrAction -AdminUrl <String> -Body <List<IPostContentSchemaItem>> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,11 +35,26 @@ PS C:\>  tbd ...
 
 ## PARAMETERS
 
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Body
 Array of PostContentSchemaItem
 
 ```yaml
-Type: Titan.API.Models.IPostContentSchemaItem[]
+Type: System.Collections.Generic.List`1[[Titan.API.Models.IPostContentSchemaItem, TitanApi.private, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]
 Parameter Sets: (All)
 Aliases:
 
@@ -85,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Titan.API.Models.IPostContentSchemaItem[]
+### System.Collections.Generic.List`1[[Titan.API.Models.IPostContentSchemaItem, TitanApi.private, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]
 
 ## OUTPUTS
 
@@ -95,8 +111,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
 ## RELATED LINKS
-
 

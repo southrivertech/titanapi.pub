@@ -1,7 +1,7 @@
 ---
 Module Name: TitanApi
-Module Guid: ad06e2e5-ebd3-4bad-bfcd-4459e6f1f3d8
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
+Module Guid: 38c649e7-1c22-4748-8b8a-0c4c0b454968
+Download Help Link: https://learn.microsoft.com/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
 ---
@@ -236,6 +236,9 @@ Send login credentials and an optional ticket ID and receive an access token in 
 ### [Invoke-Logout](Invoke-Logout.md)
 Logout with access token
 
+### [New-DomRemote](New-DomRemote.md)
+Create a new remote domain for remote administration
+
 ### [New-FileDirectory](New-FileDirectory.md)
 Create a new folder.
 Specify the folder name in the ApiFileDirectoryCreateRequest body along with the parent folder id
@@ -269,16 +272,16 @@ Supply the ApiEeventHandler object in the body of the request
 Create a server node for a cluster
 
 ### [New-SvrPgpKey](New-SvrPgpKey.md)
-Creates a new Pgp key and returns the current list of Pgp keys
+Create a new Pgp key and returns the current list of Pgp keys
 
 ### [New-SvrReport](New-SvrReport.md)
-Creates a report and returns the current list of reports
+Create a report and returns the current list of reports
 
 ### [New-SvrSshKey](New-SvrSshKey.md)
-Creates a new ssh key and returns the current list of ssh keys
+Create a new ssh key and returns the current list of ssh keys
 
 ### [New-SvrTlKey](New-SvrTlKey.md)
-Creates a new Certificate or CSR and returns the current list of tls keys
+Create a new Certificate or CSR and returns the current list of tls keys
 
 ### [New-SvrUnc](New-SvrUnc.md)
 Send in a list of of unc paths to be created
@@ -289,6 +292,9 @@ Create a virtual folder at either the server, user or group level by specifying 
 ### [New-Usr](New-Usr.md)
 Specify the Username and Password in the request object.
 If successful the new user paramaters will be returned
+
+### [Remove-DomRemote](Remove-DomRemote.md)
+Delete a remote domain from the list of remote domains to administer.
 
 ### [Remove-File](Remove-File.md)
 Specify the file id's to delete in the request body
@@ -348,25 +354,25 @@ Supply a list of cloud folder GUIDs to delete
 Set domain settings
 
 ### [Set-GrpParam](Set-GrpParam.md)
-Update the specified group parameters with the supplied settings in the patch body.
+Set the specified group parameters with the supplied settings in the patch body.
 
 ### [Set-LicState](Set-LicState.md)
 Perform an action on a license
 
 ### [Set-SvrAuthConnectorParam](Set-SvrAuthConnectorParam.md)
-Update user authentication connector settings
+Set user authentication connector settings
 
 ### [Set-SvrCloudFolderParam](Set-SvrCloudFolderParam.md)
 Supply a list of cloud folder pocos to update
 
 ### [Set-SvrDirAccess](Set-SvrDirAccess.md)
-Update settings for a directory access entry at either the server, user or group level by specifying the proper ownerGUID
+Set settings for a directory access entry at either the server, user or group level by specifying the proper ownerGUID
 
 ### [Set-SvrEventHandler](Set-SvrEventHandler.md)
 Supply the ApiEeventHandler object in the body of the request
 
 ### [Set-SvrIpbanList](Set-SvrIpbanList.md)
-Update IPBan list
+Set IPBan list
 
 ### [Set-SvrNodeParam](Set-SvrNodeParam.md)
 Set a specific node settings
@@ -386,13 +392,13 @@ overwrites any existing guid\r\n export -\> Exports the server configuration and
 Send in a list of of unc paths to be updated
 
 ### [Set-SvrVirtualFolder](Set-SvrVirtualFolder.md)
-Update settings for a virtual folder at either the server, user or group level by specifying the proper ownerGUID
+Set settings for a virtual folder at either the server, user or group level by specifying the proper ownerGUID
 
 ### [Set-UsrCloudFolder](Set-UsrCloudFolder.md)
 Supply a list of cloud folder pocos to update
 
 ### [Set-UsrParam](Set-UsrParam.md)
-Update the specified user parameters with the supplied settings in the patch body.
+Set the specified user parameters with the supplied settings in the patch body.
 
 ### [Start-SvrAction](Start-SvrAction.md)
 Perforam verious actions on the server through the LAS.
@@ -408,6 +414,9 @@ Valid options are \"getHomeDir\", \"setpassword\",\r\n\"resetpassword\"
 ### [Test-SvrEmail](Test-SvrEmail.md)
 Test Email connection
 
+### [Update-SvrPgpKey](Update-SvrPgpKey.md)
+Update a Pgp key and returns the current list of Pgp keys
+
 ### [Update-SvrTlKey](Update-SvrTlKey.md)
-Updates the certificate / csr
+Update the certificate / csr
 

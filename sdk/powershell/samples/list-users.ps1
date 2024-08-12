@@ -1,1 +1,1 @@
-(Get-UsrList -ServerGuid "your-server" -AuthGuid native).Response.UserList | Format-List
+(Get-UsrList -ServerGuid "your-server" -AuthGuid native -AdminUrl localhost:31443).Response.UserList | Format-List
