@@ -7,9 +7,9 @@ $apiVer = $apiVerInfo.Version
 Write-Host "Titan API Version Information: Name: $apiName, Version: $apiVer"
 
 #
-# This is the server name you wish to customize, enter credentials below
+# This is the server name you wish to customize, enter credentials below, use the servername or "las" for local admin
 #
-$serverName = "testserver"
+$serverName = "las"
 
 #
 # Login  (use your credentials)
@@ -25,11 +25,58 @@ $sp = (Get-SvrParam -ServerGUID "$serverName").Response
 $spBrands = $sp.Brand.Brands
 $spThemes = $sp.Brand.Themes
 
+
+Write-Host "ActiveBrandGuid: " $sp.Brand.ActiveBrandGuid
+Write-Host "ActiveThemeGuid: " $sp.Brand.ActiveThemeGuid
+
+# list all brands
+Write-Host "We have " $spBrands.Count " brands defined, listing them now"
+foreach($brand in $spBrands) {
+    Write-Host "Brand Description: " $brand.BrandDesc " Brand Guid: " $brand.BrandGuid " Copyright: " $brand.Copyright
+}
+
+# list all themes
+Write-Host "We have " $spThemes.Count " themes defined, listing them now"
+foreach($theme in $spThemes) {
+    Write-Host "Theme Description: " $theme.ThemeDesc " Theme Guid: " $theme.ThemeGuid " Footer Color: " $theme.FooterColor
+}
+
+# to assign the active brand set this field
+#$sp.Brand.ActiveBrandGuid = $spBrands[0].BrandGuid
+
+
 #
 # Brands.ActiveBrandGuid is the ID for the currently active brand
 # Search the list of brands to find the settings for the active brand
-#j
+#
 $spCurrentBrand = $spBrands | where { $_.BrandGuid -eq $sp.Brand.ActiveBrandGuid }
+
+
+# How to Create a new brand, allocate the brand object and add to list of brands
+# theme is done in a similar fashion
+$newBrand = new-object Titan.API.Models.SrtApiModelsApiBrandPocoData
+$newBrand.BrandGuid = New-Guid
+$newBrand.BrandDesc = "My new brand"
+$newBrand.Copyright = "My new copyright (c)"
+$newBrand.CopyrightUrl = "https://www.southrivertech.com"
+$newBrand.LoginWelcome = "My new welcome message"
+# add in this new brand to our list (uncomment below)
+#$sp.Brand.Brands += $newBrand
+
+#
+# To delete a brand you have to create a new array and filter out the ones to delete
+#
+# $newBrandArray = @()
+# foreach($brand in $spBrands) {
+#     if ($brand.BrandGuid -ne "f78006bf-0c5a-4f00-a4bd-d81615af9bd1" ) {
+#         $newBrandArray += $brand
+#     }
+# }
+# # assign modified array back to Brand
+# $sp.Brand.Brands = $newBrandArray
+# Write-Host "Number of brands now: " $sp.Brand.Brands.Count
+# $spBrands = $sp.Brand.Brands
+
 
 #
 # Brands.ActiveThemeGuid is the ID for the currently active color theme
@@ -43,7 +90,7 @@ Write-Host "Current Theme: " $spCurrentTheme.ThemeDesc
 #
 # update the brand properties
 #
-$spCurrentBrand.LoginDisclaimer = "this system is completely off limits to you, please go away."
+$spCurrentBrand.LoginDisclaimer = "this system is completely off limits to you, please go away right now."
 $spCurrentBrand.Copyright = "ACME Inc. no road runners allowed"
 $spCurrentBrand.CopyrightUrl = "https://www.titanftp.com"
 $spCurrentBrand.LoginName = "titandomain.com"
@@ -53,7 +100,7 @@ $spCurrentBrand.LoginWelcome = "Welcome to Titan Server"
 # Import custom logo file
 #
 $myLogoFile = "C:\temp\mycustomlogo.png"
-[String]$imageData = [convert]::ToBase64String((Get-Content $myLogoFile -Encoding Byte))
+[String]$imageData = [convert]::ToBase64String((Get-Content $myLogoFile -AsByteStream))
 $spCurrentBrand.LogoImage = "data:image/png;base64," + $imageData
 
 #
@@ -68,18 +115,12 @@ $spCurrentBrand.LogoImage = "data:image/png;base64," + $imageData
 #
 # push them back to the server
 #
+Write-Host "Push to sever with brand count " $sp.Brand.Brands.Count
 $result = Set-SvrParam -ServerGuid "$serverName"  -Brand $sp.Brand
-Write-Host "Result: " $result
+Write-Host "Saving brand to server...   result: " $result.Result.ErrorCode " " $result.Result.ErrorStr
 
 
 #
 # Logout
 #
 Invoke-Logout -BearerToken $env:SRTAuthToken
-
-
-
-function doLogout($token)
-{
-
-}
