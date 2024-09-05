@@ -9,6 +9,8 @@ The OpenAPI json specification for the REST API can be found here [OpenAPI](http
 # Enabling REST API
 In Titan versions 2.26 and above of Titan the REST API is disabled by default and is up to the administrator to choose to enable the REST API. To enable the REST API on the Titan server or other various Titan products please place the following json file in the installation folder, typically "C:\Program Files\South RiverTechnologies\srxserver". The config file is called "appsettings-oem.json" In this json config file you can decide which aspects of the REST API are enabled. A sample file is shown below and can be downloaded here [appsettings-oem.json](https://github.com/southrivertech/titanapi.pub/blob/main/appsettings-oem.json)
 
+After modifying or installing the appsettings-oem.json file you must restart the Titan Service from services.msc in order for changes to take effect.
+
 ```
 {
     "ConfigSettings" : {
