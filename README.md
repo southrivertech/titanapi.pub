@@ -25,7 +25,7 @@ After modifying or installing the appsettings.oem.json file you must restart the
 
 The RESTEnableAdminApi setting is used to enable/disable the REST interface to the local host admins erver on https://localhsot:31443. The RESTEnableUserApi setting is used to control whether or not the REST API is enabled for the server instances and would be accessible on that server endpoint. RESTEnableBasicAuth and RESTEnableDigestAuth control the allowed http authentication methods enabled on the REST API. Depending on the tool you are using to access the REST API you may need to enable Basic Authentication.  
 
-You can also access the REST API via swagger (if enabled in appsettings-oem.json) on the admin console via the url <https://localhost:31443/swagger/index.html> This will give you an idea of all the commands that are available however generally you will only need a few commands to perform routine tasks like setting a server setting and restarting the server, or adding a user etc.
+You can also access the REST API via swagger (if enabled in appsettings.oem.json) on the admin console via the url <https://localhost:31443/swagger/index.html> This will give you an idea of all the commands that are available however generally you will only need a few commands to perform routine tasks like setting a server setting and restarting the server, or adding a user etc.
 
 # SDK Languages Supported
 1. Powershell 
