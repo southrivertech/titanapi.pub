@@ -6,7 +6,26 @@ The various Titan Server platforms contain a REST API that can either be accesse
 
 The OpenAPI json specification for the REST API can be found here [OpenAPI](https://github.com/southrivertech/titanapi.pub/blob/main/swagger.json)
 
-You can also access the REST API via swagger on the admin console via the url <https://localhost:31443/swagger/index.html> This will give you an idea of all the commands that are available however generally you will only need a few commands to perform routine tasks like setting a server setting and restarting the server, or adding a user etc.
+# Enabling REST API
+In Titan versions 2.26 and above of Titan the REST API is disabled by default and it is up to the administrator to choose to enable the REST API. To enable the REST API on the Titan server or other various Titan products please place the following json file in the installation folder, typically "C:\Program Files\South RiverTechnologies\srxserver". The config file is called "appsettings.oem.json" In this json config file you can decide which aspects of the REST API are enabled. A sample file is shown below and can be downloaded here [appsettings.oem.json](https://github.com/southrivertech/titanapi.pub/blob/main/appsettings.oem.json)
+
+After modifying or installing the appsettings.oem.json file you must restart the Titan Service from services.msc in order for changes to take effect.
+
+```
+{
+    "ConfigSettings" : {
+	"RESTEnableSwaggerUI" : false,
+	"RESTEnableAdminApi" : true,
+	"RESTEnableUserApi" : false,
+	"RESTEnableBasicAuth" : false,
+	"RESTEnableDigestAuth" : true
+    }
+}
+```
+
+The RESTEnableAdminApi setting is used to enable/disable the REST interface to the local host admins erver on https://localhsot:31443. The RESTEnableUserApi setting is used to control whether or not the REST API is enabled for the server instances and would be accessible on that server endpoint. RESTEnableBasicAuth and RESTEnableDigestAuth control the allowed http authentication methods enabled on the REST API. Depending on the tool you are using to access the REST API you may need to enable Basic Authentication.  
+
+You can also access the REST API via swagger (if enabled in appsettings.oem.json) on the admin console via the url <https://localhost:31443/swagger/index.html> This will give you an idea of all the commands that are available however generally you will only need a few commands to perform routine tasks like setting a server setting and restarting the server, or adding a user etc.
 
 # SDK Languages Supported
 1. Powershell 
