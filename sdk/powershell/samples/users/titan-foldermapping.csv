@@ -1,0 +1,3 @@
+USER,Folder Mapping
+[USER:tom],\\server\sftp\usr\john\
+[USER:jerry],\\server\sftp\usr\jerry\
