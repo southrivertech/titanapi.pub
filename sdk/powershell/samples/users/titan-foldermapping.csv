@@ -1,3 +1,3 @@
 USER,Folder Mapping
-[USER:tom],\\server\sftp\usr\john\
-[USER:jerry],\\server\sftp\usr\jerry\
+[USER:srtUser1],\\server\sftp\usr\john\
+[USER:srtUser2],\\server\sftp\usr\jerry\
