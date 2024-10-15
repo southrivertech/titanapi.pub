@@ -45,3 +45,7 @@ $createdVF.AllowAce  = "R-ADNMVLIGS--"
 $r = Set-SvrVirtualFolder -ServerGuid $serverName -OwnerGuid $userGuid -VirtualFolderGUID $vfID  -Body $createdVF
 Write-Output "Updated virtual folder"
 Write-Output $r.Response
+
+# Delete a virtual folder example, uncomment the following code to delete the virtual folder
+#$r = Remove-SvrVirtualFolder -ServerGuid $serverName -VirtualFolderGUID $vfID -OwnerGuid $userGuid
+#$r.Result
