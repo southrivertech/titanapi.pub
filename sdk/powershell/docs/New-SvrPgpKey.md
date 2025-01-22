@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-svrpgpkey
 schema: 2.0.0
 ---
 
@@ -14,25 +14,26 @@ Creates a new Pgp key and returns the current list of Pgp keys
 
 ### CreateExpanded (Default)
 ```
-New-SvrPgpKey -ServerGuid <String> [-UserGroupGuid <String>] [-Document <ISrtApiModelsApiPgpKeyData>]
- [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-SvrPgpKey -AdminUrl <String> -ServerGuid <String> [-UserGroupGuid <String>]
+ [-Document <ISrtApiModelsApiPgpKeyData>] [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-SvrPgpKey -ServerGuid <String> -Body <ISrtApiModelsApiPgpKeyInfo> [-UserGroupGuid <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-SvrPgpKey -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiPgpKeyInfo>
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-SvrPgpKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiPgpKeyInfo> [-UserGroupGuid <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiPgpKeyInfo>
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-SvrPgpKey -InputObject <ITitanApiIdentity> [-UserGroupGuid <String>]
+New-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-UserGroupGuid <String>]
  [-Document <ISrtApiModelsApiPgpKeyData>] [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -52,6 +53,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -231,7 +247,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiPgpKeyInfo>: .
+`BODY <ISrtApiModelsApiPgpKeyInfo>`: .
   - `[Document <ISrtApiModelsApiPgpKeyData>]`: 
     - `[KeyAlg <String>]`: 
     - `[KeyBlob <String>]`: 
@@ -250,7 +266,7 @@ BODY <ISrtApiModelsApiPgpKeyInfo>: .
   - `[Id <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
-DOCUMENT <ISrtApiModelsApiPgpKeyData>: .
+`DOCUMENT <ISrtApiModelsApiPgpKeyData>`: .
   - `[KeyAlg <String>]`: 
   - `[KeyBlob <String>]`: 
   - `[KeyCreds <ISrtApiModelsApiCredentials>]`: 
@@ -265,7 +281,7 @@ DOCUMENT <ISrtApiModelsApiPgpKeyData>: .
   - `[SigSha1 <String>]`: 
   - `[SigSha256 <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -274,6 +290,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -283,5 +300,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

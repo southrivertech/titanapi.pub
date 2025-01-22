@@ -1,44 +1,45 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://learn.microsoft.com/powershell/module/titanapi/update-svrtlkey
+online version: https://learn.microsoft.com/powershell/module/titanapi/update-svrpgpkey
 schema: 2.0.0
 ---
 
-# Update-SvrTlKey
+# Update-SvrPgpKey
 
 ## SYNOPSIS
-Updates the certificate / csr
+Updates a Pgp key and returns the current list of Pgp keys
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-SvrTlKey -AdminUrl <String> -ServerGuid <String> [-Cert <String>] [-Csr <String>] [-Name <String>]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-SvrPgpKey -AdminUrl <String> -ServerGuid <String> [-UserGroupGuid <String>]
+ [-Document <ISrtApiModelsApiPgpKeyData>] [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-SvrTlKey -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiTlsKeyImport> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-SvrPgpKey -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiPgpKeyInfo>
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-SvrTlKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiTlsKeyImport>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiPgpKeyInfo>
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-SvrTlKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-Cert <String>] [-Csr <String>]
- [-Name <String>] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-UserGroupGuid <String>]
+ [-Document <ISrtApiModelsApiPgpKeyData>] [-Fingerprint <String>] [-Id <String>] [-UserGroupGuid1 <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates the certificate / csr
+Updates a Pgp key and returns the current list of Pgp keys
 
 ## EXAMPLES
 
@@ -73,7 +74,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Titan.API.Models.ISrtApiModelsApiTlsKeyImport
+Type: Titan.API.Models.ISrtApiModelsApiPgpKeyInfo
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -84,7 +85,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Cert
+### -Document
+.
+To construct, see NOTES section for DOCUMENT properties and create a hash table.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiPgpKeyData
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Fingerprint
 .
 
 ```yaml
@@ -99,7 +116,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Csr
+### -Id
 .
 
 ```yaml
@@ -130,36 +147,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PrivateKeyPassword
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ServerGuid
 Server GUID
 
@@ -176,6 +163,21 @@ Accept wildcard characters: False
 ```
 
 ### -UserGroupGuid
+Optional user or group GUID
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserGroupGuid1
 .
 
 ```yaml
@@ -226,7 +228,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Titan.API.Models.ISrtApiModelsApiTlsKeyImport
+### Titan.API.Models.ISrtApiModelsApiPgpKeyInfo
 
 ### Titan.API.Models.ITitanApiIdentity
 
@@ -234,7 +236,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultTlsKeyList
+### Titan.API.Models.ISrtApiModelsApiResultPgpKeyList
 
 ## NOTES
 
@@ -245,12 +247,39 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODY <ISrtApiModelsApiTlsKeyImport>`: .
-  - `[Cert <String>]`: 
-  - `[Csr <String>]`: 
-  - `[Name <String>]`: 
-  - `[PrivateKeyPassword <String>]`: 
+`BODY <ISrtApiModelsApiPgpKeyInfo>`: .
+  - `[Document <ISrtApiModelsApiPgpKeyData>]`: 
+    - `[KeyAlg <String>]`: 
+    - `[KeyBlob <String>]`: 
+    - `[KeyCreds <ISrtApiModelsApiCredentials>]`: 
+      - `[Password <String>]`: 
+      - `[Username <String>]`: 
+    - `[KeyLen <Int32?>]`: 
+    - `[KeyType <String>]`: 
+    - `[Name <String>]`: 
+    - `[PrvKey <String>]`: 
+    - `[PubKey <String>]`: 
+    - `[SigMd5 <String>]`: 
+    - `[SigSha1 <String>]`: 
+    - `[SigSha256 <String>]`: 
+  - `[Fingerprint <String>]`: 
+  - `[Id <String>]`: 
   - `[UserGroupGuid <String>]`: 
+
+`DOCUMENT <ISrtApiModelsApiPgpKeyData>`: .
+  - `[KeyAlg <String>]`: 
+  - `[KeyBlob <String>]`: 
+  - `[KeyCreds <ISrtApiModelsApiCredentials>]`: 
+    - `[Password <String>]`: 
+    - `[Username <String>]`: 
+  - `[KeyLen <Int32?>]`: 
+  - `[KeyType <String>]`: 
+  - `[Name <String>]`: 
+  - `[PrvKey <String>]`: 
+  - `[PubKey <String>]`: 
+  - `[SigMd5 <String>]`: 
+  - `[SigSha1 <String>]`: 
+  - `[SigSha256 <String>]`: 
 
 `INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID

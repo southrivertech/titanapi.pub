@@ -14,14 +14,14 @@ $serverName = "las"
 #
 # Login  (use your credentials)
 #
-$login = Invoke-Login -UserName "admin" -PassWord "test"
+$login = Invoke-Login -UserName "admin" -PassWord "test" -AdminUrl localhost:31443
 $env:SRTAuthToken = $login.Response.SessionInfo.BearerToken
 
 
 #
 # Use your server instance name here to load proper server params
 #
-$sp = (Get-SvrParam -ServerGUID "$serverName").Response
+$sp = (Get-SvrParam -ServerGUID "$serverName" -AdminUrl localhost:31443).Response
 $spBrands = $sp.Brand.Brands
 $spThemes = $sp.Brand.Themes
 
@@ -116,11 +116,11 @@ $spCurrentBrand.LogoImage = "data:image/png;base64," + $imageData
 # push them back to the server
 #
 Write-Host "Push to sever with brand count " $sp.Brand.Brands.Count
-$result = Set-SvrParam -ServerGuid "$serverName"  -Brand $sp.Brand
+$result = Set-SvrParam -ServerGuid "$serverName"  -Brand $sp.Brand -AdminUrl localhost:31443
 Write-Host "Saving brand to server...   result: " $result.Result.ErrorCode " " $result.Result.ErrorStr
 
 
 #
 # Logout
 #
-Invoke-Logout -BearerToken $env:SRTAuthToken
+Invoke-Logout -BearerToken $env:SRTAuthToken -AdminUrl localhost:31443

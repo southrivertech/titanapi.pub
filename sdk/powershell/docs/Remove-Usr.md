@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/remove-usr
 schema: 2.0.0
 ---
 
@@ -14,13 +14,14 @@ Delete the specified user.
 
 ### Delete (Default)
 ```
-Remove-Usr -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-Usr -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-Usr -InputObject <ITitanApiIdentity> [-ByUserName] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-Usr -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ByUserName] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,6 +39,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AuthGuid
 .
@@ -166,7 +182,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -175,6 +191,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -184,5 +201,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

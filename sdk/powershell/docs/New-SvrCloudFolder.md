@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-svrcloudfolder
 schema: 2.0.0
 ---
 
@@ -15,34 +15,35 @@ A new CloudGUID will be created
 
 ### CreateExpanded (Default)
 ```
-New-SvrCloudFolder -ServerGuid <String> [-AccessKey <String>] [-AccessToken <String>] [-BucketList <String[]>]
- [-BucketRegion <String>] [-CloudGuid <String>] [-CloudName <String>] [-ConnectorConfig <String>]
- [-ConnectorName <String>] [-CustomSettings <String>] [-Description <String>] [-Password <String>]
- [-RefreshToken <String>] [-SecretKey <String>] [-ServerPortEnable] [-ServerPortNumber <Int32>]
- [-ServerUrl <String>] [-SharePointSites <ISrtApiModelsApiCloudSharePointSite[]>] [-Username <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-SvrCloudFolder -ServerGuid <String> -Body <ISrtApiModelsApiServerParamsCloudFolderPoco> [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-SvrCloudFolder -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerParamsCloudFolderPoco>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-SvrCloudFolder -InputObject <ITitanApiIdentity> [-AccessKey <String>] [-AccessToken <String>]
+New-SvrCloudFolder -AdminUrl <String> -ServerGuid <String> [-AccessKey <String>] [-AccessToken <String>]
  [-BucketList <String[]>] [-BucketRegion <String>] [-CloudGuid <String>] [-CloudName <String>]
  [-ConnectorConfig <String>] [-ConnectorName <String>] [-CustomSettings <String>] [-Description <String>]
  [-Password <String>] [-RefreshToken <String>] [-SecretKey <String>] [-ServerPortEnable]
  [-ServerPortNumber <Int32>] [-ServerUrl <String>] [-SharePointSites <ISrtApiModelsApiCloudSharePointSite[]>]
  [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-SvrCloudFolder -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiServerParamsCloudFolderPoco>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-SvrCloudFolder -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiServerParamsCloudFolderPoco> [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-SvrCloudFolder -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AccessKey <String>]
+ [-AccessToken <String>] [-BucketList <String[]>] [-BucketRegion <String>] [-CloudGuid <String>]
+ [-CloudName <String>] [-ConnectorConfig <String>] [-ConnectorName <String>] [-CustomSettings <String>]
+ [-Description <String>] [-Password <String>] [-RefreshToken <String>] [-SecretKey <String>]
+ [-ServerPortEnable] [-ServerPortNumber <Int32>] [-ServerUrl <String>]
+ [-SharePointSites <ISrtApiModelsApiCloudSharePointSite[]>] [-Username <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,6 +87,21 @@ Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -435,7 +451,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerParamsCloudFolderPoco>: .
+`BODY <ISrtApiModelsApiServerParamsCloudFolderPoco>`: .
   - `[AccessKey <String>]`: 
   - `[AccessToken <String>]`: 
   - `[BucketList <String[]>]`: 
@@ -457,7 +473,7 @@ BODY <ISrtApiModelsApiServerParamsCloudFolderPoco>: .
     - `[SiteName <String>]`: 
   - `[Username <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -466,6 +482,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -474,10 +491,9 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-SHAREPOINTSITES <ISrtApiModelsApiCloudSharePointSite[]>: .
+`SHAREPOINTSITES <ISrtApiModelsApiCloudSharePointSite[]>`: .
   - `[Id <String>]`: 
   - `[SiteName <String>]`: 
 
 ## RELATED LINKS
-
 

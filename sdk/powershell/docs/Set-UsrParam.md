@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-usrparam
 schema: 2.0.0
 ---
 
@@ -14,8 +14,8 @@ Update the specified user parameters with the supplied settings in the patch bod
 
 ### SetExpanded (Default)
 ```
-Set-UsrParam -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName] [-CreateHomeDirNow]
- [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-AuthGuid1 <String>]
+Set-UsrParam -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName]
+ [-CreateHomeDirNow] [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-AuthGuid1 <String>]
  [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-CreateHomeDirNow1 <Int32>]
  [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>] [-Dav <ISrtApiModelsApiUserParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>]
@@ -31,20 +31,21 @@ Set-UsrParam -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUser
 
 ### Set
 ```
-Set-UsrParam -AuthGuid <String> -ServerGuid <String> -UserGuid <String> -Body <ISrtApiModelsApiUserParamsPoco>
- [-ByUserName] [-CreateHomeDirNow] [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-UsrParam -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String>
+ -Body <ISrtApiModelsApiUserParamsPoco> [-ByUserName] [-CreateHomeDirNow] [-Fields <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-UsrParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsPoco> [-ByUserName]
- [-CreateHomeDirNow] [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-UsrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsPoco>
+ [-ByUserName] [-CreateHomeDirNow] [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-UsrParam -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-UserGuid <String>] [-ByUserName]
- [-CreateHomeDirNow] [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>]
+Set-UsrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-UserGuid <String>]
+ [-ByUserName] [-CreateHomeDirNow] [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>]
  [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-CreateHomeDirNow1 <Int32>]
  [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>] [-Dav <ISrtApiModelsApiUserParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>]
@@ -84,6 +85,21 @@ Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -643,7 +659,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCT <ISrtApiModelsApiUserParamsAcctPoco>: .
+`ACCT <ISrtApiModelsApiUserParamsAcctPoco>`: .
   - `[AcctExpirationCnt <Int64?>]`: 
   - `[AcctExpirationEnabled <Int32?>]`: 
   - `[AcctExpirationInterval <Int32?>]`: 
@@ -671,13 +687,13 @@ ACCT <ISrtApiModelsApiUserParamsAcctPoco>: .
   - `[PasswordHistoryCnt <Int32?>]`: 
   - `[PasswordHistoryEnabled <Int32?>]`: 
 
-AV <ISrtApiModelsApiUserParamsAvPoco>: .
+`AV <ISrtApiModelsApiUserParamsAvPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[QuarAction <Int32?>]`: 
   - `[RealTime <Int32?>]`: 
   - `[Timeout <Int32?>]`: 
 
-BODY <ISrtApiModelsApiUserParamsPoco>: .
+`BODY <ISrtApiModelsApiUserParamsPoco>`: .
   - `[Acct <ISrtApiModelsApiUserParamsAcctPoco>]`: 
     - `[AcctExpirationCnt <Int64?>]`: 
     - `[AcctExpirationEnabled <Int32?>]`: 
@@ -833,7 +849,7 @@ BODY <ISrtApiModelsApiUserParamsPoco>: .
   - `[UserGuid <String>]`: 
   - `[Username <String>]`: 
 
-CXN <ISrtApiModelsApiUserParamsCxnPoco>: .
+`CXN <ISrtApiModelsApiUserParamsCxnPoco>`: .
   - `[IdleTimeoutCnt <Int32?>]`: 
   - `[IdleTimeoutEnabled <Int32?>]`: 
   - `[MaxConnCnt <Int32?>]`: 
@@ -845,12 +861,12 @@ CXN <ISrtApiModelsApiUserParamsCxnPoco>: .
   - `[MaxUlNumCnt <Int32?>]`: 
   - `[MaxUlNumEnabled <Int32?>]`: 
 
-DAV <ISrtApiModelsApiUserParamsDavPoco>: .
+`DAV <ISrtApiModelsApiUserParamsDavPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-FILEDIR <ISrtApiModelsApiUserParamsFileDirPoco>: .
+`FILEDIR <ISrtApiModelsApiUserParamsFileDirPoco>`: .
   - `[AutoBanFileTypesList <String[]>]`: 
   - `[BanFileTypesEnabled <Int32?>]`: 
   - `[BanFileTypesList <String[]>]`: 
@@ -862,7 +878,7 @@ FILEDIR <ISrtApiModelsApiUserParamsFileDirPoco>: .
   - `[WriteCacheEnabled <Int32?>]`: 
   - `[WriteCacheSizeMb <Int32?>]`: 
 
-FTP <ISrtApiModelsApiUserParamsFtpPoco>: .
+`FTP <ISrtApiModelsApiUserParamsFtpPoco>`: .
   - `[AllowMdtm <Int32?>]`: 
   - `[AllowMfct <Int32?>]`: 
   - `[AllowMfmt <Int32?>]`: 
@@ -877,7 +893,7 @@ FTP <ISrtApiModelsApiUserParamsFtpPoco>: .
   - `[TimeZoneMinutes <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-FTPS <ISrtApiModelsApiUserParamsFtpsPoco>: .
+`FTPS <ISrtApiModelsApiUserParamsFtpsPoco>`: .
   - `[AllowCcc <Int32?>]`: 
   - `[AllowProt <Int32?>]`: 
   - `[DefaultProtp <Int32?>]`: 
@@ -888,7 +904,7 @@ FTPS <ISrtApiModelsApiUserParamsFtpsPoco>: .
   - `[RequireFtps <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
 
-GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>: .
+`GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>`: .
   - `[EmailAddress <String>]`: 
   - `[FullName <String>]`: 
   - `[HomeDir <String>]`: 
@@ -899,12 +915,12 @@ GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>: .
   - `[PrimaryGroupGuid <String>]`: 
   - `[UserDesc <String>]`: 
 
-HTTP <ISrtApiModelsApiUserParamsHttpPoco>: .
+`HTTP <ISrtApiModelsApiUserParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[TlsCertGuid <String[]>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-IDENT <ISrtApiModelsApiUserParamsIdentPoco>: .
+`IDENT <ISrtApiModelsApiUserParamsIdentPoco>`: .
   - `[AccessFailedCount <Int64?>]`: 
   - `[AcctCreatedDate <Int64?>]`: 
   - `[AcctEnabled <Int32?>]`: 
@@ -914,7 +930,7 @@ IDENT <ISrtApiModelsApiUserParamsIdentPoco>: .
   - `[LastLoginUtc <Int64?>]`: 
   - `[LockoutExpiration <Int64?>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -923,6 +939,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -931,7 +948,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-PGP <ISrtApiModelsApiUserParamsPgpPoco>: .
+`PGP <ISrtApiModelsApiUserParamsPgpPoco>`: .
   - `[AddPgpExtension <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[ExemptFiles <String[]>]`: 
@@ -940,17 +957,17 @@ PGP <ISrtApiModelsApiUserParamsPgpPoco>: .
   - `[RetainFileSize <Int32?>]`: 
   - `[UseEvents <Int32?>]`: 
 
-QUOTA <ISrtApiModelsApiUserParamsQuotaPoco>: .
+`QUOTA <ISrtApiModelsApiUserParamsQuotaPoco>`: .
   - `[CurrentUsageKb <Int32?>]`: 
   - `[QuotaCntKb <Int32?>]`: 
   - `[QuotaEnabled <Int32?>]`: 
   - `[QuotaFreeFileList <String[]>]`: 
 
-ROLE <ISrtApiModelsApiUserParamsRolePoco>: .
+`ROLE <ISrtApiModelsApiUserParamsRolePoco>`: .
   - `[IsRoleStandard <Int32?>]`: 
   - `[Roles <String[]>]`: 
 
-SFS <ISrtApiModelsApiUserParamsSfsPoco>: .
+`SFS <ISrtApiModelsApiUserParamsSfsPoco>`: .
   - `[AdHocEnabled <Int32?>]`: 
   - `[DzEnabled <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
@@ -961,12 +978,12 @@ SFS <ISrtApiModelsApiUserParamsSfsPoco>: .
   - `[TlsCertGuid <String[]>]`: 
   - `[ViewableTypes <String[]>]`: 
 
-SFTP <ISrtApiModelsApiUserParamsSftpPoco>: .
+`SFTP <ISrtApiModelsApiUserParamsSftpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-SSH <ISrtApiModelsApiUserParamsSshPoco>: .
+`SSH <ISrtApiModelsApiUserParamsSshPoco>`: .
   - `[AllowPubKeyAuth <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[HostKeyGuid <String[]>]`: 
@@ -974,10 +991,9 @@ SSH <ISrtApiModelsApiUserParamsSshPoco>: .
   - `[MfaEnabled <Int32?>]`: 
   - `[MfaMode <Int32?>]`: 
 
-STATS <ISrtApiModelsApiUserParamsStatsPoco>: .
+`STATS <ISrtApiModelsApiUserParamsStatsPoco>`: .
   - `[BadPassVal <Int64?>]`: 
   - `[LastLoginDate <Int64?>]`: 
 
 ## RELATED LINKS
-
 

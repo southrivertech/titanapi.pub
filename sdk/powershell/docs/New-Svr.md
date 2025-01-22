@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-svr
 schema: 2.0.0
 ---
 
@@ -15,7 +15,7 @@ a ServerName must be supplied
 
 ### CreateExpanded (Default)
 ```
-New-Svr [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+New-Svr -AdminUrl <String> [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
  [-FolderParams <ISrtApiModelsApiServerParamsFolderPoco>] [-General <ISrtApiModelsApiServerParamsGeneralPoco>]
  [-ServerName <String>] [-SqlParams <ISrtApiModelsApiUtilSqlParamsPoco>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -23,7 +23,8 @@ New-Svr [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
 
 ### Create
 ```
-New-Svr -Body <ISrtApiModelsApiServerCreateRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-Svr -AdminUrl <String> -Body <ISrtApiModelsApiServerCreateRequest> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,6 +43,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -191,7 +207,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerCreateRequest>: .
+`BODY <ISrtApiModelsApiServerCreateRequest>`: .
   - `[ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]`: 
     - `[ClusteredIPAddress <String>]`: 
   - `[FolderParams <ISrtApiModelsApiServerParamsFolderPoco>]`: 
@@ -218,10 +234,10 @@ BODY <ISrtApiModelsApiServerCreateRequest>: .
     - `[Password <String>]`: 
     - `[Username <String>]`: 
 
-CLUSTERPARAMS <ISrtApiModelsApiServerClusterParamsPoco>: .
+`CLUSTERPARAMS <ISrtApiModelsApiServerClusterParamsPoco>`: .
   - `[ClusteredIPAddress <String>]`: 
 
-FOLDERPARAMS <ISrtApiModelsApiServerParamsFolderPoco>: .
+`FOLDERPARAMS <ISrtApiModelsApiServerParamsFolderPoco>`: .
   - `[AvQuarantineDir <String>]`: 
   - `[BackupsDir <String>]`: 
   - `[BaseDataDir <String>]`: 
@@ -232,13 +248,13 @@ FOLDERPARAMS <ISrtApiModelsApiServerParamsFolderPoco>: .
   - `[TempDataDir <String>]`: 
   - `[UserDataDir <String>]`: 
 
-GENERAL <ISrtApiModelsApiServerParamsGeneralPoco>: .
+`GENERAL <ISrtApiModelsApiServerParamsGeneralPoco>`: .
   - `[Notes <String>]`: 
   - `[RunAtStartup <Int32?>]`: 
   - `[ServerDesc <String>]`: 
   - `[ShowEula <Boolean?>]`: 
 
-SQLPARAMS <ISrtApiModelsApiUtilSqlParamsPoco>: .
+`SQLPARAMS <ISrtApiModelsApiUtilSqlParamsPoco>`: .
   - `[Database <String>]`: 
   - `[DatabaseType <String>]`: 
   - `[Instance <String>]`: 
@@ -247,5 +263,4 @@ SQLPARAMS <ISrtApiModelsApiUtilSqlParamsPoco>: .
   - `[Username <String>]`: 
 
 ## RELATED LINKS
-
 

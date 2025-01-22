@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-svrparam
 schema: 2.0.0
 ---
 
@@ -14,16 +14,16 @@ Set server settings
 
 ### SetExpanded (Default)
 ```
-Set-SvrParam -ServerGuid <String> [-Fields <String>] [-Acct <ISrtApiModelsApiServerParamsAcctPoco>]
- [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>] [-Av <ISrtApiModelsApiServerParamsAvPoco>]
- [-Brand <ISrtApiModelsApiServerParamsBrandPoco>] [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
- [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>] [-Dav <ISrtApiModelsApiServerParamsDavPoco>]
- [-Dmz <ISrtApiModelsApiServerParamsDmzPoco[]>] [-DmzSvr <ISrtApiModelsApiServerParamsDmzSvrPoco>]
- [-Email <ISrtApiModelsApiServerParamsEmailPoco>] [-FileDir <ISrtApiModelsApiServerParamsFileDirPoco>]
- [-Folder <ISrtApiModelsApiServerParamsFolderPoco>] [-Ftp <ISrtApiModelsApiServerParamsFtpPoco>]
- [-Ftps <ISrtApiModelsApiServerParamsFtpsPoco>] [-General <ISrtApiModelsApiServerParamsGeneralPoco>]
- [-Http <ISrtApiModelsApiServerParamsHttpPoco>] [-IcapSvr <ISrtApiModelsApiServerParamsIcapSvrPoco>]
- [-IPAccess <ISrtApiModelsApiServerParamsIPAccessPoco>]
+Set-SvrParam -AdminUrl <String> -ServerGuid <String> [-Fields <String>]
+ [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]
+ [-Av <ISrtApiModelsApiServerParamsAvPoco>] [-Brand <ISrtApiModelsApiServerParamsBrandPoco>]
+ [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
+ [-Dav <ISrtApiModelsApiServerParamsDavPoco>] [-Dmz <ISrtApiModelsApiServerParamsDmzPoco[]>]
+ [-DmzSvr <ISrtApiModelsApiServerParamsDmzSvrPoco>] [-Email <ISrtApiModelsApiServerParamsEmailPoco>]
+ [-FileDir <ISrtApiModelsApiServerParamsFileDirPoco>] [-Folder <ISrtApiModelsApiServerParamsFolderPoco>]
+ [-Ftp <ISrtApiModelsApiServerParamsFtpPoco>] [-Ftps <ISrtApiModelsApiServerParamsFtpsPoco>]
+ [-General <ISrtApiModelsApiServerParamsGeneralPoco>] [-Http <ISrtApiModelsApiServerParamsHttpPoco>]
+ [-IcapSvr <ISrtApiModelsApiServerParamsIcapSvrPoco>] [-IPAccess <ISrtApiModelsApiServerParamsIPAccessPoco>]
  [-IPSecurity <ISrtApiModelsApiServerParamsIPSecurityPoco>] [-Log <ISrtApiModelsApiServerParamsLogPoco>]
  [-Msg <ISrtApiModelsApiServerParamsMsgPoco>] [-MulTen <ISrtApiModelsApiServerParamsMulTenPoco>]
  [-Nodes <ISrtApiModelsApiServerParamsNodesPoco[]>] [-Pci <ISrtApiModelsApiServerParamsPciPoco>]
@@ -37,19 +37,19 @@ Set-SvrParam -ServerGuid <String> [-Fields <String>] [-Acct <ISrtApiModelsApiSer
 
 ### Set
 ```
-Set-SvrParam -ServerGuid <String> -Body <ISrtApiModelsApiServerParamsPoco> [-Fields <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-SvrParam -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiServerParamsPoco>
+ [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-SvrParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerParamsPoco> [-Fields <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerParamsPoco>
+ [-Fields <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-SvrParam -InputObject <ITitanApiIdentity> [-ServerGuid <String>] [-Fields <String>]
+Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ServerGuid <String>] [-Fields <String>]
  [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]
  [-Av <ISrtApiModelsApiServerParamsAvPoco>] [-Brand <ISrtApiModelsApiServerParamsBrandPoco>]
  [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
@@ -96,6 +96,21 @@ Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -791,7 +806,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCT <ISrtApiModelsApiServerParamsAcctPoco>: .
+`ACCT <ISrtApiModelsApiServerParamsAcctPoco>`: .
   - `[AcctExpirationCnt <Int64?>]`: 
   - `[AcctExpirationEnabled <Int32?>]`: 
   - `[AcctExpirationInterval <Int32?>]`: 
@@ -819,7 +834,7 @@ ACCT <ISrtApiModelsApiServerParamsAcctPoco>: .
   - `[PasswordHistoryCnt <Int32?>]`: 
   - `[PasswordHistoryEnabled <Int32?>]`: 
 
-AUTH <ISrtApiModelsApiServerParamsAuthPoco[]>: .
+`AUTH <ISrtApiModelsApiServerParamsAuthPoco[]>`: .
   - `[AdHocPoco <ISrtApiModelsApiAuthDataAdHocPoco>]`: 
     - `[AuthDesc <String>]`: 
     - `[AuthGuid <String>]`: 
@@ -949,7 +964,7 @@ AUTH <ISrtApiModelsApiServerParamsAuthPoco[]>: .
     - `[Win32LogonProvider <Int32?>]`: 
     - `[Win32LogonType <Int32?>]`: 
 
-AV <ISrtApiModelsApiServerParamsAvPoco>: AntiVirus-ICAP Settings
+`AV <ISrtApiModelsApiServerParamsAvPoco>`: AntiVirus-ICAP Settings
   - `[Enabled <Int32?>]`: 
   - `[EngineType <Int32?>]`: AV/ICAP Engine Id. 0 = Internal, 1 = CloudEmersive
   - `[ICapPort <String>]`: TCP/IP Port for connecting to the AV/ICAP server. The default port is 1344
@@ -958,7 +973,7 @@ AV <ISrtApiModelsApiServerParamsAvPoco>: AntiVirus-ICAP Settings
   - `[RealTime <Int32?>]`: 
   - `[Timeout <Int32?>]`: 
 
-BODY <ISrtApiModelsApiServerParamsPoco>: .
+`BODY <ISrtApiModelsApiServerParamsPoco>`: .
   - `[Acct <ISrtApiModelsApiServerParamsAcctPoco>]`: 
     - `[AcctExpirationCnt <Int64?>]`: 
     - `[AcctExpirationEnabled <Int32?>]`: 
@@ -1141,6 +1156,8 @@ BODY <ISrtApiModelsApiServerParamsPoco>: .
       - `[LogoImage <String>]`: 
       - `[LogoName <String>]`: 
     - `[Themes <ISrtApiModelsApiThemePocoData[]>]`: 
+      - `[CardColor <String>]`: 
+      - `[CardColorText <String>]`: 
       - `[ContentColor <String>]`: 
       - `[ContentColorText <String>]`: 
       - `[FooterColor <String>]`: 
@@ -1302,7 +1319,6 @@ BODY <ISrtApiModelsApiServerParamsPoco>: .
     - `[Enabled <Int32?>]`: 
     - `[IPAccessRules <ISrtApiModelsApiIPAccessRulePoco[]>]`: 
       - `[Allow <Int32?>]`: 
-      - `[Duration <Int64?>]`: 
       - `[Enabled <Int32?>]`: 
       - `[IPAccRuleGuid <String>]`: 
       - `[IPAddressEnd <String>]`: 
@@ -1402,9 +1418,17 @@ BODY <ISrtApiModelsApiServerParamsPoco>: .
     - `[SftpVersion <Int32?>]`: 
     - `[Utf8Enabled <Int32?>]`: 
   - `[SlSvr <ISrtApiModelsApiServerParamsSlSvrPoco>]`: 
+    - `[EnableLogToDatabase <Int32?>]`: 
+    - `[EnableLogToFile <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
+    - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
+    - `[LogMaxSizeMb <Int32?>]`: 
+    - `[LogRotation <Int32?>]`: 
+    - `[LogRotationCheckInterval <Int32?>]`: 
+    - `[LogUnicodeFormat <Int32?>]`: 
     - `[TlsCertGuid <String>]`: 
     - `[TlsEnabled <Int32?>]`: 
+    - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
   - `[Ssh <ISrtApiModelsApiServerParamsSshPoco>]`: 
     - `[AllowPasswordAuth <Int32?>]`: 
     - `[AllowPubKeyAuth <Int32?>]`: 
@@ -1436,7 +1460,7 @@ BODY <ISrtApiModelsApiServerParamsPoco>: .
     - `[UncReAuth <Int32?>]`: 
     - `[UncSharePath <String>]`: 
 
-BRAND <ISrtApiModelsApiServerParamsBrandPoco>: .
+`BRAND <ISrtApiModelsApiServerParamsBrandPoco>`: .
   - `[ActiveBrandGuid <String>]`: 
   - `[ActiveThemeGuid <String>]`: 
   - `[Brands <ISrtApiModelsApiBrandPocoData[]>]`: 
@@ -1454,6 +1478,8 @@ BRAND <ISrtApiModelsApiServerParamsBrandPoco>: .
     - `[LogoImage <String>]`: 
     - `[LogoName <String>]`: 
   - `[Themes <ISrtApiModelsApiThemePocoData[]>]`: 
+    - `[CardColor <String>]`: 
+    - `[CardColorText <String>]`: 
     - `[ContentColor <String>]`: 
     - `[ContentColorText <String>]`: 
     - `[FooterColor <String>]`: 
@@ -1463,10 +1489,10 @@ BRAND <ISrtApiModelsApiServerParamsBrandPoco>: .
     - `[ThemeDesc <String>]`: 
     - `[ThemeGuid <String>]`: 
 
-CLUSTERPARAMS <ISrtApiModelsApiServerClusterParamsPoco>: .
+`CLUSTERPARAMS <ISrtApiModelsApiServerClusterParamsPoco>`: .
   - `[ClusteredIPAddress <String>]`: 
 
-CXN <ISrtApiModelsApiServerParamsCxnPoco>: .
+`CXN <ISrtApiModelsApiServerParamsCxnPoco>`: .
   - `[IdleTimeoutCnt <Int32?>]`: 
   - `[IdleTimeoutEnabled <Int32?>]`: 
   - `[MaxConnCnt <Int32?>]`: 
@@ -1478,7 +1504,7 @@ CXN <ISrtApiModelsApiServerParamsCxnPoco>: .
   - `[MaxUlNumCnt <Int32?>]`: 
   - `[MaxUlNumEnabled <Int32?>]`: 
 
-DAV <ISrtApiModelsApiServerParamsDavPoco>: .
+`DAV <ISrtApiModelsApiServerParamsDavPoco>`: .
   - `[BasicAuthEnabled <Int32?>]`: 
   - `[DigestAuthEnabled <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
@@ -1497,7 +1523,7 @@ DAV <ISrtApiModelsApiServerParamsDavPoco>: .
   - `[TlsVersions <ISrtApiModelsApiServerParamsDavPocoTlsVersions>]`: Dictionary of <boolean>
     - `[(Any) <Boolean>]`: This indicates any property can be added to this object.
 
-DMZ <ISrtApiModelsApiServerParamsDmzPoco[]>: .
+`DMZ <ISrtApiModelsApiServerParamsDmzPoco[]>`: .
   - `[DavWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[Enabled <Int32?>]`: Flag to indicate if the host is enabled
     - `[Host <String>]`: The Host name or IP address for the endpoint
@@ -1513,13 +1539,13 @@ DMZ <ISrtApiModelsApiServerParamsDmzPoco[]>: .
   - `[HttpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
   - `[SshWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
 
-DMZSVR <ISrtApiModelsApiServerParamsDmzSvrPoco>: .
+`DMZSVR <ISrtApiModelsApiServerParamsDmzSvrPoco>`: .
   - `[PrivateHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[PublicHostAddress <String>]`: 
 
-EMAIL <ISrtApiModelsApiServerParamsEmailPoco>: .
+`EMAIL <ISrtApiModelsApiServerParamsEmailPoco>`: .
   - `[EmailDefFromAddr <String>]`: 
   - `[EmailPassword <String>]`: 
   - `[EmailServerHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
@@ -1534,7 +1560,7 @@ EMAIL <ISrtApiModelsApiServerParamsEmailPoco>: .
     - `[SourcePhoneNumber <String>]`: 
     - `[TestPhoneNumber <String>]`: 
 
-FILEDIR <ISrtApiModelsApiServerParamsFileDirPoco>: .
+`FILEDIR <ISrtApiModelsApiServerParamsFileDirPoco>`: .
   - `[AutoBanFileTypesList <String[]>]`: 
   - `[BanFileTypesEnabled <Int32?>]`: 
   - `[BanFileTypesList <String[]>]`: 
@@ -1548,7 +1574,7 @@ FILEDIR <ISrtApiModelsApiServerParamsFileDirPoco>: .
   - `[WriteCacheEnabled <Int32?>]`: 
   - `[WriteCacheSizeMb <Int32?>]`: 
 
-FOLDER <ISrtApiModelsApiServerParamsFolderPoco>: .
+`FOLDER <ISrtApiModelsApiServerParamsFolderPoco>`: .
   - `[AvQuarantineDir <String>]`: 
   - `[BackupsDir <String>]`: 
   - `[BaseDataDir <String>]`: 
@@ -1559,7 +1585,7 @@ FOLDER <ISrtApiModelsApiServerParamsFolderPoco>: .
   - `[TempDataDir <String>]`: 
   - `[UserDataDir <String>]`: 
 
-FTP <ISrtApiModelsApiServerParamsFtpPoco>: .
+`FTP <ISrtApiModelsApiServerParamsFtpPoco>`: .
   - `[AllowEpsv <Int32?>]`: 
   - `[AllowMdtm <Int32?>]`: 
   - `[AllowMfct <Int32?>]`: 
@@ -1592,7 +1618,7 @@ FTP <ISrtApiModelsApiServerParamsFtpPoco>: .
   - `[UseRouterHost <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-FTPS <ISrtApiModelsApiServerParamsFtpsPoco>: .
+`FTPS <ISrtApiModelsApiServerParamsFtpsPoco>`: .
   - `[AllowCcc <Int32?>]`: 
   - `[AllowProt <Int32?>]`: 
   - `[DefaultProtp <Int32?>]`: 
@@ -1609,13 +1635,13 @@ FTPS <ISrtApiModelsApiServerParamsFtpsPoco>: .
   - `[TlsVersions <ISrtApiModelsApiServerParamsFtpsPocoTlsVersions>]`: Dictionary of <boolean>
     - `[(Any) <Boolean>]`: This indicates any property can be added to this object.
 
-GENERAL <ISrtApiModelsApiServerParamsGeneralPoco>: .
+`GENERAL <ISrtApiModelsApiServerParamsGeneralPoco>`: .
   - `[Notes <String>]`: 
   - `[RunAtStartup <Int32?>]`: 
   - `[ServerDesc <String>]`: 
   - `[ShowEula <Boolean?>]`: 
 
-HTTP <ISrtApiModelsApiServerParamsHttpPoco>: .
+`HTTP <ISrtApiModelsApiServerParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[Ipv6Enabled <Int32?>]`: 
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
@@ -1633,12 +1659,12 @@ HTTP <ISrtApiModelsApiServerParamsHttpPoco>: .
     - `[(Any) <Boolean>]`: This indicates any property can be added to this object.
   - `[WanHostName <String>]`: 
 
-ICAPSVR <ISrtApiModelsApiServerParamsIcapSvrPoco>: .
+`ICAPSVR <ISrtApiModelsApiServerParamsIcapSvrPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -1647,6 +1673,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -1655,19 +1682,18 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-IPACCESS <ISrtApiModelsApiServerParamsIPAccessPoco>: .
+`IPACCESS <ISrtApiModelsApiServerParamsIPAccessPoco>`: .
   - `[DenyByDefault <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[IPAccessRules <ISrtApiModelsApiIPAccessRulePoco[]>]`: 
     - `[Allow <Int32?>]`: 
-    - `[Duration <Int64?>]`: 
     - `[Enabled <Int32?>]`: 
     - `[IPAccRuleGuid <String>]`: 
     - `[IPAddressEnd <String>]`: 
     - `[IPAddressStart <String>]`: 
     - `[Protocols <Int32[]>]`: 
 
-IPSECURITY <ISrtApiModelsApiServerParamsIPSecurityPoco>: .
+`IPSECURITY <ISrtApiModelsApiServerParamsIPSecurityPoco>`: .
   - `[FloodBanTimeout <Int32?>]`: 
   - `[FloodProtEnabled <Int32?>]`: 
   - `[FloodProtInterval <Int32?>]`: 
@@ -1677,7 +1703,7 @@ IPSECURITY <ISrtApiModelsApiServerParamsIPSecurityPoco>: .
   - `[HackProtInterval <Int32?>]`: 
   - `[HackProtValue <Int32?>]`: 
 
-LOG <ISrtApiModelsApiServerParamsLogPoco>: .
+`LOG <ISrtApiModelsApiServerParamsLogPoco>`: .
   - `[EnableLogToFile <Int32?>]`: 
   - `[EnableSysLogServer <Int32?>]`: 
   - `[LogFieldsText <String[]>]`: 
@@ -1695,11 +1721,11 @@ LOG <ISrtApiModelsApiServerParamsLogPoco>: .
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
 
-MSG <ISrtApiModelsApiServerParamsMsgPoco>: .
+`MSG <ISrtApiModelsApiServerParamsMsgPoco>`: .
   - `[Msgs <ISrtApiModelsApiServerParamsMsgPocoMsgs>]`: Dictionary of <Srt.Api.Models.ApiMsgPocoMsg>
     - `[(Any) <ISrtApiModelsApiMsgPocoMsg>]`: This indicates any property can be added to this object.
 
-MULTEN <ISrtApiModelsApiServerParamsMulTenPoco>: .
+`MULTEN <ISrtApiModelsApiServerParamsMulTenPoco>`: .
   - `[Dav <ISrtApiModelsApiMultiTenancyPoco>]`: 
     - `[Enabled <Int32?>]`: 
     - `[HostName <String>]`: 
@@ -1709,7 +1735,7 @@ MULTEN <ISrtApiModelsApiServerParamsMulTenPoco>: .
   - `[MultiHomeMode <Int32?>]`: 
   - `[Sftp <ISrtApiModelsApiMultiTenancyPoco>]`: 
 
-NODES <ISrtApiModelsApiServerParamsNodesPoco[]>: .
+`NODES <ISrtApiModelsApiServerParamsNodesPoco[]>`: .
   - `[Dav <ISrtApiModelsApiNodeHostPoco>]`: 
     - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
       - `[Host <String>]`: The Host name or IP address for the endpoint
@@ -1740,11 +1766,11 @@ NODES <ISrtApiModelsApiServerParamsNodesPoco[]>: .
   - `[SlSvr <ISrtApiModelsApiNodeHostPoco>]`: 
   - `[Ssh <ISrtApiModelsApiNodeHostPoco>]`: 
 
-PCI <ISrtApiModelsApiServerParamsPciPoco>: .
+`PCI <ISrtApiModelsApiServerParamsPciPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[Version <Int32?>]`: 
 
-PGP <ISrtApiModelsApiServerParamsPgpPoco>: .
+`PGP <ISrtApiModelsApiServerParamsPgpPoco>`: .
   - `[AddPgpExtension <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[ExemptFiles <String[]>]`: 
@@ -1756,16 +1782,16 @@ PGP <ISrtApiModelsApiServerParamsPgpPoco>: .
   - `[RetainFileSize <Int32?>]`: 
   - `[UseEvents <Int32?>]`: 
 
-QUOTA <ISrtApiModelsApiServerParamsQuotaPoco>: .
+`QUOTA <ISrtApiModelsApiServerParamsQuotaPoco>`: .
   - `[QuotaCntKb <Int32?>]`: 
   - `[QuotaEnabled <Int32?>]`: 
   - `[QuotaFreeFileList <String[]>]`: 
 
-ROLE <ISrtApiModelsApiServerParamsRolePoco>: .
+`ROLE <ISrtApiModelsApiServerParamsRolePoco>`: .
   - `[IsRoleStandard <Int32?>]`: 
   - `[Roles <String[]>]`: 
 
-SFS <ISrtApiModelsApiServerParamsSfsPoco>: .
+`SFS <ISrtApiModelsApiServerParamsSfsPoco>`: .
   - `[AdHocEnabled <Int32?>]`: 
   - `[DzEnabled <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
@@ -1775,18 +1801,28 @@ SFS <ISrtApiModelsApiServerParamsSfsPoco>: .
   - `[QsEnabled <Int32?>]`: 
   - `[ViewableTypes <String[]>]`: 
 
-SFTP <ISrtApiModelsApiServerParamsSftpPoco>: .
+`SFTP <ISrtApiModelsApiServerParamsSftpPoco>`: .
   - `[Enabled <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
   - `[SftpVersion <Int32?>]`: 
   - `[Utf8Enabled <Int32?>]`: 
 
-SLSVR <ISrtApiModelsApiServerParamsSlSvrPoco>: .
+`SLSVR <ISrtApiModelsApiServerParamsSlSvrPoco>`: .
+  - `[EnableLogToDatabase <Int32?>]`: 
+  - `[EnableLogToFile <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
+  - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
+    - `[Host <String>]`: The Host name or IP address for the endpoint
+    - `[Port <Int32?>]`: The port number for the endpoint
+  - `[LogMaxSizeMb <Int32?>]`: 
+  - `[LogRotation <Int32?>]`: 
+  - `[LogRotationCheckInterval <Int32?>]`: 
+  - `[LogUnicodeFormat <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
   - `[TlsEnabled <Int32?>]`: 
+  - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
-SSH <ISrtApiModelsApiServerParamsSshPoco>: .
+`SSH <ISrtApiModelsApiServerParamsSshPoco>`: .
   - `[AllowPasswordAuth <Int32?>]`: 
   - `[AllowPubKeyAuth <Int32?>]`: 
   - `[CipherList <String[]>]`: 
@@ -1807,13 +1843,13 @@ SSH <ISrtApiModelsApiServerParamsSshPoco>: .
   - `[SshWindowSizeKb <Int32?>]`: 
   - `[UseCompression <Int32?>]`: 
 
-STATS <ISrtApiModelsApiServerParamsStatsPoco>: .
+`STATS <ISrtApiModelsApiServerParamsStatsPoco>`: .
   - `[ArchiveBeforePrune <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[LastArchiveDate <Int64?>]`: 
   - `[RotationSchedule <Int32?>]`: 
 
-UNC <ISrtApiModelsApiServerParamsUncPoco[]>: .
+`UNC <ISrtApiModelsApiServerParamsUncPoco[]>`: .
   - `[BasicCreds <ISrtApiModelsApiCredentialsBasic>]`: 
     - `[Password <String>]`: 
     - `[Username <String>]`: 
@@ -1822,5 +1858,4 @@ UNC <ISrtApiModelsApiServerParamsUncPoco[]>: .
   - `[UncSharePath <String>]`: 
 
 ## RELATED LINKS
-
 

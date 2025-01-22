@@ -2,7 +2,7 @@ $myserver = "myserver"
 
 # List current IP Ban list
 Write-Host "Current IP Ban list:"
-$ipBanList = (Get-SvrIpBanList -serverGUID $myserver).Response
+$ipBanList = (Get-SvrIpBanList -serverGUID $myserver -AdminUrl localhost:31443).Response
 $ipBanList.IPBans | Format-List
 
 # quick way to get server guid

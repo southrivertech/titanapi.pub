@@ -1,7 +1,7 @@
 ---
 Module Name: TitanApi
-Module Guid: ad06e2e5-ebd3-4bad-bfcd-4459e6f1f3d8
-Download Help Link: https://docs.microsoft.com/en-us/powershell/module/titanapi
+Module Guid: bbd1c14c-da6e-4beb-b708-5dc507ffabc1
+Download Help Link: https://learn.microsoft.com/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
 ---
@@ -236,6 +236,9 @@ Send login credentials and an optional ticket ID and receive an access token in 
 ### [Invoke-Logout](Invoke-Logout.md)
 Logout with access token
 
+### [New-DomRemote](New-DomRemote.md)
+Create a new remote domain for remote administration
+
 ### [New-FileDirectory](New-FileDirectory.md)
 Create a new folder.
 Specify the folder name in the ApiFileDirectoryCreateRequest body along with the parent folder id
@@ -289,6 +292,9 @@ Create a virtual folder at either the server, user or group level by specifying 
 ### [New-Usr](New-Usr.md)
 Specify the Username and Password in the request object.
 If successful the new user paramaters will be returned
+
+### [Remove-DomRemote](Remove-DomRemote.md)
+Delete a remote domain from the list of remote domains to administer.
 
 ### [Remove-File](Remove-File.md)
 Specify the file id's to delete in the request body
@@ -407,6 +413,9 @@ Valid options are \"getHomeDir\", \"setpassword\",\r\n\"resetpassword\"
 
 ### [Test-SvrEmail](Test-SvrEmail.md)
 Test Email connection
+
+### [Update-SvrPgpKey](Update-SvrPgpKey.md)
+Updates a Pgp key and returns the current list of Pgp keys
 
 ### [Update-SvrTlKey](Update-SvrTlKey.md)
 Updates the certificate / csr

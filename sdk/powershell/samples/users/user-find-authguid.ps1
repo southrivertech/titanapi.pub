@@ -2,7 +2,7 @@ $myserver = "dbtest"    # enter your server name here
 
 # find a specific auth connector by the domain suffix, this is the @domain you used when setting up the auth connector for say NTSAM or LDAP/ADSI etc. It should
 # always be prefixed by an @ sign.  This case below is for an adsi connector defined on the specified server
-$authParams = Get-SvrAuthConnectorParam -AuthGuid "@srtlab.local" -ServerGuid $myserver
+$authParams = Get-SvrAuthConnectorParam -AuthGuid "@srtlab.local" -ServerGuid $myserver -AdminUrl localhost:31443
 
 Write-Output "Auth params object is as follows:"
 Write-Output ($authParams.Response) | Format-List

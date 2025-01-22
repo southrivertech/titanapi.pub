@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-svrdiraccess
 schema: 2.0.0
 ---
 
@@ -14,27 +14,28 @@ Create a directory access entry at either the server, user or group level by spe
 
 ### CreateExpanded (Default)
 ```
-New-SvrDirAccess -OwnerGuid <String> -ServerGuid <String> [-AllowAce <String>] [-DenyAce <String>]
- [-Id <String>] [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-SvrDirAccess -AdminUrl <String> -OwnerGuid <String> -ServerGuid <String> [-AllowAce <String>]
+ [-DenyAce <String>] [-Id <String>] [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-SvrDirAccess -OwnerGuid <String> -ServerGuid <String> -Body <ISrtApiModelsApiDirAccessPoco> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-SvrDirAccess -AdminUrl <String> -OwnerGuid <String> -ServerGuid <String>
+ -Body <ISrtApiModelsApiDirAccessPoco> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-SvrDirAccess -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDirAccessPoco> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-SvrDirAccess -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiDirAccessPoco>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-SvrDirAccess -InputObject <ITitanApiIdentity> [-AllowAce <String>] [-DenyAce <String>] [-Id <String>]
- [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-SvrDirAccess -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AllowAce <String>] [-DenyAce <String>]
+ [-Id <String>] [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,6 +53,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AllowAce
 .
@@ -260,7 +276,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiDirAccessPoco>: .
+`BODY <ISrtApiModelsApiDirAccessPoco>`: .
   - `[AllowAce <String>]`: 
   - `[DenyAce <String>]`: 
   - `[Id <String>]`: 
@@ -268,7 +284,7 @@ BODY <ISrtApiModelsApiDirAccessPoco>: .
   - `[Path <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -277,6 +293,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -286,5 +303,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

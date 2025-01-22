@@ -2,6 +2,10 @@
 
 The TitanApi powershell module is located in the Powershell Gallery [TitanApi](https://www.powershellgallery.com/packages/TitanApi)
 
+# Important Information
+
+There was a small API change for the Titan powershell momdule in version 0.1.7 where each command now has a parameter named 'AdminUrl' which you set to the machine name or IP address and port for the REST API. This was done so that the powershell module can be used on linux instances where the remote admin port must be used. This is also helpful for using the powershell module on remote Windows servers as well. The examples provided all include the new AdminUrl option which is required when using version 0.1.7 of the Titan powershell module or later. If you want to use a previous version of the powershell module simply remove the AdminUrl parameter from any command. Do not include https:// when specifying the machine name simply use it as follows '-AdminUrl localhost:31443' or '-AdminUrl 10.2.3.4:41443' If the AdminUrl parameter is not provided you will be prompted for it.
+
 # Getting Started
 
 1. Install or Update TitanApi by downloading it from the Powershell Gallery
@@ -30,7 +34,7 @@ The TitanApi powershell module is located in the Powershell Gallery [TitanApi](h
 5. Error handling - Each command will return response object that will consist of 2 members, "Response" which contains command specific information, and "Result" which contains any error codes if the command fails.
 
   ```
-   $loginResponse = Invoke-Login -username admin -password mypass
+   $loginResponse = Invoke-Login -username admin -password mypass -AdminUrl localhost:31443
    $loginResponse.Result | Format-List
    ErrorCode    : 0
    ErrorStr     : Success
@@ -59,7 +63,7 @@ Most objects on Titan Server are identified by unique guids which can be queried
 
 * Login/Authenticate to the server before issuing any commands. The login response from the server will contain the session token which can be set as an environment variable so it will be added to future commands in the Authorization header for https requests.
 ```
-    $login = Invoke-Login -UserName `<username>` -PassWord `<password>`
+    $login = Invoke-Login -UserName `<username>` -PassWord `<password>` -AdminUrl localhost:31443
     $env:SRTAuthToken = $login.Response.SessionInfo.BearerToken
 ```  
 * Logout from server and invalidate the session
@@ -73,20 +77,20 @@ Most objects on Titan Server are identified by unique guids which can be queried
 
 * List servers
   ```
-  $serverList = Get-SvrList
+  $serverList = Get-SvrList -AdminUrl localhost:31443
   $serverList.Response.ServerList | Format-List
     or
-  (Get-SvrList).Response.ServerList | Format-List
+  (Get-SvrList -AdminUrl localhost:31443).Response.ServerList | Format-List
   ```
 * 
 * Get server state - Returns information about the srever like is it running, which protocols are currently running etc.
     ```
-    (Get-SvrState -serverGUID myserver).Response | Format-List
+    (Get-SvrState -serverGUID myserver -AdminUrl localhost:31443).Response | Format-List
     ```
 * Set server state - Modify the server state by performing an action. Valid actions are ("stop" | "start" | "restart" | "rotatelog" | "quota" | "smstest"
 
   ```
-     Set-SvrState -ServerGUID my-server-name -Action stop
+     Set-SvrState -ServerGUID my-server-name -Action stop -AdminUrl localhost:31443
   ```
 * Create a server - Creates a new server instance. The new server params object is returned in $r.Response, with this you can then modify any specific settings you want and then save the settings.
 
@@ -206,7 +210,7 @@ Most objects on Titan Server are identified by unique guids which can be queried
 
 * Get Group Parameters
   ```
-  $gp = Get-GrpParam -ServerGuid myserver -AuthGuid native -GroupGuid MyGroupName -byGroupName
+  $gp = Get-GrpParam -ServerGuid myserver -AuthGuid native -GroupGuid MyGroupName -byGroupName -AdminUrl localhost:31443
   $gp.Response | Format-List
   ```
 * Set Group Parameters - It's generally best to only set parameters for a specific poco or section of the settings rather than the entire server params object as shown below.
@@ -214,5 +218,5 @@ Most objects on Titan Server are identified by unique guids which can be queried
   $gp = new-object Titan.API.Models.SrtApiModelsApiGroupParamsPoco
   $banList = @("*.zzz", "*.dork")
   $gp.FileDir.BanFileTypesList = $banList
-  $r = Set-GrpParam -ServerGUID myserver -AuthGUID native -GroupGUID MyGroupName -FileDir $gp.FileDir -byGroupName
+  $r = Set-GrpParam -ServerGUID myserver -AuthGUID native -GroupGUID MyGroupName -FileDir $gp.FileDir -byGroupName -AdminUrl localhost;31443
   ```

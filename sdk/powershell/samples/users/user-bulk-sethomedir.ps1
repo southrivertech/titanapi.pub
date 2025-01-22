@@ -10,7 +10,7 @@ $adminPassword = "test"
 $csvFile = ".\titan-foldermapping.csv"    
 
 # Login to Admin REST API
-$login = Invoke-Login -UserName $adminUsername -PassWord $adminPassword
+$login = Invoke-Login -UserName $adminUsername -PassWord $adminPassword -AdminUrl localhost:31443
 if (0 -eq $login.Result.ErrorCode) {
     $env:SRTAuthToken = $login.Response.SessionInfo.BearerToken
     Write-Host "Logged in successfully"
@@ -22,7 +22,7 @@ if (0 -eq $login.Result.ErrorCode) {
 # Find the auth guid if needed, for native you can comment out this section
 # If not using native auth then you need to find the auth guid. Finding a specific auth connector by the domain suffix, this is the @domain you used when setting up the auth connector for say NTSAM or LDAP/ADSI etc. It should
 # always be prefixed by an @ sign.  This case below is for an adsi connector defined on the specified server
-$authParams = Get-SvrAuthConnectorParam -AuthGuid $authDomainSuffix -ServerGuid $serverName
+$authParams = Get-SvrAuthConnectorParam -AuthGuid $authDomainSuffix -ServerGuid $serverName -AdminUrl localhost:31443
 
 Write-Output "Auth params object is as follows:"
 Write-Output ($authParams.Response) | Format-List
@@ -59,14 +59,14 @@ foreach ($row in $data) {
         Write-Host "Setting User: " $userName " HomeDir: " $homeDir
    
         # Get the user params for the user
-        $up = Get-UsrParam -ServerGuid $serverName -AuthGuid $authGuid -UserGuid $userName -byUserName
+        $up = Get-UsrParam -ServerGuid $serverName -AuthGuid $authGuid -UserGuid $userName -byUserName -AdminUrl localhost:31443
         if (0 -eq $up.Result.ErrorCode) {
             # Set users HomeDir to Custom folder
             $up.Response.General.HomeDir = $homeDir
             $up.Response.General.HomeDirInherit = 2    # custom homedir 
 
             # Just update the General Poco
-            $up2 = Set-UsrParam -serverGUID $serverName -authGUID $authGuid -userGUID $userName -General $up.Response.General -byUserName
+            $up2 = Set-UsrParam -serverGUID $serverName -authGUID $authGuid -userGUID $userName -General $up.Response.General -byUserName -AdminUrl localhost:31443
             Write-Host "Error: " $up2.Result.ErrorCode - $up2.Result.ErrorStr
 
         } else {

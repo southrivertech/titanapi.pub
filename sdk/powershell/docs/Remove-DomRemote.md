@@ -1,33 +1,29 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://learn.microsoft.com/powershell/module/titanapi/new-filedirectory
+online version: https://learn.microsoft.com/powershell/module/titanapi/remove-domremote
 schema: 2.0.0
 ---
 
-# New-FileDirectory
+# Remove-DomRemote
 
 ## SYNOPSIS
-Create a new folder.
-Specify the folder name in the ApiFileDirectoryCreateRequest body along with the parent folder id
+Delete a remote domain from the list of remote domains to administer.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Delete (Default)
 ```
-New-FileDirectory -AdminUrl <String> [-FolderName <String>] [-ParentFolderId <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-DomRemote -AdminUrl <String> -RemoteDomainGuid <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### DeleteViaIdentity
 ```
-New-FileDirectory -AdminUrl <String> -Body <ISrtApiModelsApiFileDirectoryCreateRequest> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-DomRemote -AdminUrl <String> -InputObject <ITitanApiIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new folder.
-Specify the folder name in the ApiFileDirectoryCreateRequest body along with the parent folder id
+Delete a remote domain from the list of remote domains to administer.
 
 ## EXAMPLES
 
@@ -57,13 +53,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Titan.API.Models.ISrtApiModelsApiFileDirectoryCreateRequest
-Parameter Sets: Create
+Type: Titan.API.Models.ITitanApiIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -73,30 +69,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -FolderName
-.
+### -RemoteDomainGuid
+the remote domain GUID to delete
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: Delete
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ParentFolderId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -139,13 +120,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Titan.API.Models.ISrtApiModelsApiFileDirectoryCreateRequest
+### Titan.API.Models.ITitanApiIdentity
 
 ## OUTPUTS
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultFileInfo
+### Titan.API.Models.ISrtApiModelsApiResultDomainList
 
 ## NOTES
 
@@ -156,9 +137,23 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODY <ISrtApiModelsApiFileDirectoryCreateRequest>`: .
-  - `[FolderName <String>]`: 
-  - `[ParentFolderId <String>]`: 
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
+  - `[AuthGuid <String>]`: The authentication GUID
+  - `[DirAccessGuid <String>]`: The dir access Id to update
+  - `[DomainGuid <String>]`: The domain to get settings for
+  - `[FileId <String>]`: The folder id
+  - `[GroupGuid <String>]`: The id for the group
+  - `[LicenseId <String>]`: 
+  - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
+  - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
+  - `[ReportGuid <String>]`: The report GUID to export
+  - `[ServerGuid <String>]`: The server to list files for
+  - `[ServerNodeGuid <String>]`: Server Node GUID
+  - `[SshKeyGuid <String>]`: The key to delete
+  - `[TlsKeyGuid <String>]`: The key to delete
+  - `[UserGuid <String>]`: The username or GUID for the username
+  - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
 

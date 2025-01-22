@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-svripbanlist
 schema: 2.0.0
 ---
 
@@ -14,26 +14,26 @@ Update IPBan list
 
 ### SetExpanded (Default)
 ```
-Set-SvrIpbanList -ServerGuid <String> [-IPBans <ISrtApiModelsApiIPBan[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrIpbanList -AdminUrl <String> -ServerGuid <String> [-IPBans <ISrtApiModelsApiIPBan[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-SvrIpbanList -ServerGuid <String> -Body <ISrtApiModelsApiIPBanInfo> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrIpbanList -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiIPBanInfo> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-SvrIpbanList -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiIPBanInfo> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrIpbanList -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiIPBanInfo>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-SvrIpbanList -InputObject <ITitanApiIdentity> [-IPBans <ISrtApiModelsApiIPBan[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrIpbanList -AdminUrl <String> -InputObject <ITitanApiIdentity> [-IPBans <ISrtApiModelsApiIPBan[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,6 +51,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -170,7 +185,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiIPBanInfo>: .
+`BODY <ISrtApiModelsApiIPBanInfo>`: .
   - `[IPBans <ISrtApiModelsApiIPBan[]>]`: 
     - `[EndTimeUtc <Int64?>]`: 
     - `[IPAddress <String>]`: 
@@ -178,7 +193,7 @@ BODY <ISrtApiModelsApiIPBanInfo>: .
     - `[StartTimeUtc <Int64?>]`: 
     - `[UserGroupGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -187,6 +202,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -195,7 +211,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-IPBANS <ISrtApiModelsApiIPBan[]>: .
+`IPBANS <ISrtApiModelsApiIPBan[]>`: .
   - `[EndTimeUtc <Int64?>]`: 
   - `[IPAddress <String>]`: 
   - `[ServerGuid <String>]`: 
@@ -203,5 +219,4 @@ IPBANS <ISrtApiModelsApiIPBan[]>: .
   - `[UserGroupGuid <String>]`: 
 
 ## RELATED LINKS
-
 

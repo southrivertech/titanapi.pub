@@ -1,34 +1,33 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://learn.microsoft.com/powershell/module/titanapi/invoke-dbsqlutil
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-domremote
 schema: 2.0.0
 ---
 
-# Invoke-DbSqlUtil
+# New-DomRemote
 
 ## SYNOPSIS
-Database utility method that can be uased to list instances, databases, or server instances.
-The following\r\nmethods are allowed by setting \"Method\" to \"datasources\" | \"instlist\" | \"dblist\" | \"svrlist\" | \"test\"
+Create a new remote domain for remote administration
 
 ## SYNTAX
 
-### DbExpanded (Default)
+### CreateExpanded (Default)
 ```
-Invoke-DbSqlUtil -AdminUrl <String> [-Database <String>] [-DatabaseType <String>] [-ExistingDatabase]
- [-Instance <String>] [-IntegratedSecurity] [-ListDatabases] [-Method <String>] [-PassWord <String>]
- [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-DomRemote -AdminUrl <String> [-DomainGuid <String>] [-DomainName <String>] [-DomNodeGuid <String>]
+ [-DomNodeName <String>] [-LocalRecDesc <String>] [-LocalRecGuid <String>] [-Password <String>]
+ [-TlsRasCertGuid <String>] [-TlsRasHost <ISrtApiModelsApiHostExPoco>] [-Username <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### Db
+### Create
 ```
-Invoke-DbSqlUtil -AdminUrl <String> -Body <ISrtApiModelsApiDataSourceRequest> [-Confirm] [-WhatIf]
+New-DomRemote -AdminUrl <String> -Body <ISrtApiModelsApiDomainParamsRemotePoco> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Database utility method that can be uased to list instances, databases, or server instances.
-The following\r\nmethods are allowed by setting \"Method\" to \"datasources\" | \"instlist\" | \"dblist\" | \"svrlist\" | \"test\"
+Create a new remote domain for remote administration
 
 ## EXAMPLES
 
@@ -59,12 +58,12 @@ Accept wildcard characters: False
 ```
 
 ### -Body
-.
+Building on the base poco, add RAS connectivity for the remote domain pcoo
 To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Titan.API.Models.ISrtApiModelsApiDataSourceRequest
-Parameter Sets: Db
+Type: Titan.API.Models.ISrtApiModelsApiDomainParamsRemotePoco
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -74,12 +73,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Database
+### -DomainGuid
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: DbExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -89,42 +88,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DatabaseType
-Sqlite or SqlServer
-
-```yaml
-Type: System.String
-Parameter Sets: DbExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExistingDatabase
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: DbExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Instance
+### -DomainName
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: DbExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -134,42 +103,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IntegratedSecurity
-if true then integreated windows security is used and username and password are ignored
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: DbExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ListDatabases
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: DbExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Method
+### -DomNodeGuid
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: DbExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -179,12 +118,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassWord
-User's password
+### -DomNodeName
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: DbExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -194,12 +133,89 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserName
-User's username
+### -LocalRecDesc
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: DbExpanded
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LocalRecGuid
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Password
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TlsRasCertGuid
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TlsRasHost
+this version adds an Enabled flag to the data.
+We willbe using this in the Node stuff
+To construct, see NOTES section for TLSRASHOST properties and create a hash table.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiHostExPoco
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Username
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -245,13 +261,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Titan.API.Models.ISrtApiModelsApiDataSourceRequest
+### Titan.API.Models.ISrtApiModelsApiDomainParamsRemotePoco
 
 ## OUTPUTS
 
 ### Titan.API.Models.ISrtApiModelsApiResult
 
-### Titan.API.Models.ISrtApiModelsApiResultDataSourceResponse
+### Titan.API.Models.ISrtApiModelsApiResultDomainList
 
 ## NOTES
 
@@ -262,16 +278,25 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODY <ISrtApiModelsApiDataSourceRequest>`: .
-  - `[Database <String>]`: 
-  - `[DatabaseType <String>]`: Sqlite or SqlServer
-  - `[ExistingDatabase <Boolean?>]`: 
-  - `[Instance <String>]`: 
-  - `[IntegratedSecurity <Boolean?>]`: if true then integreated windows security is used and username and password are ignored
-  - `[ListDatabases <Boolean?>]`: 
-  - `[Method <String>]`: 
-  - `[PassWord <String>]`: User's password
-  - `[UserName <String>]`: User's username
+`BODY <ISrtApiModelsApiDomainParamsRemotePoco>`: Building on the base poco, add RAS connectivity for the remote domain pcoo
+  - `[DomNodeGuid <String>]`: 
+  - `[DomNodeName <String>]`: 
+  - `[DomainGuid <String>]`: 
+  - `[DomainName <String>]`: 
+  - `[LocalRecDesc <String>]`: 
+  - `[LocalRecGuid <String>]`: 
+  - `[Password <String>]`: 
+  - `[TlsRasCertGuid <String>]`: 
+  - `[TlsRasHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
+    - `[Enabled <Int32?>]`: Flag to indicate if the host is enabled
+    - `[Host <String>]`: The Host name or IP address for the endpoint
+    - `[Port <Int32?>]`: The port number for the endpoint
+  - `[Username <String>]`: 
+
+`TLSRASHOST <ISrtApiModelsApiHostExPoco>`: this version adds an Enabled flag to the data. We willbe using this in the Node stuff
+  - `[Enabled <Int32?>]`: Flag to indicate if the host is enabled
+  - `[Host <String>]`: The Host name or IP address for the endpoint
+  - `[Port <Int32?>]`: The port number for the endpoint
 
 ## RELATED LINKS
 

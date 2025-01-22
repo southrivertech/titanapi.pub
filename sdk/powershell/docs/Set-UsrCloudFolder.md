@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-usrcloudfolder
 schema: 2.0.0
 ---
 
@@ -14,13 +14,13 @@ Supply a list of cloud folder pocos to update
 
 ### SetViaIdentity (Default)
 ```
-Set-UsrCloudFolder -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiUserParamsCloudFolderPoco[]>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-UsrCloudFolder -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiUserParamsCloudFolderPoco[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-UsrCloudFolder -AuthGuid <String> -ServerGuid <String> -UserGuid <String>
+Set-UsrCloudFolder -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String>
  -Body <ISrtApiModelsApiUserParamsCloudFolderPoco[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -39,6 +39,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AuthGuid
 Authentication GUID
@@ -172,7 +187,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiUserParamsCloudFolderPoco[]>: Array of Srt.Api.Models.ApiUserParamsCloudFolderPoco
+`BODY <ISrtApiModelsApiUserParamsCloudFolderPoco[]>`: Array of Srt.Api.Models.ApiUserParamsCloudFolderPoco
   - `[AccessKey <String>]`: 
   - `[AccessToken <String>]`: 
   - `[BucketList <String[]>]`: 
@@ -194,7 +209,7 @@ BODY <ISrtApiModelsApiUserParamsCloudFolderPoco[]>: Array of Srt.Api.Models.ApiU
     - `[SiteName <String>]`: 
   - `[Username <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -203,6 +218,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -212,5 +228,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

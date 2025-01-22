@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-svrstate
 schema: 2.0.0
 ---
 
@@ -16,26 +16,26 @@ overwrites any existing guid\r\n export -\> Exports the server configuration and
 
 ### SetExpanded (Default)
 ```
-Set-SvrState -ServerGuid <String> [-Action <String>] [-ActionData <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrState -AdminUrl <String> -ServerGuid <String> [-Action <String>] [-ActionData <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-SvrState -ServerGuid <String> -Body <ISrtApiModelsApiServerStateRequest> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrState -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiServerStateRequest> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-SvrState -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerStateRequest> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrState -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerStateRequest>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-SvrState -InputObject <ITitanApiIdentity> [-Action <String>] [-ActionData <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrState -AdminUrl <String> -InputObject <ITitanApiIdentity> [-Action <String>] [-ActionData <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,6 +80,21 @@ Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -188,11 +203,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerStateRequest>: .
+`BODY <ISrtApiModelsApiServerStateRequest>`: .
   - `[Action <String>]`: 
   - `[ActionData <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -201,6 +216,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -210,5 +226,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

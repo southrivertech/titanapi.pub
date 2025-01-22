@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/new-svrreport
 schema: 2.0.0
 ---
 
@@ -14,26 +14,26 @@ Creates a report and returns the current list of reports
 
 ### CreateExpanded (Default)
 ```
-New-SvrReport -ServerGuid <String> [-Report <ISrtApiModelsApiServerReport>] [-ServerGuid1 <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-SvrReport -AdminUrl <String> -ServerGuid <String> [-Report <ISrtApiModelsApiServerReport>]
+ [-ServerGuid1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-SvrReport -ServerGuid <String> -Body <ISrtApiModelsApiServerReportCreate> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-SvrReport -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiServerReportCreate> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-SvrReport -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerReportCreate> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-SvrReport -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerReportCreate>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-SvrReport -InputObject <ITitanApiIdentity> [-ServerGuid <String>] [-Report <ISrtApiModelsApiServerReport>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-SvrReport -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ServerGuid <String>]
+ [-Report <ISrtApiModelsApiServerReport>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,6 +51,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -185,17 +200,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerReportCreate>: .
+`BODY <ISrtApiModelsApiServerReportCreate>`: .
   - `[Report <ISrtApiModelsApiServerReport>]`: 
+    - `[Created <Int64?>]`: 
     - `[Document <ISrtApiModelsApiReportDocument>]`: 
       - `[Name <String>]`: 
       - `[RepxData <String>]`: 
       - `[Type <Int32?>]`: 
     - `[OwnerGuid <String>]`: 
     - `[ReportGuid <String>]`: 
+    - `[Updated <Int64?>]`: 
   - `[ServerGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -204,6 +221,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -212,14 +230,15 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-REPORT <ISrtApiModelsApiServerReport>: .
+`REPORT <ISrtApiModelsApiServerReport>`: .
+  - `[Created <Int64?>]`: 
   - `[Document <ISrtApiModelsApiReportDocument>]`: 
     - `[Name <String>]`: 
     - `[RepxData <String>]`: 
     - `[Type <Int32?>]`: 
   - `[OwnerGuid <String>]`: 
   - `[ReportGuid <String>]`: 
+  - `[Updated <Int64?>]`: 
 
 ## RELATED LINKS
-
 

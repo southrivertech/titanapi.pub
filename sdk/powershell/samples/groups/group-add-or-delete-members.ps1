@@ -13,7 +13,7 @@ Write-Host "Add or remove the following users to the group"
 $memberData
 
 # quick and easy way to add users to a group
-$r = Set-GrpParam -AuthGuid "native" -GroupGuid $groupName -ServerGuid $serverName -ByGroupName -MemberUsers $memberData
+$r = Set-GrpParam -AuthGuid "native" -GroupGuid $groupName -ServerGuid $serverName -ByGroupName -MemberUsers $memberData -AdminUrl localhost:31443
 
 
 # this way involves allocating group params and setting MemberUsers and passing this in body along with

@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-svrsessionparam
 schema: 2.0.0
 ---
 
@@ -14,26 +14,28 @@ Set session params
 
 ### SetExpanded (Default)
 ```
-Set-SvrSessionParam -ServerGuid <String> [-AutoRefresh <Int32>] [-AutoRefreshInterval <Int32>]
- [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-SvrSessionParam -AdminUrl <String> -ServerGuid <String> [-AutoRefresh <Int32>]
+ [-AutoRefreshInterval <Int32>] [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-SvrSessionParam -ServerGuid <String> -Body <ISrtApiModelsApiSessionParamsPoco> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrSessionParam -AdminUrl <String> -ServerGuid <String> -Body <ISrtApiModelsApiSessionParamsPoco>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-SvrSessionParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiSessionParamsPoco> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-SvrSessionParam -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiSessionParamsPoco> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-SvrSessionParam -InputObject <ITitanApiIdentity> [-AutoRefresh <Int32>] [-AutoRefreshInterval <Int32>]
- [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-SvrSessionParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AutoRefresh <Int32>]
+ [-AutoRefreshInterval <Int32>] [-SessionList <ISrtApiModelsApiSessionInfo[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,6 +53,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AutoRefresh
 .
@@ -200,7 +217,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiSessionParamsPoco>: .
+`BODY <ISrtApiModelsApiSessionParamsPoco>`: .
   - `[AutoRefresh <Int32?>]`: 
   - `[AutoRefreshInterval <Int32?>]`: 
   - `[SessionList <ISrtApiModelsApiSessionInfo[]>]`: 
@@ -214,7 +231,7 @@ BODY <ISrtApiModelsApiSessionParamsPoco>: .
     - `[UserGuid <String>]`: 
     - `[Username <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -223,6 +240,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -231,7 +249,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-SESSIONLIST <ISrtApiModelsApiSessionInfo[]>: .
+`SESSIONLIST <ISrtApiModelsApiSessionInfo[]>`: .
   - `[ClientIP <String>]`: 
   - `[CreatedAt <Int64?>]`: 
   - `[IdleTimeMS <Int64?>]`: 
@@ -243,5 +261,4 @@ SESSIONLIST <ISrtApiModelsApiSessionInfo[]>: .
   - `[Username <String>]`: 
 
 ## RELATED LINKS
-
 

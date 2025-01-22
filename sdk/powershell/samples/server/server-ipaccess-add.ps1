@@ -2,7 +2,7 @@
 $myserver = "myserver"
 
 # Get current server params settings
-$spResult = Get-SvrParam -ServerGuid $myserver -Fields IPAccess
+$spResult = Get-SvrParam -ServerGuid $myserver -Fields IPAccess -AdminUrl localhost:31443
 
 $sp = $spResult.Response
 
@@ -34,7 +34,7 @@ $ipEntry.Protocols = (3,1,2,5);
 $sp.IPAccess.IPAccessRules += $ipEntry
 
 # Update IP Access poco in server params
-$r = Set-SvrParam -serverGUID $myserver -IPAccess $sp.IPAccess
+$r = Set-SvrParam -serverGUID $myserver -IPAccess $sp.IPAccess -AdminUrl localhost:31443
 $r.Result | Format-List
 # Print results
 Write-Host "Updated IP Access settings"

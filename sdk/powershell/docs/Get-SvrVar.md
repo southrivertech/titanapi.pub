@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/get-svrvar
 schema: 2.0.0
 ---
 
@@ -13,7 +13,7 @@ Returns macro variables at either the server, user or group level
 ## SYNTAX
 
 ```
-Get-SvrVar [-Level <String>] [<CommonParameters>]
+Get-SvrVar -AdminUrl <String> [-Level <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,6 +31,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Level
 The level to display variables for: "server" | "user" | "group" | "domain"
@@ -63,5 +78,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-
 

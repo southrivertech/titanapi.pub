@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/set-svrnodeparam
 schema: 2.0.0
 ---
 
@@ -14,29 +14,29 @@ Set a specific node settings
 
 ### SetExpanded (Default)
 ```
-Set-SvrNodeParam -ServerGuid <String> -ServerNodeGuid <String> [-Dav <ISrtApiModelsApiNodeHostPoco>]
- [-DmzList <ISrtApiModelsApiServerParamsDmzPoco[]>] [-Ftp <ISrtApiModelsApiNodeHostPoco>]
- [-Http <ISrtApiModelsApiNodeHostPoco>] [-IcapSvr <ISrtApiModelsApiNodeHostPoco>] [-NodePriority <Int32>]
- [-NodeType <Int32>] [-ServerNodeGuid1 <String>] [-ServerNodeName <String>]
- [-SlSvr <ISrtApiModelsApiNodeHostPoco>] [-Ssh <ISrtApiModelsApiNodeHostPoco>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-SvrNodeParam -AdminUrl <String> -ServerGuid <String> -ServerNodeGuid <String>
+ [-Dav <ISrtApiModelsApiNodeHostPoco>] [-DmzList <ISrtApiModelsApiServerParamsDmzPoco[]>]
+ [-Ftp <ISrtApiModelsApiNodeHostPoco>] [-Http <ISrtApiModelsApiNodeHostPoco>]
+ [-IcapSvr <ISrtApiModelsApiNodeHostPoco>] [-NodePriority <Int32>] [-NodeType <Int32>]
+ [-ServerNodeGuid1 <String>] [-ServerNodeName <String>] [-SlSvr <ISrtApiModelsApiNodeHostPoco>]
+ [-Ssh <ISrtApiModelsApiNodeHostPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-SvrNodeParam -ServerGuid <String> -ServerNodeGuid <String> -Body <ISrtApiModelsApiServerParamsNodesPoco>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-SvrNodeParam -AdminUrl <String> -ServerGuid <String> -ServerNodeGuid <String>
+ -Body <ISrtApiModelsApiServerParamsNodesPoco> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-SvrNodeParam -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiServerParamsNodesPoco> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-SvrNodeParam -AdminUrl <String> -InputObject <ITitanApiIdentity>
+ -Body <ISrtApiModelsApiServerParamsNodesPoco> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-SvrNodeParam -InputObject <ITitanApiIdentity> [-ServerNodeGuid <String>]
+Set-SvrNodeParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ServerNodeGuid <String>]
  [-Dav <ISrtApiModelsApiNodeHostPoco>] [-DmzList <ISrtApiModelsApiServerParamsDmzPoco[]>]
  [-Ftp <ISrtApiModelsApiNodeHostPoco>] [-Http <ISrtApiModelsApiNodeHostPoco>]
  [-IcapSvr <ISrtApiModelsApiNodeHostPoco>] [-NodePriority <Int32>] [-NodeType <Int32>]
@@ -59,6 +59,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -349,7 +364,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiServerParamsNodesPoco>: .
+`BODY <ISrtApiModelsApiServerParamsNodesPoco>`: .
   - `[Dav <ISrtApiModelsApiNodeHostPoco>]`: 
     - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
       - `[Host <String>]`: The Host name or IP address for the endpoint
@@ -380,13 +395,13 @@ BODY <ISrtApiModelsApiServerParamsNodesPoco>: .
   - `[SlSvr <ISrtApiModelsApiNodeHostPoco>]`: 
   - `[Ssh <ISrtApiModelsApiNodeHostPoco>]`: 
 
-DAV <ISrtApiModelsApiNodeHostPoco>: .
+`DAV <ISrtApiModelsApiNodeHostPoco>`: .
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
-DMZLIST <ISrtApiModelsApiServerParamsDmzPoco[]>: .
+`DMZLIST <ISrtApiModelsApiServerParamsDmzPoco[]>`: .
   - `[DavWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[Enabled <Int32?>]`: Flag to indicate if the host is enabled
     - `[Host <String>]`: The Host name or IP address for the endpoint
@@ -402,25 +417,25 @@ DMZLIST <ISrtApiModelsApiServerParamsDmzPoco[]>: .
   - `[HttpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
   - `[SshWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
 
-FTP <ISrtApiModelsApiNodeHostPoco>: .
+`FTP <ISrtApiModelsApiNodeHostPoco>`: .
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
-HTTP <ISrtApiModelsApiNodeHostPoco>: .
+`HTTP <ISrtApiModelsApiNodeHostPoco>`: .
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
-ICAPSVR <ISrtApiModelsApiNodeHostPoco>: .
+`ICAPSVR <ISrtApiModelsApiNodeHostPoco>`: .
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -429,6 +444,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -437,18 +453,17 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
-SLSVR <ISrtApiModelsApiNodeHostPoco>: .
+`SLSVR <ISrtApiModelsApiNodeHostPoco>`: .
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
-SSH <ISrtApiModelsApiNodeHostPoco>: .
+`SSH <ISrtApiModelsApiNodeHostPoco>`: .
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
 
 ## RELATED LINKS
-
 

@@ -28,7 +28,7 @@ $newVF.Level = "Usr"
 $newVF.Path = "VFJunk"
 $newVF.UserGroupGuid = $userGuid
 # create the VF
-$r = New-SvrVirtualFolder -ServerGuid $serverName -OwnerGuid $userGuid -Body $newVF
+$r = New-SvrVirtualFolder -ServerGuid $serverName -OwnerGuid $userGuid -Body $newVF -AdminUrl localhost:31443
 
 # the new VF is returned
 Write-Output "New Virtual Folder"
@@ -42,7 +42,7 @@ $vfID = $createdVF.Id
 $createdVF.Path = "VFNewJunk"
 $createdVF.AllowAce  = "R-ADNMVLIGS--"
 
-$r = Set-SvrVirtualFolder -ServerGuid $serverName -OwnerGuid $userGuid -VirtualFolderGUID $vfID  -Body $createdVF
+$r = Set-SvrVirtualFolder -ServerGuid $serverName -OwnerGuid $userGuid -VirtualFolderGUID $vfID  -Body $createdVF -AdminUrl localhost:31443
 Write-Output "Updated virtual folder"
 Write-Output $r.Response
 

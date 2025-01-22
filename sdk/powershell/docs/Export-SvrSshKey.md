@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/export-svrsshkey
 schema: 2.0.0
 ---
 
@@ -14,27 +14,28 @@ Exports the ssh key identified by sshKeyGUID
 
 ### ExportExpanded (Default)
 ```
-Export-SvrSshKey -ServerGuid <String> -SshKeyGuid <String> [-ExportType <String>]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Export-SvrSshKey -AdminUrl <String> -ServerGuid <String> -SshKeyGuid <String> -OutFile <String>
+ [-ExportType <String>] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Export
 ```
-Export-SvrSshKey -ServerGuid <String> -SshKeyGuid <String> -Body <ISrtApiModelsApiSshKeyExport> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Export-SvrSshKey -AdminUrl <String> -ServerGuid <String> -SshKeyGuid <String>
+ -Body <ISrtApiModelsApiSshKeyExport> -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-SvrSshKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiSshKeyExport> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Export-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiSshKeyExport>
+ -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentityExpanded
 ```
-Export-SvrSshKey -InputObject <ITitanApiIdentity> [-ExportType <String>] [-PrivateKeyPassword <String>]
- [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Export-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -OutFile <String> [-ExportType <String>]
+ [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,6 +53,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -97,6 +113,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -217,7 +248,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Titan.API.Models.ISrtApiModelsApiResult
+### System.Boolean
 
 ## NOTES
 
@@ -228,12 +259,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiSshKeyExport>: .
+`BODY <ISrtApiModelsApiSshKeyExport>`: .
   - `[ExportType <String>]`: 
   - `[PrivateKeyPassword <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -242,6 +273,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -251,5 +283,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 

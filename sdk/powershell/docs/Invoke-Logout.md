@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/invoke-logout
 schema: 2.0.0
 ---
 
@@ -13,7 +13,7 @@ Logout with access token
 ## SYNTAX
 
 ```
-Invoke-Logout [-BearerToken <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-Logout -AdminUrl <String> [-BearerToken <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,6 +31,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BearerToken
 A valid bearer token received from a successful call to Login
@@ -92,5 +107,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-
 

@@ -1,7 +1,7 @@
 ---
 external help file:
 Module Name: TitanApi
-online version: https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/readme.md
+online version: https://learn.microsoft.com/powershell/module/titanapi/export-svrtlkey
 schema: 2.0.0
 ---
 
@@ -14,27 +14,28 @@ Exports the certificate identified by tlsKeyGUID
 
 ### ExportExpanded (Default)
 ```
-Export-SvrTlKey -ServerGuid <String> -TlsKeyGuid <String> [-ExportCsr] [-ExportPrivateKey]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
+Export-SvrTlKey -AdminUrl <String> -ServerGuid <String> -TlsKeyGuid <String> -OutFile <String> [-ExportCsr]
+ [-ExportPrivateKey] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Export
 ```
-Export-SvrTlKey -ServerGuid <String> -TlsKeyGuid <String> -Body <ISrtApiModelsApiTlsKeyExport> [-ExportCsr]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Export-SvrTlKey -AdminUrl <String> -ServerGuid <String> -TlsKeyGuid <String>
+ -Body <ISrtApiModelsApiTlsKeyExport> -OutFile <String> [-ExportCsr] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-SvrTlKey -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiTlsKeyExport> [-ExportCsr] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Export-SvrTlKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiModelsApiTlsKeyExport>
+ -OutFile <String> [-ExportCsr] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ExportViaIdentityExpanded
 ```
-Export-SvrTlKey -InputObject <ITitanApiIdentity> [-ExportCsr] [-ExportPrivateKey]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
+Export-SvrTlKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -OutFile <String> [-ExportCsr]
+ [-ExportPrivateKey] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -53,6 +54,21 @@ PS C:\>  tbd ...
 
 
 ## PARAMETERS
+
+### -AdminUrl
+Titan Admin URL
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Body
 .
@@ -113,6 +129,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -233,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Titan.API.Models.ISrtApiModelsApiResult
+### System.Boolean
 
 ## NOTES
 
@@ -244,12 +275,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ISrtApiModelsApiTlsKeyExport>: .
+`BODY <ISrtApiModelsApiTlsKeyExport>`: .
   - `[ExportPrivateKey <Boolean?>]`: 
   - `[PrivateKeyPassword <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
-INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
+`INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID
   - `[DirAccessGuid <String>]`: The dir access Id to update
   - `[DomainGuid <String>]`: The domain to get settings for
@@ -258,6 +289,7 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[LicenseId <String>]`: 
   - `[OwnerGuid <String>]`: The owner GUID (server, group, or user)
   - `[PgpKeyGuid <String>]`: The key to delete
+  - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
   - `[ServerGuid <String>]`: The server to list files for
   - `[ServerNodeGuid <String>]`: Server Node GUID
@@ -267,5 +299,4 @@ INPUTOBJECT <ITitanApiIdentity>: Identity Parameter
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
 
 ## RELATED LINKS
-
 
