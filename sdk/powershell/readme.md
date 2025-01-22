@@ -51,6 +51,10 @@ There was a small API change for the Titan powershell momdule in version 0.1.7 w
 
 Documentation is a work in progress and the best way to see how to do something is with the provided samples. You can get help on each command in powershell with Get-Help `<command>` you can also view online documentation [here](https://github.com/southrivertech/titanapi.pub/blob/main/sdk/powershell/docs/TitanApi.md)
 
+# Linux Support
+
+With version 0.1.7 of the TitanAPI powershell module linux is now possible with the addition of the 'AdminUrl' parameter. Be sure to add the appsettings.oem.json file to installation folder /opt/southriver/srxserver to enable the REST API and then you will also need to have a valid SSL certificate (not self signed) in order for the powershell module to communicate with Titan. If you don't use a valid SSL certificate you will see the error 'The SSL connection could not be established, see inner exception' from any powershell Titan API command. Configure the SSL certificate in the Titan Admin UI on the remote domain settings and be sure to import and select a valid certificate. Then when specifying the 'AdminUrl' use something like myvalid-domain:41443 as the AdminUrl setting.
+
 # Samples
 
 The [samples](https://github.com/southrivertech/titanapi.pub/tree/main/sdk/powershell/samples) folder contains many examples of using powershell to query and configure the server. 
