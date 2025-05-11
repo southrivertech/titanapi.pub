@@ -380,6 +380,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DmzGuid <String>]`: 
     - `[DmzHost <String>]`: 
     - `[DmzName <String>]`: 
+    - `[DmzPort <Int32?>]`: 
     - `[FtpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[FtpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[HttpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
@@ -411,6 +412,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DmzGuid <String>]`: 
   - `[DmzHost <String>]`: 
   - `[DmzName <String>]`: 
+  - `[DmzPort <Int32?>]`: 
   - `[FtpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
   - `[FtpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
   - `[HttpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff

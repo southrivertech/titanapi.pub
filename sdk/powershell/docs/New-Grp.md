@@ -21,11 +21,11 @@ New-Grp -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> [-Fields <Str
  [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>] [-General <ISrtApiModelsApiGroupParamsGeneralPoco>]
  [-GroupGuid <String>] [-GroupName <String>] [-Http <ISrtApiModelsApiGroupParamsHttpPoco>]
- [-IPAccessRules <IAny>] [-MemberUsers <Hashtable>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
- [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>] [-Role <ISrtApiModelsApiGroupParamsRolePoco>]
- [-RoleParams <String>] [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>] [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IPAccessRules <ISrtApiModelsApiGroupParamsIPAccessRulesPoco>] [-MemberUsers <Hashtable>]
+ [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>] [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>]
+ [-Role <ISrtApiModelsApiGroupParamsRolePoco>] [-RoleParams <String>]
+ [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>] [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>]
+ [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -48,11 +48,11 @@ New-Grp -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AuthGuid <String>]
  [-FileDir <ISrtApiModelsApiGroupParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiGroupParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiGroupParamsFtpsPoco>] [-General <ISrtApiModelsApiGroupParamsGeneralPoco>]
  [-GroupGuid <String>] [-GroupName <String>] [-Http <ISrtApiModelsApiGroupParamsHttpPoco>]
- [-IPAccessRules <IAny>] [-MemberUsers <Hashtable>] [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]
- [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>] [-Role <ISrtApiModelsApiGroupParamsRolePoco>]
- [-RoleParams <String>] [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>] [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IPAccessRules <ISrtApiModelsApiGroupParamsIPAccessRulesPoco>] [-MemberUsers <Hashtable>]
+ [-Pgp <ISrtApiModelsApiGroupParamsPgpPoco>] [-Quota <ISrtApiModelsApiGroupParamsQuotaPoco>]
+ [-Role <ISrtApiModelsApiGroupParamsRolePoco>] [-RoleParams <String>]
+ [-Sfs <ISrtApiModelsApiGroupParamsSfsPoco>] [-Sftp <ISrtApiModelsApiGroupParamsSftpPoco>]
+ [-Ssh <ISrtApiModelsApiGroupParamsSshPoco>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -339,10 +339,11 @@ Accept wildcard characters: False
 ```
 
 ### -IPAccessRules
-Any object
+.
+To construct, see NOTES section for IPACCESSRULES properties and create a hash table.
 
 ```yaml
-Type: Titan.API.Models.IAny
+Type: Titan.API.Models.ISrtApiModelsApiGroupParamsIPAccessRulesPoco
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -650,6 +651,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[BlockAntiTimeout <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
     - `[LockFileOnWrite <Int32?>]`: 
+    - `[MfaEnabled <Int32?>]`: 
+    - `[MfaMode <Int32?>]`: 
     - `[ModeZEnabled <Int32?>]`: 
     - `[ModeZLevel <Int32?>]`: 
     - `[NlstReturnsDirs <Int32?>]`: 
@@ -674,8 +677,19 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupName <String>]`: 
   - `[Http <ISrtApiModelsApiGroupParamsHttpPoco>]`: 
     - `[Enabled <Int32?>]`: 
+    - `[MfaEnabled <Int32?>]`: 
+    - `[MfaMode <Int32?>]`: 
     - `[TlsEnabled <Int32?>]`: 
-  - `[IPAccessRules <IAny>]`: Any object
+  - `[IPAccessRules <ISrtApiModelsApiGroupParamsIPAccessRulesPoco>]`: 
+    - `[DenyByDefault <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[IPAccessRules <ISrtApiModelsApiIPAccessRulePoco[]>]`: 
+      - `[Allow <Int32?>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[IPAccRuleGuid <String>]`: 
+      - `[IPAddressEnd <String>]`: 
+      - `[IPAddressStart <String>]`: 
+      - `[Protocols <Int32[]>]`: 
   - `[MemberUsers <ISrtApiModelsApiGroupParamsPocoMemberUsers>]`: Dictionary of <integer>
     - `[(Any) <Int32>]`: This indicates any property can be added to this object.
   - `[Pgp <ISrtApiModelsApiGroupParamsPgpPoco>]`: 
@@ -750,6 +764,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[BlockAntiTimeout <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
+  - `[MfaEnabled <Int32?>]`: 
+  - `[MfaMode <Int32?>]`: 
   - `[ModeZEnabled <Int32?>]`: 
   - `[ModeZLevel <Int32?>]`: 
   - `[NlstReturnsDirs <Int32?>]`: 
@@ -775,6 +791,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `HTTP <ISrtApiModelsApiGroupParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
+  - `[MfaEnabled <Int32?>]`: 
+  - `[MfaMode <Int32?>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
 `INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
@@ -794,6 +812,17 @@ To create the parameters described below, construct a hash table containing the 
   - `[TlsKeyGuid <String>]`: The key to delete
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
+
+`IPACCESSRULES <ISrtApiModelsApiGroupParamsIPAccessRulesPoco>`: .
+  - `[DenyByDefault <Int32?>]`: 
+  - `[Enabled <Int32?>]`: 
+  - `[IPAccessRules <ISrtApiModelsApiIPAccessRulePoco[]>]`: 
+    - `[Allow <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[IPAccRuleGuid <String>]`: 
+    - `[IPAddressEnd <String>]`: 
+    - `[IPAddressStart <String>]`: 
+    - `[Protocols <Int32[]>]`: 
 
 `PGP <ISrtApiModelsApiGroupParamsPgpPoco>`: .
   - `[AddPgpExtension <Int32?>]`: 

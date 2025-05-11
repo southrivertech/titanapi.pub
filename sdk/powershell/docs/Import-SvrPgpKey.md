@@ -14,9 +14,9 @@ Imports the Pgp key data that is submitted in the request
 
 ### ImportExpanded (Default)
 ```
-Import-SvrPgpKey -AdminUrl <String> -ServerGuid <String> [-KeyBlob <String>] [-Name <String>]
- [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>] [-UserGroupGuid <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Import-SvrPgpKey -AdminUrl <String> -ServerGuid <String> [-ImportPrivateKey] [-KeyBlob <String>]
+ [-Name <String>] [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>]
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Import
@@ -33,9 +33,9 @@ Import-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrt
 
 ### ImportViaIdentityExpanded
 ```
-Import-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-KeyBlob <String>] [-Name <String>]
- [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>] [-UserGroupGuid <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Import-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ImportPrivateKey] [-KeyBlob <String>]
+ [-Name <String>] [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>]
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,6 +82,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ImportPrivateKey
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -262,6 +277,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `BODY <ISrtApiModelsApiPgpKeyImport>`: .
+  - `[ImportPrivateKey <Boolean?>]`: 
   - `[KeyBlob <String>]`: 
   - `[Name <String>]`: 
   - `[PrivateKeyPassword <String>]`: 

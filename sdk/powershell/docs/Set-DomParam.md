@@ -539,6 +539,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ProductInfo <ISrtApiModelsApiProductInfo>]`: 
     - `[DisplayName <String>]`: 
     - `[IsBeta <Boolean?>]`: 
+    - `[IsFreeUpdate <Boolean?>]`: 
     - `[Linux64Url <String>]`: 
     - `[LongName <String>]`: 
     - `[ProductId <Int32?>]`: 
@@ -547,6 +548,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ShortName <String>]`: 
     - `[Updates <ISrtApiModelsApiProductReleaseInfo[]>]`: 
       - `[IsBeta <Boolean?>]`: 
+      - `[IsFreeUpdate <Boolean?>]`: 
       - `[Linux64Url <String>]`: 
       - `[RelNotesUrl <String>]`: 
       - `[ReleaseDate <Int64?>]`: 
@@ -600,6 +602,7 @@ To create the parameters described below, construct a hash table containing the 
 `PRODUCTINFO <ISrtApiModelsApiProductInfo>`: .
   - `[DisplayName <String>]`: 
   - `[IsBeta <Boolean?>]`: 
+  - `[IsFreeUpdate <Boolean?>]`: 
   - `[Linux64Url <String>]`: 
   - `[LongName <String>]`: 
   - `[ProductId <Int32?>]`: 
@@ -608,6 +611,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ShortName <String>]`: 
   - `[Updates <ISrtApiModelsApiProductReleaseInfo[]>]`: 
     - `[IsBeta <Boolean?>]`: 
+    - `[IsFreeUpdate <Boolean?>]`: 
     - `[Linux64Url <String>]`: 
     - `[RelNotesUrl <String>]`: 
     - `[ReleaseDate <Int64?>]`: 

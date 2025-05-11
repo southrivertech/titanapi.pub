@@ -244,6 +244,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[WaitTimeout <Int32?>]`: 
     - `[Desc <String>]`: 
     - `[Enabled <Boolean?>]`: 
+    - `[EventConditionLogic <Int32?>]`: 
     - `[EventType <Int32?>]`: 
     - `[Events <ISrtApiModelsApiEcaEventBase[]>]`: 
       - `[Conditions <ISrtApiModelsApiEcaConditionBase[]>]`: 
@@ -273,6 +274,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[WaitTimeout <Int32?>]`: 
   - `[Desc <String>]`: 
   - `[Enabled <Boolean?>]`: 
+  - `[EventConditionLogic <Int32?>]`: 
   - `[EventType <Int32?>]`: 
   - `[Events <ISrtApiModelsApiEcaEventBase[]>]`: 
     - `[Conditions <ISrtApiModelsApiEcaConditionBase[]>]`: 

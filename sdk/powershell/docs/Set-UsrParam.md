@@ -16,17 +16,18 @@ Update the specified user parameters with the supplied settings in the patch bod
 ```
 Set-UsrParam -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String> [-ByUserName]
  [-CreateHomeDirNow] [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>] [-AuthGuid1 <String>]
- [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-CreateHomeDirNow1 <Int32>]
+ [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-ConfirmPassword <String>] [-CreateHomeDirNow1 <Int32>]
  [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>] [-Dav <ISrtApiModelsApiUserParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiUserParamsFtpsPoco>] [-General <ISrtApiModelsApiUserParamsGeneralPoco>]
  [-Http <ISrtApiModelsApiUserParamsHttpPoco>] [-Ident <ISrtApiModelsApiUserParamsIdentPoco>]
- [-IPAccessRules <IAny>] [-MemberGroups <Hashtable>] [-Password <String>]
- [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>] [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiUserParamsRolePoco>] [-RoleParams <String>]
- [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>] [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>]
- [-Ssh <ISrtApiModelsApiUserParamsSshPoco>] [-Stats <ISrtApiModelsApiUserParamsStatsPoco>]
- [-UserGuid1 <String>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IPAccessRules <ISrtApiModelsApiUserParamsIPAccessRulesPoco>] [-MemberGroups <Hashtable>]
+ [-Password <String>] [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>] [-Role <ISrtApiModelsApiUserParamsRolePoco>]
+ [-RoleParams <String>] [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>]
+ [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>] [-Ssh <ISrtApiModelsApiUserParamsSshPoco>]
+ [-Stats <ISrtApiModelsApiUserParamsStatsPoco>] [-UserGuid1 <String>] [-Username <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
@@ -46,17 +47,17 @@ Set-UsrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiM
 ```
 Set-UsrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AuthGuid <String>] [-UserGuid <String>]
  [-ByUserName] [-CreateHomeDirNow] [-Fields <String>] [-Acct <ISrtApiModelsApiUserParamsAcctPoco>]
- [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-CreateHomeDirNow1 <Int32>]
+ [-Av <ISrtApiModelsApiUserParamsAvPoco>] [-ConfirmPassword <String>] [-CreateHomeDirNow1 <Int32>]
  [-Cxn <ISrtApiModelsApiUserParamsCxnPoco>] [-Dav <ISrtApiModelsApiUserParamsDavPoco>]
  [-FileDir <ISrtApiModelsApiUserParamsFileDirPoco>] [-Ftp <ISrtApiModelsApiUserParamsFtpPoco>]
  [-Ftps <ISrtApiModelsApiUserParamsFtpsPoco>] [-General <ISrtApiModelsApiUserParamsGeneralPoco>]
  [-Http <ISrtApiModelsApiUserParamsHttpPoco>] [-Ident <ISrtApiModelsApiUserParamsIdentPoco>]
- [-IPAccessRules <IAny>] [-MemberGroups <Hashtable>] [-Password <String>]
- [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>] [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiUserParamsRolePoco>] [-RoleParams <String>]
- [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>] [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>]
- [-Ssh <ISrtApiModelsApiUserParamsSshPoco>] [-Stats <ISrtApiModelsApiUserParamsStatsPoco>]
- [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IPAccessRules <ISrtApiModelsApiUserParamsIPAccessRulesPoco>] [-MemberGroups <Hashtable>]
+ [-Password <String>] [-Pgp <ISrtApiModelsApiUserParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiUserParamsQuotaPoco>] [-Role <ISrtApiModelsApiUserParamsRolePoco>]
+ [-RoleParams <String>] [-Sfs <ISrtApiModelsApiUserParamsSfsPoco>]
+ [-Sftp <ISrtApiModelsApiUserParamsSftpPoco>] [-Ssh <ISrtApiModelsApiUserParamsSshPoco>]
+ [-Stats <ISrtApiModelsApiUserParamsStatsPoco>] [-Username <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,6 +175,21 @@ userId is a username instead of an id
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfirmPassword
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -373,10 +389,11 @@ Accept wildcard characters: False
 ```
 
 ### -IPAccessRules
-Any object
+.
+To construct, see NOTES section for IPACCESSRULES properties and create a hash table.
 
 ```yaml
-Type: Titan.API.Models.IAny
+Type: Titan.API.Models.ISrtApiModelsApiUserParamsIPAccessRulesPoco
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -727,6 +744,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[QuarAction <Int32?>]`: 
     - `[RealTime <Int32?>]`: 
     - `[Timeout <Int32?>]`: 
+  - `[ConfirmPassword <String>]`: 
   - `[CreateHomeDirNow <Int32?>]`: 
   - `[Cxn <ISrtApiModelsApiUserParamsCxnPoco>]`: 
     - `[IdleTimeoutCnt <Int32?>]`: 
@@ -762,6 +780,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[BlockAntiTimeout <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
     - `[LockFileOnWrite <Int32?>]`: 
+    - `[MfaEnabled <Int32?>]`: 
+    - `[MfaMode <Int32?>]`: 
     - `[ModeZEnabled <Int32?>]`: 
     - `[ModeZLevel <Int32?>]`: 
     - `[NlstReturnsDirs <Int32?>]`: 
@@ -777,7 +797,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ImplicitEnabled <Int32?>]`: 
     - `[RequireCerts <Int32?>]`: 
     - `[RequireFtps <Int32?>]`: 
-    - `[TlsCertGuid <String>]`: 
+    - `[TlsCertGuiDs <String[]>]`: 
   - `[General <ISrtApiModelsApiUserParamsGeneralPoco>]`: 
     - `[EmailAddress <String>]`: 
     - `[FullName <String>]`: 
@@ -790,9 +810,20 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserDesc <String>]`: 
   - `[Http <ISrtApiModelsApiUserParamsHttpPoco>]`: 
     - `[Enabled <Int32?>]`: 
+    - `[MfaEnabled <Int32?>]`: 
+    - `[MfaMode <Int32?>]`: 
     - `[TlsCertGuid <String[]>]`: 
     - `[TlsEnabled <Int32?>]`: 
-  - `[IPAccessRules <IAny>]`: Any object
+  - `[IPAccessRules <ISrtApiModelsApiUserParamsIPAccessRulesPoco>]`: 
+    - `[DenyByDefault <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[IPAccessRules <ISrtApiModelsApiIPAccessRulePoco[]>]`: 
+      - `[Allow <Int32?>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[IPAccRuleGuid <String>]`: 
+      - `[IPAddressEnd <String>]`: 
+      - `[IPAddressStart <String>]`: 
+      - `[Protocols <Int32[]>]`: 
   - `[Ident <ISrtApiModelsApiUserParamsIdentPoco>]`: 
     - `[AccessFailedCount <Int64?>]`: 
     - `[AcctCreatedDate <Int64?>]`: 
@@ -886,6 +917,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[BlockAntiTimeout <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
+  - `[MfaEnabled <Int32?>]`: 
+  - `[MfaMode <Int32?>]`: 
   - `[ModeZEnabled <Int32?>]`: 
   - `[ModeZLevel <Int32?>]`: 
   - `[NlstReturnsDirs <Int32?>]`: 
@@ -902,7 +935,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImplicitEnabled <Int32?>]`: 
   - `[RequireCerts <Int32?>]`: 
   - `[RequireFtps <Int32?>]`: 
-  - `[TlsCertGuid <String>]`: 
+  - `[TlsCertGuiDs <String[]>]`: 
 
 `GENERAL <ISrtApiModelsApiUserParamsGeneralPoco>`: .
   - `[EmailAddress <String>]`: 
@@ -917,6 +950,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `HTTP <ISrtApiModelsApiUserParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
+  - `[MfaEnabled <Int32?>]`: 
+  - `[MfaMode <Int32?>]`: 
   - `[TlsCertGuid <String[]>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
@@ -947,6 +982,17 @@ To create the parameters described below, construct a hash table containing the 
   - `[TlsKeyGuid <String>]`: The key to delete
   - `[UserGuid <String>]`: The username or GUID for the username
   - `[VirtualFolderGuid <String>]`: The virtual folder Id to update
+
+`IPACCESSRULES <ISrtApiModelsApiUserParamsIPAccessRulesPoco>`: .
+  - `[DenyByDefault <Int32?>]`: 
+  - `[Enabled <Int32?>]`: 
+  - `[IPAccessRules <ISrtApiModelsApiIPAccessRulePoco[]>]`: 
+    - `[Allow <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[IPAccRuleGuid <String>]`: 
+    - `[IPAddressEnd <String>]`: 
+    - `[IPAddressStart <String>]`: 
+    - `[Protocols <Int32[]>]`: 
 
 `PGP <ISrtApiModelsApiUserParamsPgpPoco>`: .
   - `[AddPgpExtension <Int32?>]`: 

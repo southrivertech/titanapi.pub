@@ -14,8 +14,9 @@ Imports the ssh key data that is submitted in the request
 
 ### ImportExpanded (Default)
 ```
-Import-SvrSshKey -AdminUrl <String> -ServerGuid <String> [-KeyData <String>] [-Name <String>]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Import-SvrSshKey -AdminUrl <String> -ServerGuid <String> [-ImportPrivateKey] [-KeyBlob <String>]
+ [-Name <String>] [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>]
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Import
@@ -32,8 +33,9 @@ Import-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrt
 
 ### ImportViaIdentityExpanded
 ```
-Import-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-KeyData <String>] [-Name <String>]
- [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Import-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ImportPrivateKey] [-KeyBlob <String>]
+ [-Name <String>] [-PrivateKeyPassword <String>] [-PrvKey <String>] [-PubKey <String>]
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,6 +85,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -ImportPrivateKey
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -99,7 +116,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -KeyData
+### -KeyBlob
 .
 
 ```yaml
@@ -130,6 +147,36 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateKeyPassword
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrvKey
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PubKey
 .
 
 ```yaml
@@ -230,9 +277,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `BODY <ISrtApiModelsApiSshKeyImport>`: .
-  - `[KeyData <String>]`: 
+  - `[ImportPrivateKey <Boolean?>]`: 
+  - `[KeyBlob <String>]`: 
   - `[Name <String>]`: 
   - `[PrivateKeyPassword <String>]`: 
+  - `[PrvKey <String>]`: 
+  - `[PubKey <String>]`: 
   - `[UserGroupGuid <String>]`: 
 
 `INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter

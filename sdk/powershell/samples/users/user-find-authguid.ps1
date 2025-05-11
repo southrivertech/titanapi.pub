@@ -23,7 +23,7 @@ $myAuthGuid = $authParams.Response.AdsiPoco.AuthGuid
 # another way to find an auth guid is to list all auth connectors and search based on your own criteria if you don't want 
 # to look it up via domain suffix shown above
 
-$authList = Get-SvrAuthConnectorList -ServerGuid $myserver
+$authList = Get-SvrAuthConnectorList -ServerGuid $myserver -AdminUrl localhost:31443
 $authList.Response.Auth | format-list
 
 foreach($authConnector in $authList.Response.Auth) {

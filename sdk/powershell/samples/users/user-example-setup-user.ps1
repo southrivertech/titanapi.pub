@@ -5,6 +5,7 @@ $userName = "newuser"
 $newUser = new-object Titan.API.Models.SrtApiModelsApiUserParamsPoco
 $newUser.Username = $userName
 $newUser.Password = "test"
+$newUser.ConfirmPassword = "test"
 $newUser.CreateHomeDirNow = 1
 
 $user = New-Usr -ServerGuid $serverName -AuthGuid native -Body $newUser -AdminUrl localhost:31443

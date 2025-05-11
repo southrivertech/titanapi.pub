@@ -16,8 +16,8 @@ Valid options are \"getHomeDir\", \"setpassword\",\r\n\"resetpassword\"
 ### RunExpanded (Default)
 ```
 Start-UsrAction -AdminUrl <String> -AuthGuid <String> -ServerGuid <String> -UserGuid <String>
- [-Action <String>] [-ByUserName] [-DomainData] [-DomainLogs] [-Password <String>] [-Path <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Action <String>] [-ByUserName] [-DomainData] [-DomainLogs] [-HomeDir <String>] [-HomeDirInherit <Int32>]
+ [-Password <String>] [-Path <String>] [-UseHomeDirParams] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Run
@@ -36,7 +36,8 @@ Start-UsrAction -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtA
 ### RunViaIdentityExpanded
 ```
 Start-UsrAction -AdminUrl <String> -InputObject <ITitanApiIdentity> [-Action <String>] [-ByUserName]
- [-DomainData] [-DomainLogs] [-Password <String>] [-Path <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DomainData] [-DomainLogs] [-HomeDir <String>] [-HomeDirInherit <Int32>] [-Password <String>]
+ [-Path <String>] [-UseHomeDirParams] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -162,6 +163,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HomeDir
+.
+
+```yaml
+Type: System.String
+Parameter Sets: RunExpanded, RunViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HomeDirInherit
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: RunExpanded, RunViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -217,6 +248,21 @@ Parameter Sets: Run, RunExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseHomeDirParams
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: RunExpanded, RunViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -296,8 +342,11 @@ To create the parameters described below, construct a hash table containing the 
 `BODY <ISrtApiModelsApiUserActionRequest>`: .
   - `[DomainData <Boolean?>]`: 
   - `[DomainLogs <Boolean?>]`: 
+  - `[HomeDir <String>]`: 
+  - `[HomeDirInherit <Int32?>]`: 
   - `[Password <String>]`: 
   - `[Path <String>]`: 
+  - `[UseHomeDirParams <Boolean?>]`: 
 
 `INPUTOBJECT <ITitanApiIdentity>`: Identity Parameter
   - `[AuthGuid <String>]`: The authentication GUID

@@ -15,8 +15,9 @@ Exports the ssh key identified by sshKeyGUID
 ### ExportExpanded (Default)
 ```
 Export-SvrSshKey -AdminUrl <String> -ServerGuid <String> -SshKeyGuid <String> -OutFile <String>
- [-ExportType <String>] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ConfirmPrivateKeyPassword <String>] [-ExportPrivateKey] [-ExportType <String>]
+ [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Export
@@ -33,7 +34,8 @@ Export-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrt
 
 ### ExportViaIdentityExpanded
 ```
-Export-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -OutFile <String> [-ExportType <String>]
+Export-SvrSshKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -OutFile <String>
+ [-ConfirmPrivateKeyPassword <String>] [-ExportPrivateKey] [-ExportType <String>]
  [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -82,6 +84,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ConfirmPrivateKeyPassword
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ExportExpanded, ExportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExportPrivateKey
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ExportExpanded, ExportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -260,6 +292,8 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `BODY <ISrtApiModelsApiSshKeyExport>`: .
+  - `[ConfirmPrivateKeyPassword <String>]`: 
+  - `[ExportPrivateKey <Boolean?>]`: 
   - `[ExportType <String>]`: 
   - `[PrivateKeyPassword <String>]`: 
   - `[UserGroupGuid <String>]`: 

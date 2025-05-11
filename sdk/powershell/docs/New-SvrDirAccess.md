@@ -15,8 +15,8 @@ Create a directory access entry at either the server, user or group level by spe
 ### CreateExpanded (Default)
 ```
 New-SvrDirAccess -AdminUrl <String> -OwnerGuid <String> -ServerGuid <String> [-AllowAce <String>]
- [-DenyAce <String>] [-Id <String>] [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DenyAce <String>] [-Id <String>] [-Level <String>] [-ObjectGuid <String>] [-Path <String>]
+ [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -34,8 +34,8 @@ New-SvrDirAccess -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrt
 ### CreateViaIdentityExpanded
 ```
 New-SvrDirAccess -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AllowAce <String>] [-DenyAce <String>]
- [-Id <String>] [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Level <String>] [-ObjectGuid <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,6 +147,21 @@ Accept wildcard characters: False
 ```
 
 ### -Level
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ObjectGuid
 .
 
 ```yaml
@@ -281,6 +296,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DenyAce <String>]`: 
   - `[Id <String>]`: 
   - `[Level <String>]`: 
+  - `[ObjectGuid <String>]`: 
   - `[Path <String>]`: 
   - `[UserGroupGuid <String>]`: 
 

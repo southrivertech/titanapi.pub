@@ -17,7 +17,8 @@ Set server settings
 Set-SvrParam -AdminUrl <String> -ServerGuid <String> [-Fields <String>]
  [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]
  [-Av <ISrtApiModelsApiServerParamsAvPoco>] [-Brand <ISrtApiModelsApiServerParamsBrandPoco>]
- [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
+ [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+ [-CountryAccess <ISrtApiModelsApiServerParamsCountryAccessPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiServerParamsDavPoco>] [-Dmz <ISrtApiModelsApiServerParamsDmzPoco[]>]
  [-DmzSvr <ISrtApiModelsApiServerParamsDmzSvrPoco>] [-Email <ISrtApiModelsApiServerParamsEmailPoco>]
  [-FileDir <ISrtApiModelsApiServerParamsFileDirPoco>] [-Folder <ISrtApiModelsApiServerParamsFolderPoco>]
@@ -52,7 +53,8 @@ Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiM
 Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ServerGuid <String>] [-Fields <String>]
  [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]
  [-Av <ISrtApiModelsApiServerParamsAvPoco>] [-Brand <ISrtApiModelsApiServerParamsBrandPoco>]
- [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
+ [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+ [-CountryAccess <ISrtApiModelsApiServerParamsCountryAccessPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiServerParamsDavPoco>] [-Dmz <ISrtApiModelsApiServerParamsDmzPoco[]>]
  [-DmzSvr <ISrtApiModelsApiServerParamsDmzSvrPoco>] [-Email <ISrtApiModelsApiServerParamsEmailPoco>]
  [-FileDir <ISrtApiModelsApiServerParamsFileDirPoco>] [-Folder <ISrtApiModelsApiServerParamsFolderPoco>]
@@ -187,6 +189,22 @@ To construct, see NOTES section for CLUSTERPARAMS properties and create a hash t
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerClusterParamsPoco
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountryAccess
+.
+To construct, see NOTES section for COUNTRYACCESS properties and create a hash table.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiServerParamsCountryAccessPoco
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -1168,6 +1186,17 @@ To create the parameters described below, construct a hash table containing the 
       - `[ThemeGuid <String>]`: 
   - `[ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]`: 
     - `[ClusteredIPAddress <String>]`: 
+  - `[CountryAccess <ISrtApiModelsApiServerParamsCountryAccessPoco>]`: 
+    - `[AccessKey <String>]`: 
+    - `[CountryAccessRules <ISrtApiModelsApiCountryAccessRulePoco[]>]`: 
+      - `[Allow <Int32?>]`: 
+      - `[CountriesName <String>]`: 
+      - `[CountryAccRuleGuid <String>]`: 
+      - `[Protocols <Int32[]>]`: 
+    - `[DenyByDefault <Int32?>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[IsAvialbleInCache <Boolean?>]`: 
+    - `[Service <Int32?>]`: 
   - `[Cxn <ISrtApiModelsApiServerParamsCxnPoco>]`: 
     - `[IdleTimeoutCnt <Int32?>]`: 
     - `[IdleTimeoutEnabled <Int32?>]`: 
@@ -1207,6 +1236,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DmzGuid <String>]`: 
     - `[DmzHost <String>]`: 
     - `[DmzName <String>]`: 
+    - `[DmzPort <Int32?>]`: 
     - `[FtpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[FtpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[HttpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
@@ -1246,6 +1276,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[BaseDataDir <String>]`: 
     - `[BaseLogDir <String>]`: 
     - `[DatabaseDir <String>]`: 
+    - `[DirConfig <Boolean?>]`: 
     - `[QuickSendDataDir <String>]`: 
     - `[ReportsDir <String>]`: 
     - `[TempDataDir <String>]`: 
@@ -1263,6 +1294,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[LimitPasvPort <Int32?>]`: 
     - `[LockFileOnWrite <Int32?>]`: 
+    - `[MfaEnabled <Int32?>]`: 
+    - `[MfaMode <Int32?>]`: 
     - `[ModeZEnabled <Int32?>]`: 
     - `[ModeZLevel <Int32?>]`: 
     - `[MtsHostName <String>]`: 
@@ -1301,8 +1334,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ShowEula <Boolean?>]`: 
   - `[Http <ISrtApiModelsApiServerParamsHttpPoco>]`: 
     - `[Enabled <Int32?>]`: 
+    - `[FileDatePreference <String>]`: 
     - `[Ipv6Enabled <Int32?>]`: 
     - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
+    - `[MfaEnabled <Int32?>]`: 
+    - `[MfaMode <Int32?>]`: 
     - `[NoAutoComplete <Int32?>]`: 
     - `[Redirect301 <Int32?>]`: 
     - `[TlsCertGuid <String>]`: 
@@ -1418,14 +1454,129 @@ To create the parameters described below, construct a hash table containing the 
     - `[SftpVersion <Int32?>]`: 
     - `[Utf8Enabled <Int32?>]`: 
   - `[SlSvr <ISrtApiModelsApiServerParamsSlSvrPoco>]`: 
+    - `[ArchiveAboveSize <Int32?>]`: 
+    - `[ArchiveCurrentTableEnabled <Int32?>]`: 
+    - `[ArchiveHistoryTableEnabled <Int32?>]`: 
+    - `[ArchiveOldFileOnStartup <Int32?>]`: 
+    - `[ColumnsChooser <String[]>]`: 
+    - `[CustomLayout <ISrtApiModelsCustomFileFormat[]>]`: 
+      - `[DateFormat <String>]`: 
+      - `[DateTime <Int32?>]`: 
+      - `[DescriptionOfFormat <String>]`: 
+      - `[Facility <Int32?>]`: 
+      - `[FieldDelimiter <String>]`: 
+      - `[FieldQualifier <String>]`: 
+      - `[HostAddress <Int32?>]`: 
+      - `[HostName <Int32?>]`: 
+      - `[Id <Int32?>]`: 
+      - `[LayoutType <String>]`: 
+      - `[Level <Int32?>]`: 
+      - `[Message <Int32?>]`: 
+      - `[NameOfFormat <String>]`: 
+      - `[Port <Int32?>]`: 
+      - `[Severity <Int32?>]`: 
+      - `[SortedLogFileFields <String[]>]`: 
+      - `[TimeFormat <String>]`: 
     - `[EnableLogToDatabase <Int32?>]`: 
     - `[EnableLogToFile <Int32?>]`: 
+    - `[EnableViewerMessageHistory <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
     - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
+    - `[LogFileLogRotation <String>]`: 
     - `[LogMaxSizeMb <Int32?>]`: 
     - `[LogRotation <Int32?>]`: 
     - `[LogRotationCheckInterval <Int32?>]`: 
     - `[LogUnicodeFormat <Int32?>]`: 
+    - `[MaxArchiveDays <Int32?>]`: 
+    - `[MaxArchiveDurationMonth <Int32?>]`: 
+    - `[MaxArchiveDurationMonthArc <Int32?>]`: 
+    - `[MaxArchiveLogFiles <Int32?>]`: 
+    - `[MaximumArchiveThreshold <Int32?>]`: 
+    - `[MaximumArchiveThresholdArc <Int32?>]`: 
+    - `[MinimumRecordsToKeep <Int32?>]`: 
+    - `[MinimumRecordsToKeepArc <Int32?>]`: 
+    - `[OutputSettingsImported <Int32?>]`: 
+    - `[SelectedLayoutId <Int32?>]`: 
+    - `[SysLogArchiveCheckInterval <Int32?>]`: 
+    - `[SysLogTargets <ISrtApiModelsApiSysLogTarget[]>]`: 
+      - `[AmazonCloudWatch <ISrtApiModelsApiSysLogAmazonCloudWatchTarget>]`: 
+        - `[AwsAccessKey <String>]`: 
+        - `[AwsRegion <String>]`: 
+        - `[AwsSecretKey <String>]`: 
+        - `[LogGroupName <String>]`: 
+        - `[SelectedLayoutId <Int32?>]`: 
+        - `[SelectedLayoutString <String>]`: 
+      - `[AzureBlobStorage <ISrtApiModelsApiSysLogAzureBlobStorageTarget>]`: 
+        - `[AzureBlobName <String>]`: 
+        - `[AzureFileShareName <String>]`: 
+        - `[BlobContainerName <String>]`: 
+        - `[SelectedLayoutId <Int32?>]`: 
+        - `[SelectedLayoutString <String>]`: 
+        - `[StorageConnectionString <String>]`: 
+      - `[CustomTarget <ISrtApiModelsApiSysLogCustomTarget>]`: 
+        - `[FileDataXmlString <String>]`: 
+        - `[FileName <String>]`: 
+      - `[DatabaseTarget <ISrtApiModelsApiSysLogDatabaseTarget>]`: 
+        - `[CommandText <String>]`: 
+        - `[CommandType <String>]`: 
+        - `[Conforms <Int32?>]`: 
+        - `[ConnectionString <String>]`: 
+        - `[DataBaseProvider <String>]`: 
+        - `[DatabaseDirPath <String>]`: 
+        - `[DatabaseName <String>]`: 
+        - `[DateTime <Int32?>]`: 
+        - `[Facility <Int32?>]`: 
+        - `[HostAddress <Int32?>]`: 
+        - `[HostName <Int32?>]`: 
+        - `[InstallCommand <String>]`: 
+        - `[KeepConnection <Boolean?>]`: 
+        - `[Level <Int32?>]`: 
+        - `[Message <Int32?>]`: 
+        - `[Parameters <ISrtApiModelsApiSysLogDatabaseTargetParameters>]`: Dictionary of <string>
+          - `[(Any) <String>]`: This indicates any property can be added to this object.
+        - `[Port <Int32?>]`: 
+        - `[Severity <Int32?>]`: 
+        - `[UseTransaction <Boolean?>]`: 
+      - `[DescriptionOfTarget <String>]`: 
+      - `[Enabled <Int32?>]`: 
+      - `[Id <Int32?>]`: 
+      - `[LogFileTarget <ISrtApiModelsApiSysLogFileTarget>]`: 
+        - `[ArchiveAboveSize <Int32?>]`: 
+        - `[ArchiveEvery <String>]`: 
+        - `[ArchiveLogFileDirPath <String>]`: 
+        - `[ArchiveLogFileName <String>]`: 
+        - `[ArchiveNumbering <String>]`: 
+        - `[ArchiveOldFileOnStartup <Int32?>]`: 
+        - `[CreateDirs <Boolean?>]`: 
+        - `[Encoding <String>]`: 
+        - `[FileTargetFooter <String>]`: 
+        - `[FileTargetHeader <String>]`: 
+        - `[KeepFileOpen <Boolean?>]`: 
+        - `[LogFileName <String>]`: 
+        - `[LogFilePath <String>]`: 
+        - `[MaxArchiveDays <Int32?>]`: 
+        - `[MaxArchiveFiles <Int32?>]`: 
+        - `[SelectedLayoutId <Int32?>]`: 
+        - `[WriteBom <Boolean?>]`: 
+      - `[Loggly <ISrtApiModelsApiSysLogLogglyTarget>]`: 
+        - `[ApplicationName <String>]`: 
+        - `[CustomerToken <String>]`: 
+        - `[EndpointHostname <String>]`: 
+        - `[EndpointPort <String>]`: 
+        - `[ForwardedForIP <String>]`: 
+        - `[LogTransport <String>]`: 
+        - `[SelectedLayoutId <Int32?>]`: 
+      - `[NameOfTarget <String>]`: 
+      - `[SelectedTarget <String>]`: 
+      - `[SyslogServerTarget <ISrtApiModelsApiSyslogServerTarget>]`: 
+        - `[DestinationIPAddress <String>]`: 
+        - `[Facility <String>]`: 
+        - `[PortNo <String>]`: 
+        - `[Protocol <String>]`: 
+        - `[SeverityLevel <String>]`: 
+        - `[SyslogMessage <String>]`: 
+    - `[TcpLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
+    - `[TcpNonSecuredEnabled <Int32?>]`: 
     - `[TlsCertGuid <String>]`: 
     - `[TlsEnabled <Int32?>]`: 
     - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
@@ -1445,6 +1596,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MacList <String[]>]`: 
     - `[MfaEnabled <Int32?>]`: 
     - `[MfaMode <Int32?>]`: 
+    - `[SshRsaHostKeyAlgEnable <Int32?>]`: 
     - `[SshWindowSizeKb <Int32?>]`: 
     - `[UseCompression <Int32?>]`: 
   - `[Stats <ISrtApiModelsApiServerParamsStatsPoco>]`: 
@@ -1492,6 +1644,18 @@ To create the parameters described below, construct a hash table containing the 
 `CLUSTERPARAMS <ISrtApiModelsApiServerClusterParamsPoco>`: .
   - `[ClusteredIPAddress <String>]`: 
 
+`COUNTRYACCESS <ISrtApiModelsApiServerParamsCountryAccessPoco>`: .
+  - `[AccessKey <String>]`: 
+  - `[CountryAccessRules <ISrtApiModelsApiCountryAccessRulePoco[]>]`: 
+    - `[Allow <Int32?>]`: 
+    - `[CountriesName <String>]`: 
+    - `[CountryAccRuleGuid <String>]`: 
+    - `[Protocols <Int32[]>]`: 
+  - `[DenyByDefault <Int32?>]`: 
+  - `[Enabled <Int32?>]`: 
+  - `[IsAvialbleInCache <Boolean?>]`: 
+  - `[Service <Int32?>]`: 
+
 `CXN <ISrtApiModelsApiServerParamsCxnPoco>`: .
   - `[IdleTimeoutCnt <Int32?>]`: 
   - `[IdleTimeoutEnabled <Int32?>]`: 
@@ -1533,6 +1697,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DmzGuid <String>]`: 
   - `[DmzHost <String>]`: 
   - `[DmzName <String>]`: 
+  - `[DmzPort <Int32?>]`: 
   - `[FtpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
   - `[FtpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
   - `[HttpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
@@ -1580,6 +1745,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[BaseDataDir <String>]`: 
   - `[BaseLogDir <String>]`: 
   - `[DatabaseDir <String>]`: 
+  - `[DirConfig <Boolean?>]`: 
   - `[QuickSendDataDir <String>]`: 
   - `[ReportsDir <String>]`: 
   - `[TempDataDir <String>]`: 
@@ -1600,6 +1766,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Port <Int32?>]`: The port number for the endpoint
   - `[LimitPasvPort <Int32?>]`: 
   - `[LockFileOnWrite <Int32?>]`: 
+  - `[MfaEnabled <Int32?>]`: 
+  - `[MfaMode <Int32?>]`: 
   - `[ModeZEnabled <Int32?>]`: 
   - `[ModeZLevel <Int32?>]`: 
   - `[MtsHostName <String>]`: 
@@ -1643,10 +1811,13 @@ To create the parameters described below, construct a hash table containing the 
 
 `HTTP <ISrtApiModelsApiServerParamsHttpPoco>`: .
   - `[Enabled <Int32?>]`: 
+  - `[FileDatePreference <String>]`: 
   - `[Ipv6Enabled <Int32?>]`: 
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
+  - `[MfaEnabled <Int32?>]`: 
+  - `[MfaMode <Int32?>]`: 
   - `[NoAutoComplete <Int32?>]`: 
   - `[Redirect301 <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
@@ -1751,6 +1922,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DmzGuid <String>]`: 
     - `[DmzHost <String>]`: 
     - `[DmzName <String>]`: 
+    - `[DmzPort <Int32?>]`: 
     - `[FtpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[FtpsWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
     - `[HttpWanHost <ISrtApiModelsApiHostExPoco>]`: this version adds an Enabled flag to the data. We will         be using this in the Node stuff
@@ -1808,16 +1980,131 @@ To create the parameters described below, construct a hash table containing the 
   - `[Utf8Enabled <Int32?>]`: 
 
 `SLSVR <ISrtApiModelsApiServerParamsSlSvrPoco>`: .
+  - `[ArchiveAboveSize <Int32?>]`: 
+  - `[ArchiveCurrentTableEnabled <Int32?>]`: 
+  - `[ArchiveHistoryTableEnabled <Int32?>]`: 
+  - `[ArchiveOldFileOnStartup <Int32?>]`: 
+  - `[ColumnsChooser <String[]>]`: 
+  - `[CustomLayout <ISrtApiModelsCustomFileFormat[]>]`: 
+    - `[DateFormat <String>]`: 
+    - `[DateTime <Int32?>]`: 
+    - `[DescriptionOfFormat <String>]`: 
+    - `[Facility <Int32?>]`: 
+    - `[FieldDelimiter <String>]`: 
+    - `[FieldQualifier <String>]`: 
+    - `[HostAddress <Int32?>]`: 
+    - `[HostName <Int32?>]`: 
+    - `[Id <Int32?>]`: 
+    - `[LayoutType <String>]`: 
+    - `[Level <Int32?>]`: 
+    - `[Message <Int32?>]`: 
+    - `[NameOfFormat <String>]`: 
+    - `[Port <Int32?>]`: 
+    - `[Severity <Int32?>]`: 
+    - `[SortedLogFileFields <String[]>]`: 
+    - `[TimeFormat <String>]`: 
   - `[EnableLogToDatabase <Int32?>]`: 
   - `[EnableLogToFile <Int32?>]`: 
+  - `[EnableViewerMessageHistory <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[LanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
     - `[Host <String>]`: The Host name or IP address for the endpoint
     - `[Port <Int32?>]`: The port number for the endpoint
+  - `[LogFileLogRotation <String>]`: 
   - `[LogMaxSizeMb <Int32?>]`: 
   - `[LogRotation <Int32?>]`: 
   - `[LogRotationCheckInterval <Int32?>]`: 
   - `[LogUnicodeFormat <Int32?>]`: 
+  - `[MaxArchiveDays <Int32?>]`: 
+  - `[MaxArchiveDurationMonth <Int32?>]`: 
+  - `[MaxArchiveDurationMonthArc <Int32?>]`: 
+  - `[MaxArchiveLogFiles <Int32?>]`: 
+  - `[MaximumArchiveThreshold <Int32?>]`: 
+  - `[MaximumArchiveThresholdArc <Int32?>]`: 
+  - `[MinimumRecordsToKeep <Int32?>]`: 
+  - `[MinimumRecordsToKeepArc <Int32?>]`: 
+  - `[OutputSettingsImported <Int32?>]`: 
+  - `[SelectedLayoutId <Int32?>]`: 
+  - `[SysLogArchiveCheckInterval <Int32?>]`: 
+  - `[SysLogTargets <ISrtApiModelsApiSysLogTarget[]>]`: 
+    - `[AmazonCloudWatch <ISrtApiModelsApiSysLogAmazonCloudWatchTarget>]`: 
+      - `[AwsAccessKey <String>]`: 
+      - `[AwsRegion <String>]`: 
+      - `[AwsSecretKey <String>]`: 
+      - `[LogGroupName <String>]`: 
+      - `[SelectedLayoutId <Int32?>]`: 
+      - `[SelectedLayoutString <String>]`: 
+    - `[AzureBlobStorage <ISrtApiModelsApiSysLogAzureBlobStorageTarget>]`: 
+      - `[AzureBlobName <String>]`: 
+      - `[AzureFileShareName <String>]`: 
+      - `[BlobContainerName <String>]`: 
+      - `[SelectedLayoutId <Int32?>]`: 
+      - `[SelectedLayoutString <String>]`: 
+      - `[StorageConnectionString <String>]`: 
+    - `[CustomTarget <ISrtApiModelsApiSysLogCustomTarget>]`: 
+      - `[FileDataXmlString <String>]`: 
+      - `[FileName <String>]`: 
+    - `[DatabaseTarget <ISrtApiModelsApiSysLogDatabaseTarget>]`: 
+      - `[CommandText <String>]`: 
+      - `[CommandType <String>]`: 
+      - `[Conforms <Int32?>]`: 
+      - `[ConnectionString <String>]`: 
+      - `[DataBaseProvider <String>]`: 
+      - `[DatabaseDirPath <String>]`: 
+      - `[DatabaseName <String>]`: 
+      - `[DateTime <Int32?>]`: 
+      - `[Facility <Int32?>]`: 
+      - `[HostAddress <Int32?>]`: 
+      - `[HostName <Int32?>]`: 
+      - `[InstallCommand <String>]`: 
+      - `[KeepConnection <Boolean?>]`: 
+      - `[Level <Int32?>]`: 
+      - `[Message <Int32?>]`: 
+      - `[Parameters <ISrtApiModelsApiSysLogDatabaseTargetParameters>]`: Dictionary of <string>
+        - `[(Any) <String>]`: This indicates any property can be added to this object.
+      - `[Port <Int32?>]`: 
+      - `[Severity <Int32?>]`: 
+      - `[UseTransaction <Boolean?>]`: 
+    - `[DescriptionOfTarget <String>]`: 
+    - `[Enabled <Int32?>]`: 
+    - `[Id <Int32?>]`: 
+    - `[LogFileTarget <ISrtApiModelsApiSysLogFileTarget>]`: 
+      - `[ArchiveAboveSize <Int32?>]`: 
+      - `[ArchiveEvery <String>]`: 
+      - `[ArchiveLogFileDirPath <String>]`: 
+      - `[ArchiveLogFileName <String>]`: 
+      - `[ArchiveNumbering <String>]`: 
+      - `[ArchiveOldFileOnStartup <Int32?>]`: 
+      - `[CreateDirs <Boolean?>]`: 
+      - `[Encoding <String>]`: 
+      - `[FileTargetFooter <String>]`: 
+      - `[FileTargetHeader <String>]`: 
+      - `[KeepFileOpen <Boolean?>]`: 
+      - `[LogFileName <String>]`: 
+      - `[LogFilePath <String>]`: 
+      - `[MaxArchiveDays <Int32?>]`: 
+      - `[MaxArchiveFiles <Int32?>]`: 
+      - `[SelectedLayoutId <Int32?>]`: 
+      - `[WriteBom <Boolean?>]`: 
+    - `[Loggly <ISrtApiModelsApiSysLogLogglyTarget>]`: 
+      - `[ApplicationName <String>]`: 
+      - `[CustomerToken <String>]`: 
+      - `[EndpointHostname <String>]`: 
+      - `[EndpointPort <String>]`: 
+      - `[ForwardedForIP <String>]`: 
+      - `[LogTransport <String>]`: 
+      - `[SelectedLayoutId <Int32?>]`: 
+    - `[NameOfTarget <String>]`: 
+    - `[SelectedTarget <String>]`: 
+    - `[SyslogServerTarget <ISrtApiModelsApiSyslogServerTarget>]`: 
+      - `[DestinationIPAddress <String>]`: 
+      - `[Facility <String>]`: 
+      - `[PortNo <String>]`: 
+      - `[Protocol <String>]`: 
+      - `[SeverityLevel <String>]`: 
+      - `[SyslogMessage <String>]`: 
+  - `[TcpLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
+  - `[TcpNonSecuredEnabled <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
   - `[TlsEnabled <Int32?>]`: 
   - `[TlsLanHost <ISrtApiModelsApiHostPoco>]`: Defines the host name and port for a tcp endpoint
@@ -1840,6 +2127,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacList <String[]>]`: 
   - `[MfaEnabled <Int32?>]`: 
   - `[MfaMode <Int32?>]`: 
+  - `[SshRsaHostKeyAlgEnable <Int32?>]`: 
   - `[SshWindowSizeKb <Int32?>]`: 
   - `[UseCompression <Int32?>]`: 
 

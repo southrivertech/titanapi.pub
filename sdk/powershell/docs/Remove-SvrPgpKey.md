@@ -15,13 +15,13 @@ Deletes a Pgp key and returns the current list of Pgp keys
 ### Delete (Default)
 ```
 Remove-SvrPgpKey -AdminUrl <String> -PgpKeyGuid <String> -ServerGuid <String> [-UserGroupGuid <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-UserGroupGuid <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-SvrPgpKey -AdminUrl <String> -InputObject <ITitanApiIdentity> [-UserGroupGuid <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,21 +68,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,6 +157,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Titan.API.Models.ISrtApiModelsApiResult
+
+### Titan.API.Models.ISrtApiModelsApiResultPgpKeyList
 
 ## NOTES
 

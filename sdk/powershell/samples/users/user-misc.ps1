@@ -13,8 +13,10 @@ $up.Response.MemberGroups.Keys
 $up.Response.Ftp.Enabled = 0
 
 # Just the Ftp poco
-$up2 = Set-UsrParam -serverGUID $serverName -authGUID native -userGUID $userName -Ftp $up.Response.Ftp -byUserName -AdminUrl localhost:31443
+$up2 = Set-UsrParam -ServerGUID $serverName -AuthGUID native -AdminUrl localhost:31443 -UserGUID $userName -Ftp $up.Response.Ftp -byUserName
 $up2.Response.Ftp | Format-List
+
+Write-Host "poco set for ftp"
 
 # get users homedir
 $r = Start-UsrAction -ServerGuid $serverName -AuthGuid native -UserGuid $userName -byUserName -Action getHomeDir -AdminUrl localhost:31443

@@ -15,8 +15,8 @@ Send login credentials and an optional ticket ID and receive an access token in 
 
 ### LoginExpanded (Default)
 ```
-Invoke-Login -AdminUrl <String> [-PassWord <String>] [-Ticket <String>] [-UserName <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-Login -AdminUrl <String> [-IsChallenge] [-PassWord <String>] [-Ticket <String>] [-UserName <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Login
@@ -69,6 +69,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsChallenge
+Indicates if multi-factor authentication is required for the user.When true, an authentication code must be provided instead of a password.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: LoginExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -171,6 +186,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `BODY <ISrtApiModelsApiAuthRequest>`: Contains information needed by the /Login endpoint
+  - `[IsChallenge <Boolean?>]`: Indicates if multi-factor authentication is required for the user.         When true, an authentication code must be provided instead of a password.
   - `[PassWord <String>]`: User's password
   - `[Ticket <String>]`: An optional Ticket ID
   - `[UserName <String>]`: User's username

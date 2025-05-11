@@ -223,7 +223,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[SessionList <ISrtApiModelsApiSessionInfo[]>]`: 
     - `[ClientIP <String>]`: 
     - `[CreatedAt <Int64?>]`: 
+    - `[CreatedAtToString <String>]`: 
     - `[IdleTimeMS <Int64?>]`: 
+    - `[IdleTimeToString <String>]`: 
     - `[LastCommand <String>]`: 
     - `[Protocol <String>]`: 
     - `[SessionId <String>]`: 
@@ -252,7 +254,9 @@ To create the parameters described below, construct a hash table containing the 
 `SESSIONLIST <ISrtApiModelsApiSessionInfo[]>`: .
   - `[ClientIP <String>]`: 
   - `[CreatedAt <Int64?>]`: 
+  - `[CreatedAtToString <String>]`: 
   - `[IdleTimeMS <Int64?>]`: 
+  - `[IdleTimeToString <String>]`: 
   - `[LastCommand <String>]`: 
   - `[Protocol <String>]`: 
   - `[SessionId <String>]`: 

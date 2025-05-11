@@ -15,8 +15,8 @@ Exports the certificate identified by tlsKeyGUID
 ### ExportExpanded (Default)
 ```
 Export-SvrTlKey -AdminUrl <String> -ServerGuid <String> -TlsKeyGuid <String> -OutFile <String> [-ExportCsr]
- [-ExportPrivateKey] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ConfirmPrivateKeyPassword <String>] [-ExportPrivateKey] [-PrivateKeyPassword <String>]
+ [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Export
@@ -35,8 +35,8 @@ Export-SvrTlKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtA
 ### ExportViaIdentityExpanded
 ```
 Export-SvrTlKey -AdminUrl <String> -InputObject <ITitanApiIdentity> -OutFile <String> [-ExportCsr]
- [-ExportPrivateKey] [-PrivateKeyPassword <String>] [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ConfirmPrivateKeyPassword <String>] [-ExportPrivateKey] [-PrivateKeyPassword <String>]
+ [-UserGroupGuid <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,6 +83,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ConfirmPrivateKeyPassword
+.
+
+```yaml
+Type: System.String
+Parameter Sets: ExportExpanded, ExportViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -276,6 +291,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `BODY <ISrtApiModelsApiTlsKeyExport>`: .
+  - `[ConfirmPrivateKeyPassword <String>]`: 
   - `[ExportPrivateKey <Boolean?>]`: 
   - `[PrivateKeyPassword <String>]`: 
   - `[UserGroupGuid <String>]`: 

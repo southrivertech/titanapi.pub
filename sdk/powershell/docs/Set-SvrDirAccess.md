@@ -15,8 +15,8 @@ Update settings for a directory access entry at either the server, user or group
 ### SetExpanded (Default)
 ```
 Set-SvrDirAccess -AdminUrl <String> -DirAccessGuid <String> -OwnerGuid <String> -ServerGuid <String>
- [-AllowAce <String>] [-DenyAce <String>] [-Id <String>] [-Level <String>] [-Path <String>]
- [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AllowAce <String>] [-DenyAce <String>] [-Id <String>] [-Level <String>] [-ObjectGuid <String>]
+ [-Path <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
@@ -34,8 +34,8 @@ Set-SvrDirAccess -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrt
 ### SetViaIdentityExpanded
 ```
 Set-SvrDirAccess -AdminUrl <String> -InputObject <ITitanApiIdentity> [-AllowAce <String>] [-DenyAce <String>]
- [-Id <String>] [-Level <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Level <String>] [-ObjectGuid <String>] [-Path <String>] [-UserGroupGuid <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -176,6 +176,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ObjectGuid
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -OwnerGuid
 The owner GUID (server, group, or user)
 
@@ -296,6 +311,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DenyAce <String>]`: 
   - `[Id <String>]`: 
   - `[Level <String>]`: 
+  - `[ObjectGuid <String>]`: 
   - `[Path <String>]`: 
   - `[UserGroupGuid <String>]`: 
 

@@ -1,4 +1,4 @@
-$myserver = "myserver"
+$myserver = "junk"
 
 # List current IP Ban list
 Write-Host "Current IP Ban list:"
@@ -6,7 +6,7 @@ $ipBanList = (Get-SvrIpBanList -serverGUID $myserver -AdminUrl localhost:31443).
 $ipBanList.IPBans | Format-List
 
 # quick way to get server guid
-$serverState = Get-SvrState -serverGUID $myserver
+$serverState = Get-SvrState -serverGUID $myserver -AdminUrl localhost:31443
 $serverGuid = $serverState.Response.ServerGuid
 
 # create new IpBan object
@@ -21,8 +21,8 @@ $ipBan.EndTimeUtc = 0       # 0 means ban forever, non zero is ban until time se
 $ipBanList.IPBans += $ipBan
 
 # set it on server
-Set-SvrIpBanList -serverGUID $myserver -Body $ipBanList
+Set-SvrIpBanList -serverGUID $myserver -Body $ipBanList -AdminUrl localhost:31443
 
 Write-Host "New IP Ban list:"
-$ipBanList = (Get-SvrIpBanList -serverGUID $myserver).Response
+$ipBanList = (Get-SvrIpBanList -serverGUID $myserver -AdminUrl localhost:31443).Response
 $ipBanList.IPBans | Format-List
