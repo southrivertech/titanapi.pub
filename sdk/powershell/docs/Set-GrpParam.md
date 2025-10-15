@@ -669,7 +669,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[BanFileTypesList <String[]>]`: 
     - `[DelMetaWithFiles <Int32?>]`: 
     - `[DelPartFiles <Int32?>]`: 
-    - `[HideInaccessibleDirs <Int32?>]`: 
+    - `[HideInaccessibleFolders <Int32?>]`: 
     - `[SecureFileDelete <Int32?>]`: 
     - `[ShowHiddenFiles <Int32?>]`: 
     - `[WriteCacheEnabled <Int32?>]`: 
@@ -781,7 +781,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[BanFileTypesList <String[]>]`: 
   - `[DelMetaWithFiles <Int32?>]`: 
   - `[DelPartFiles <Int32?>]`: 
-  - `[HideInaccessibleDirs <Int32?>]`: 
+  - `[HideInaccessibleFolders <Int32?>]`: 
   - `[SecureFileDelete <Int32?>]`: 
   - `[ShowHiddenFiles <Int32?>]`: 
   - `[WriteCacheEnabled <Int32?>]`: 
@@ -837,7 +837,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PgpKeyGuid <String>]`: The key to delete
   - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
-  - `[ServerGuid <String>]`: The server to list files for
+  - `[ServerGuid <String>]`: 
   - `[ServerNodeGuid <String>]`: Server Node GUID
   - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete

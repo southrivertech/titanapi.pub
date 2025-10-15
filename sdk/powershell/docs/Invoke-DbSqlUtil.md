@@ -16,8 +16,8 @@ The following\r\nmethods are allowed by setting \"Method\" to \"datasources\" | 
 ### DbExpanded (Default)
 ```
 Invoke-DbSqlUtil -AdminUrl <String> [-Database <String>] [-DatabaseType <String>] [-ExistingDatabase]
- [-Instance <String>] [-IntegratedSecurity] [-ListDatabases] [-Method <String>] [-PassWord <String>]
- [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Instance <String>] [-IntegratedSecurity] [-ListDatabases] [-LogDb <String>] [-Method <String>]
+ [-PassWord <String>] [-PortNo <Int32>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Db
@@ -164,6 +164,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LogDb
+.
+
+```yaml
+Type: System.String
+Parameter Sets: DbExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Method
 .
 
@@ -184,6 +199,21 @@ User's password
 
 ```yaml
 Type: System.String
+Parameter Sets: DbExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PortNo
+.
+
+```yaml
+Type: System.Int32
 Parameter Sets: DbExpanded
 Aliases:
 
@@ -269,8 +299,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Instance <String>]`: 
   - `[IntegratedSecurity <Boolean?>]`: if true then integreated windows security is used and username and password are ignored
   - `[ListDatabases <Boolean?>]`: 
+  - `[LogDb <String>]`: 
   - `[Method <String>]`: 
   - `[PassWord <String>]`: User's password
+  - `[PortNo <Int32?>]`: 
   - `[UserName <String>]`: User's username
 
 ## RELATED LINKS

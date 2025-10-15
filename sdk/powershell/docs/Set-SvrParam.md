@@ -15,9 +15,10 @@ Set server settings
 ### SetExpanded (Default)
 ```
 Set-SvrParam -AdminUrl <String> -ServerGuid <String> [-Fields <String>]
- [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]
- [-Av <ISrtApiModelsApiServerParamsAvPoco>] [-Brand <ISrtApiModelsApiServerParamsBrandPoco>]
- [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+ [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-AiConfiguration <ISrtApiModelsApiServerParamsAiConfigPoco>]
+ [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>] [-Av <ISrtApiModelsApiServerParamsAvPoco>]
+ [-Brand <ISrtApiModelsApiServerParamsBrandPoco>] [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+ [-Connector <ISrtApiModelsApiServerParamsConnectorPoco[]>]
  [-CountryAccess <ISrtApiModelsApiServerParamsCountryAccessPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiServerParamsDavPoco>] [-Dmz <ISrtApiModelsApiServerParamsDmzPoco[]>]
  [-DmzSvr <ISrtApiModelsApiServerParamsDmzSvrPoco>] [-Email <ISrtApiModelsApiServerParamsEmailPoco>]
@@ -25,15 +26,16 @@ Set-SvrParam -AdminUrl <String> -ServerGuid <String> [-Fields <String>]
  [-Ftp <ISrtApiModelsApiServerParamsFtpPoco>] [-Ftps <ISrtApiModelsApiServerParamsFtpsPoco>]
  [-General <ISrtApiModelsApiServerParamsGeneralPoco>] [-Http <ISrtApiModelsApiServerParamsHttpPoco>]
  [-IcapSvr <ISrtApiModelsApiServerParamsIcapSvrPoco>] [-IPAccess <ISrtApiModelsApiServerParamsIPAccessPoco>]
- [-IPSecurity <ISrtApiModelsApiServerParamsIPSecurityPoco>] [-Log <ISrtApiModelsApiServerParamsLogPoco>]
- [-Msg <ISrtApiModelsApiServerParamsMsgPoco>] [-MulTen <ISrtApiModelsApiServerParamsMulTenPoco>]
- [-Nodes <ISrtApiModelsApiServerParamsNodesPoco[]>] [-Pci <ISrtApiModelsApiServerParamsPciPoco>]
- [-Pgp <ISrtApiModelsApiServerParamsPgpPoco>] [-Quota <ISrtApiModelsApiServerParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiServerParamsRolePoco>] [-ServerGuid1 <String>] [-ServerName <String>]
- [-ServerNodeGuid <String>] [-ServerNodeName <String>] [-Sfs <ISrtApiModelsApiServerParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiServerParamsSftpPoco>] [-SlSvr <ISrtApiModelsApiServerParamsSlSvrPoco>]
- [-Ssh <ISrtApiModelsApiServerParamsSshPoco>] [-Stats <ISrtApiModelsApiServerParamsStatsPoco>]
- [-Unc <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IPSecurity <ISrtApiModelsApiServerParamsIPSecurityPoco>] [-Job <ISrtApiModelsApiServerParamsJobPoco[]>]
+ [-Log <ISrtApiModelsApiServerParamsLogPoco>] [-Msg <ISrtApiModelsApiServerParamsMsgPoco>]
+ [-MulTen <ISrtApiModelsApiServerParamsMulTenPoco>] [-Nodes <ISrtApiModelsApiServerParamsNodesPoco[]>]
+ [-Pci <ISrtApiModelsApiServerParamsPciPoco>] [-Pgp <ISrtApiModelsApiServerParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiServerParamsQuotaPoco>] [-Role <ISrtApiModelsApiServerParamsRolePoco>]
+ [-ServerGuid1 <String>] [-ServerName <String>] [-ServerNodeGuid <String>] [-ServerNodeName <String>]
+ [-Sfs <ISrtApiModelsApiServerParamsSfsPoco>] [-Sftp <ISrtApiModelsApiServerParamsSftpPoco>]
+ [-SlSvr <ISrtApiModelsApiServerParamsSlSvrPoco>] [-Ssh <ISrtApiModelsApiServerParamsSshPoco>]
+ [-Stats <ISrtApiModelsApiServerParamsStatsPoco>] [-Unc <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
@@ -51,9 +53,10 @@ Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> -Body <ISrtApiM
 ### SetViaIdentityExpanded
 ```
 Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ServerGuid <String>] [-Fields <String>]
- [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]
- [-Av <ISrtApiModelsApiServerParamsAvPoco>] [-Brand <ISrtApiModelsApiServerParamsBrandPoco>]
- [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+ [-Acct <ISrtApiModelsApiServerParamsAcctPoco>] [-AiConfiguration <ISrtApiModelsApiServerParamsAiConfigPoco>]
+ [-Auth <ISrtApiModelsApiServerParamsAuthPoco[]>] [-Av <ISrtApiModelsApiServerParamsAvPoco>]
+ [-Brand <ISrtApiModelsApiServerParamsBrandPoco>] [-ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]
+ [-Connector <ISrtApiModelsApiServerParamsConnectorPoco[]>]
  [-CountryAccess <ISrtApiModelsApiServerParamsCountryAccessPoco>] [-Cxn <ISrtApiModelsApiServerParamsCxnPoco>]
  [-Dav <ISrtApiModelsApiServerParamsDavPoco>] [-Dmz <ISrtApiModelsApiServerParamsDmzPoco[]>]
  [-DmzSvr <ISrtApiModelsApiServerParamsDmzSvrPoco>] [-Email <ISrtApiModelsApiServerParamsEmailPoco>]
@@ -61,15 +64,16 @@ Set-SvrParam -AdminUrl <String> -InputObject <ITitanApiIdentity> [-ServerGuid <S
  [-Ftp <ISrtApiModelsApiServerParamsFtpPoco>] [-Ftps <ISrtApiModelsApiServerParamsFtpsPoco>]
  [-General <ISrtApiModelsApiServerParamsGeneralPoco>] [-Http <ISrtApiModelsApiServerParamsHttpPoco>]
  [-IcapSvr <ISrtApiModelsApiServerParamsIcapSvrPoco>] [-IPAccess <ISrtApiModelsApiServerParamsIPAccessPoco>]
- [-IPSecurity <ISrtApiModelsApiServerParamsIPSecurityPoco>] [-Log <ISrtApiModelsApiServerParamsLogPoco>]
- [-Msg <ISrtApiModelsApiServerParamsMsgPoco>] [-MulTen <ISrtApiModelsApiServerParamsMulTenPoco>]
- [-Nodes <ISrtApiModelsApiServerParamsNodesPoco[]>] [-Pci <ISrtApiModelsApiServerParamsPciPoco>]
- [-Pgp <ISrtApiModelsApiServerParamsPgpPoco>] [-Quota <ISrtApiModelsApiServerParamsQuotaPoco>]
- [-Role <ISrtApiModelsApiServerParamsRolePoco>] [-ServerName <String>] [-ServerNodeGuid <String>]
- [-ServerNodeName <String>] [-Sfs <ISrtApiModelsApiServerParamsSfsPoco>]
- [-Sftp <ISrtApiModelsApiServerParamsSftpPoco>] [-SlSvr <ISrtApiModelsApiServerParamsSlSvrPoco>]
- [-Ssh <ISrtApiModelsApiServerParamsSshPoco>] [-Stats <ISrtApiModelsApiServerParamsStatsPoco>]
- [-Unc <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IPSecurity <ISrtApiModelsApiServerParamsIPSecurityPoco>] [-Job <ISrtApiModelsApiServerParamsJobPoco[]>]
+ [-Log <ISrtApiModelsApiServerParamsLogPoco>] [-Msg <ISrtApiModelsApiServerParamsMsgPoco>]
+ [-MulTen <ISrtApiModelsApiServerParamsMulTenPoco>] [-Nodes <ISrtApiModelsApiServerParamsNodesPoco[]>]
+ [-Pci <ISrtApiModelsApiServerParamsPciPoco>] [-Pgp <ISrtApiModelsApiServerParamsPgpPoco>]
+ [-Quota <ISrtApiModelsApiServerParamsQuotaPoco>] [-Role <ISrtApiModelsApiServerParamsRolePoco>]
+ [-ServerName <String>] [-ServerNodeGuid <String>] [-ServerNodeName <String>]
+ [-Sfs <ISrtApiModelsApiServerParamsSfsPoco>] [-Sftp <ISrtApiModelsApiServerParamsSftpPoco>]
+ [-SlSvr <ISrtApiModelsApiServerParamsSlSvrPoco>] [-Ssh <ISrtApiModelsApiServerParamsSshPoco>]
+ [-Stats <ISrtApiModelsApiServerParamsStatsPoco>] [-Unc <ISrtApiModelsApiServerParamsUncPoco[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,6 +117,22 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AiConfiguration
+.
+To construct, see NOTES section for AICONFIGURATION properties and create a hash table.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiServerParamsAiConfigPoco
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -189,6 +209,22 @@ To construct, see NOTES section for CLUSTERPARAMS properties and create a hash t
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerClusterParamsPoco
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Connector
+.
+To construct, see NOTES section for CONNECTOR properties and create a hash table.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiServerParamsConnectorPoco[]
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -460,6 +496,22 @@ To construct, see NOTES section for IPSECURITY properties and create a hash tabl
 
 ```yaml
 Type: Titan.API.Models.ISrtApiModelsApiServerParamsIPSecurityPoco
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Job
+.
+To construct, see NOTES section for JOB properties and create a hash table.
+
+```yaml
+Type: Titan.API.Models.ISrtApiModelsApiServerParamsJobPoco[]
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -852,6 +904,48 @@ To create the parameters described below, construct a hash table containing the 
   - `[PasswordHistoryCnt <Int32?>]`: 
   - `[PasswordHistoryEnabled <Int32?>]`: 
 
+`AICONFIGURATION <ISrtApiModelsApiServerParamsAiConfigPoco>`: .
+  - `[AiSampleQueries <ISrtApiModelsApiAiSampleQuery[]>]`: 
+    - `[DescriptionOfSampleQuery <String>]`: 
+    - `[IsUserDefined <Boolean?>]`: 
+    - `[NameOfSampleQuery <String>]`: 
+    - `[SqlDbType <String>]`: 
+    - `[SqlQueryOfSampleQuery <String>]`: 
+  - `[AiServiceEndpoint <String>]`: 
+  - `[AiServicePassword <String>]`: 
+  - `[AiServiceProviderAiassistant <String>]`: 
+  - `[AiServiceProviderAiassistantDlp <String>]`: 
+  - `[AiServiceProviderDocumentScanning <String>]`: 
+  - `[AiServiceProviderDocumentSummary <String>]`: 
+  - `[AiServiceUserName <String>]`: 
+  - `[AwsAccessId <String>]`: 
+  - `[AwsModelIdDocumentSummary <String>]`: 
+  - `[AwsModelIdNaturalQuery <String>]`: 
+  - `[AwsSecretKey <String>]`: 
+  - `[AzureBlobStorageContainerUrl <String>]`: 
+  - `[AzureDocumentIntelligenceAccessKey <String>]`: 
+  - `[AzureDocumentIntelligenceEndpoint <String>]`: 
+  - `[AzureDocumentSummarizeAccessKey <String>]`: 
+  - `[AzureDocumentSummarizeEndpoint <String>]`: 
+  - `[AzureOpenAiAccessKey <String>]`: 
+  - `[AzureOpenAiDeploymentName <String>]`: 
+  - `[AzureOpenAiEndpoint <String>]`: 
+  - `[EnableAiService <Boolean?>]`: 
+  - `[FileDataType <String>]`: 
+  - `[GcpModelApiendPoint <String>]`: 
+  - `[GeminiApiAccessKey <String>]`: 
+  - `[GeminiModelName <String>]`: 
+  - `[IsDocumentViewerEnabled <Boolean?>]`: 
+  - `[IsGlobalAiConfiguration <Boolean?>]`: 
+  - `[OllamaApiEndpoint <String>]`: 
+  - `[OllamaModelApiEndpoint <String>]`: 
+  - `[OllamaModelName <String>]`: 
+  - `[OllamaPullModelApiEndpoint <String>]`: 
+  - `[OpenAiModelApiendPoint <String>]`: 
+  - `[OpenAiModelName <String>]`: 
+  - `[OpenAiapiAccessKey <String>]`: 
+  - `[OpenAiapiEndpoint <String>]`: 
+
 `AUTH <ISrtApiModelsApiServerParamsAuthPoco[]>`: .
   - `[AdHocPoco <ISrtApiModelsApiAuthDataAdHocPoco>]`: 
     - `[AuthDesc <String>]`: 
@@ -875,6 +969,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AttrUserId <String>]`: 
     - `[AttrUserMemberOf <String>]`: 
     - `[AttrUserName <String>]`: 
+    - `[AttrUserPhoneNumber <String>]`: 
     - `[AttrUserPrimaryGid <String>]`: 
     - `[AuthDesc <String>]`: 
     - `[AuthGuid <String>]`: 
@@ -924,6 +1019,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AttrUserId <String>]`: 
     - `[AttrUserMemberOf <String>]`: 
     - `[AttrUserName <String>]`: 
+    - `[AttrUserPhoneNumber <String>]`: 
     - `[AttrUserPrimaryGid <String>]`: 
     - `[AuthDesc <String>]`: 
     - `[AuthGuid <String>]`: 
@@ -1019,6 +1115,47 @@ To create the parameters described below, construct a hash table containing the 
     - `[PasswordExpirationInterval <Int32?>]`: 
     - `[PasswordHistoryCnt <Int32?>]`: 
     - `[PasswordHistoryEnabled <Int32?>]`: 
+  - `[AiConfiguration <ISrtApiModelsApiServerParamsAiConfigPoco>]`: 
+    - `[AiSampleQueries <ISrtApiModelsApiAiSampleQuery[]>]`: 
+      - `[DescriptionOfSampleQuery <String>]`: 
+      - `[IsUserDefined <Boolean?>]`: 
+      - `[NameOfSampleQuery <String>]`: 
+      - `[SqlDbType <String>]`: 
+      - `[SqlQueryOfSampleQuery <String>]`: 
+    - `[AiServiceEndpoint <String>]`: 
+    - `[AiServicePassword <String>]`: 
+    - `[AiServiceProviderAiassistant <String>]`: 
+    - `[AiServiceProviderAiassistantDlp <String>]`: 
+    - `[AiServiceProviderDocumentScanning <String>]`: 
+    - `[AiServiceProviderDocumentSummary <String>]`: 
+    - `[AiServiceUserName <String>]`: 
+    - `[AwsAccessId <String>]`: 
+    - `[AwsModelIdDocumentSummary <String>]`: 
+    - `[AwsModelIdNaturalQuery <String>]`: 
+    - `[AwsSecretKey <String>]`: 
+    - `[AzureBlobStorageContainerUrl <String>]`: 
+    - `[AzureDocumentIntelligenceAccessKey <String>]`: 
+    - `[AzureDocumentIntelligenceEndpoint <String>]`: 
+    - `[AzureDocumentSummarizeAccessKey <String>]`: 
+    - `[AzureDocumentSummarizeEndpoint <String>]`: 
+    - `[AzureOpenAiAccessKey <String>]`: 
+    - `[AzureOpenAiDeploymentName <String>]`: 
+    - `[AzureOpenAiEndpoint <String>]`: 
+    - `[EnableAiService <Boolean?>]`: 
+    - `[FileDataType <String>]`: 
+    - `[GcpModelApiendPoint <String>]`: 
+    - `[GeminiApiAccessKey <String>]`: 
+    - `[GeminiModelName <String>]`: 
+    - `[IsDocumentViewerEnabled <Boolean?>]`: 
+    - `[IsGlobalAiConfiguration <Boolean?>]`: 
+    - `[OllamaApiEndpoint <String>]`: 
+    - `[OllamaModelApiEndpoint <String>]`: 
+    - `[OllamaModelName <String>]`: 
+    - `[OllamaPullModelApiEndpoint <String>]`: 
+    - `[OpenAiModelApiendPoint <String>]`: 
+    - `[OpenAiModelName <String>]`: 
+    - `[OpenAiapiAccessKey <String>]`: 
+    - `[OpenAiapiEndpoint <String>]`: 
   - `[Auth <ISrtApiModelsApiServerParamsAuthPoco[]>]`: 
     - `[AdHocPoco <ISrtApiModelsApiAuthDataAdHocPoco>]`: 
       - `[AuthDesc <String>]`: 
@@ -1042,6 +1179,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AttrUserId <String>]`: 
       - `[AttrUserMemberOf <String>]`: 
       - `[AttrUserName <String>]`: 
+      - `[AttrUserPhoneNumber <String>]`: 
       - `[AttrUserPrimaryGid <String>]`: 
       - `[AuthDesc <String>]`: 
       - `[AuthGuid <String>]`: 
@@ -1091,6 +1229,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AttrUserId <String>]`: 
       - `[AttrUserMemberOf <String>]`: 
       - `[AttrUserName <String>]`: 
+      - `[AttrUserPhoneNumber <String>]`: 
       - `[AttrUserPrimaryGid <String>]`: 
       - `[AuthDesc <String>]`: 
       - `[AuthGuid <String>]`: 
@@ -1186,6 +1325,117 @@ To create the parameters described below, construct a hash table containing the 
       - `[ThemeGuid <String>]`: 
   - `[ClusterParams <ISrtApiModelsApiServerClusterParamsPoco>]`: 
     - `[ClusteredIPAddress <String>]`: 
+  - `[Connector <ISrtApiModelsApiServerParamsConnectorPoco[]>]`: 
+    - `[AccessKey <String>]`: 
+    - `[AccessToken <String>]`: 
+    - `[AllowUsersToMapDrive <Boolean?>]`: 
+    - `[AutoCheckoutEnabled <Boolean?>]`: 
+    - `[AutoCheckoutFileTypes <String>]`: 
+    - `[BrowseDriveOnConnect <Boolean?>]`: 
+    - `[BucketList <String[]>]`: 
+    - `[BucketName <String>]`: 
+    - `[BypassProxyServer <Boolean?>]`: 
+    - `[CacheFolder <String>]`: 
+    - `[CacheParams <ISrtApiModelsApiServerCacheParamsPoco>]`: 
+      - `[CacheLimitUnit <Int32?>]`: 
+      - `[CacheSizeLimitMb <Int32?>]`: 
+      - `[CustomizeCacheSettings <Boolean?>]`: 
+      - `[Directory <ISrtApiModelsApiServerCacheFileParamsPoco>]`: 
+        - `[Enable <Boolean?>]`: 
+        - `[ExpireTime <Int32?>]`: 
+        - `[ExpireTimeUnit <Int32?>]`: 
+        - `[FlushOnConnect <Boolean?>]`: 
+        - `[MaxFileCount <Int32?>]`: 
+        - `[UpdateStaleFilesInBackground <Boolean?>]`: 
+        - `[ValidateMode <Int32?>]`: 
+        - `[ValidateThrottleIntervalSeconds <Int32?>]`: 
+        - `[ValidateThrottleIntervalUnit <Int32?>]`: 
+      - `[EnableCacheSizeLimit <Boolean?>]`: 
+      - `[File <ISrtApiModelsApiServerCacheFileParamsPoco>]`: 
+      - `[ServerChangeListEnable <Boolean?>]`: 
+      - `[ServerChangeListPollIntervalSeconds <Int32?>]`: 
+      - `[UseDirectoryListToValidate <Boolean?>]`: 
+    - `[CacheTemporaryOfficeFiles <Boolean?>]`: 
+    - `[CertificateAutoAccept <Boolean?>]`: 
+    - `[CertificateEnable <Boolean?>]`: 
+    - `[CertificateFile <String>]`: 
+    - `[CertificatePassword <String>]`: 
+    - `[CertificateToAcceptFromServer <String>]`: 
+    - `[ChangeTokenForSettings <String>]`: 
+    - `[CheckoutOwner <String>]`: 
+    - `[CheckoutTimeout <Int32?>]`: 
+    - `[ChooseBasicAuthAlways <Boolean?>]`: 
+    - `[ConnectAtLogin <Boolean?>]`: 
+    - `[ConnectBeforeLogin <Boolean?>]`: 
+    - `[ConnectionLimit <Int32?>]`: 
+    - `[ConnectionTimeout <Int32?>]`: 
+    - `[ConnectorConfig <String>]`: 
+    - `[ConnectorName <String>]`: 
+    - `[DefaultDirectory <String>]`: 
+    - `[DevicelessConnection <Boolean?>]`: 
+    - `[DriveLetter <String>]`: 
+    - `[DriveLetterGlobal <Boolean?>]`: 
+    - `[DriveLetterUsed <String>]`: 
+    - `[DriveReadOnly <Boolean?>]`: 
+    - `[EnableThumbnails <Boolean?>]`: 
+    - `[FileSpec <String>]`: 
+    - `[FlushCacheOnConnect <Boolean?>]`: 
+    - `[FtpAccount <String>]`: 
+    - `[FtpInitialCommands <String>]`: 
+    - `[FtpMlsdEnable <Boolean?>]`: 
+    - `[FtpPassive <Boolean?>]`: 
+    - `[FtpShowFilesStartingWithPeriod <Boolean?>]`: 
+    - `[FtpSslMode <Int32?>]`: 
+    - `[FtpUtf8Enable <Boolean?>]`: 
+    - `[GraphAuthV1 <Boolean?>]`: 
+    - `[GraphGovCloud <Boolean?>]`: 
+    - `[Guid <String>]`: 
+    - `[HostKeyAuthenticate <Boolean?>]`: 
+    - `[HostKeyFile <String>]`: 
+    - `[HostKeyPassword <String>]`: 
+    - `[HttpsSsl2 <Boolean?>]`: 
+    - `[HttpsSsl3 <Boolean?>]`: 
+    - `[HttpsTls1 <Boolean?>]`: 
+    - `[HttpsTls11 <Boolean?>]`: 
+    - `[HttpsTls12 <Boolean?>]`: 
+    - `[HttpsTls13 <Boolean?>]`: 
+    - `[IncludeSharedDrives <Boolean?>]`: 
+    - `[IncludeSharedWithMe <Boolean?>]`: 
+    - `[IncludeSubSites <Boolean?>]`: 
+    - `[LocalOnlyFilterList <String>]`: 
+    - `[LockOwner <String>]`: 
+    - `[ManualBucketMode <Boolean?>]`: 
+    - `[PassWord <String>]`: 
+    - `[PersistSessionCookies <Boolean?>]`: 
+    - `[PreservePermissions <Boolean?>]`: 
+    - `[ProjectId <String>]`: 
+    - `[PromptForCredentialsAlways <Boolean?>]`: 
+    - `[PromptForCredentialsWhenEmpty <Boolean?>]`: 
+    - `[QuotaDefault <Int32?>]`: 
+    - `[QuotaDefaultUnit <Int32?>]`: 
+    - `[QuotaEnable <Boolean?>]`: 
+    - `[RefreshToken <String>]`: 
+    - `[Region <String>]`: 
+    - `[RetryFailedTransferCount <Int32?>]`: 
+    - `[RootFolder <String>]`: 
+    - `[RootFolderEnable <Boolean?>]`: 
+    - `[RootFolderServerId <String>]`: 
+    - `[SecretKey <String>]`: 
+    - `[ServerHostKeyAlgorithm <String>]`: 
+    - `[ServerHostKeyAutoAccept <Boolean?>]`: 
+    - `[ServerHostKeyFingerprint <String>]`: 
+    - `[ServerHostKeyFingerprintToAccept <String>]`: 
+    - `[ServerPortEnable <Boolean?>]`: 
+    - `[ServerPortNumber <String>]`: 
+    - `[ServerUrl <String>]`: 
+    - `[SetFileInformationEnable <Boolean?>]`: 
+    - `[SharePointUrl <String>]`: 
+    - `[SiteName <String>]`: 
+    - `[StorageAuthMode <Int32?>]`: 
+    - `[SupportLegacyBucketNames <Boolean?>]`: 
+    - `[UncServerName <String>]`: 
+    - `[UncShareName <String>]`: 
+    - `[UserName <String>]`: 
   - `[CountryAccess <ISrtApiModelsApiServerParamsCountryAccessPoco>]`: 
     - `[AccessKey <String>]`: 
     - `[CountryAccessRules <ISrtApiModelsApiCountryAccessRulePoco[]>]`: 
@@ -1265,7 +1515,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DelPartFiles <Int32?>]`: 
     - `[FileCase <Int32?>]`: 
     - `[FolderCase <Int32?>]`: 
-    - `[HideInaccessibleDirs <Int32?>]`: 
+    - `[HideInaccessibleFolders <Int32?>]`: 
     - `[SecureFileDelete <Int32?>]`: 
     - `[ShowHiddenFiles <Int32?>]`: 
     - `[WriteCacheEnabled <Int32?>]`: 
@@ -1370,9 +1620,167 @@ To create the parameters described below, construct a hash table containing the 
     - `[HackProtInterval <Int32?>]`: 
     - `[HackProtValue <Int32?>]`: 
   - `[IcapSvr <ISrtApiModelsApiServerParamsIcapSvrPoco>]`: 
+    - `[ColumnsChooser <String[]>]`: 
+    - `[DlpCustomPrompt <Int32?>]`: 
+    - `[DlpCustomPromptText <String>]`: 
+    - `[DlpDetectionEnabled <Int32?>]`: 
+    - `[DlpFinancialInformation <Int32?>]`: 
+    - `[DlpMedicalInformation <Int32?>]`: 
+    - `[EnableScanHistory <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
+    - `[MaxPruneDurationMonth <Int32?>]`: 
+    - `[MaximumPruneThreshold <Int32?>]`: 
+    - `[MinimumRecordsToKeep <Int32?>]`: 
+    - `[PruneCheckInterval <Int32?>]`: 
+    - `[PruneScanHistoryEnabled <Int32?>]`: 
     - `[TlsCertGuid <String>]`: 
     - `[TlsEnabled <Int32?>]`: 
+  - `[Job <ISrtApiModelsApiServerParamsJobPoco[]>]`: 
+    - `[Addendum <String>]`: 
+    - `[AdditionalEncryptionKeyId <String>]`: 
+    - `[BeginTime <String>]`: 
+    - `[CacheParams <ISrtApiModelsApiServerCacheParamsPoco>]`: 
+    - `[CalendarId <String>]`: 
+    - `[CommandText <String>]`: 
+    - `[DayOfMonth <String>]`: 
+    - `[DayOfWeek <String>]`: 
+    - `[DeleteZippedFile <Boolean?>]`: 
+    - `[Description <String>]`: 
+    - `[DestinationConnectors <ISrtApiModelsDestinationConnector[]>]`: 
+      - `[Connector <ISrtApiModelsApiServerParamsConnectorPoco>]`: 
+      - `[DestinationConnectorId <String>]`: 
+      - `[Isselected <Boolean?>]`: 
+      - `[SelectedConnection <ISrtApiModelsConnectorConnectionsModel>]`: 
+        - `[Icon <String>]`: 
+        - `[Name <String>]`: 
+      - `[SelectedConnector <ISrtApiModelsIdNameModel>]`: 
+        - `[Id <String>]`: 
+        - `[Name <String>]`: 
+    - `[DestinationDateFormat <String>]`: 
+    - `[DestinationDateType <String>]`: 
+    - `[DestinationFileFormat <String>]`: 
+    - `[EmailNotifications <ISrtApiModelsEmailNotification[]>]`: 
+      - `[Address <String>]`: 
+      - `[NotificationType <String>]`: 
+      - `[SelectedNotification <ISrtApiModelsKeyValueModel>]`: 
+        - `[Key <String>]`: 
+        - `[Value <String>]`: 
+    - `[EncryptionDecryptionKeyId <String>]`: 
+    - `[EncryptionType <String>]`: 
+    - `[EndTime <String>]`: 
+    - `[Exclude <ISrtApiModelsPattern[]>]`: 
+      - `[Id <String>]`: 
+      - `[Include <String>]`: 
+      - `[IsMatchCase <Boolean?>]`: 
+      - `[IsRecursive <Boolean?>]`: 
+      - `[MatchType <String>]`: 
+      - `[PatternName <String>]`: 
+      - `[PatternType <String>]`: 
+    - `[ExecuteCustomPostProcessOnFileTransferJobFailure <Boolean?>]`: 
+    - `[ExecuteUnzipProcessOnFileTransferJobFailure <Boolean?>]`: 
+    - `[Expiration <DateTime?>]`: 
+    - `[FileType <String>]`: 
+    - `[Friday <Boolean?>]`: 
+    - `[Guid <String>]`: 
+    - `[HolidayBehavior <String>]`: 
+    - `[IaAllowDaisyChained <Boolean?>]`: 
+    - `[Include <ISrtApiModelsPattern[]>]`: 
+    - `[IsAddTransactionSpecificSubDirectory <Boolean?>]`: 
+    - `[IsAdvancedTroubleShooting <Boolean?>]`: 
+    - `[IsAllowApi <Boolean?>]`: 
+    - `[IsAllowScriptingAgent <Boolean?>]`: 
+    - `[IsAllowZeroByteFiles <Boolean?>]`: 
+    - `[IsAuthenticate <Boolean?>]`: 
+    - `[IsCompression <Boolean?>]`: 
+    - `[IsConvertToCanonical <Boolean?>]`: 
+    - `[IsDailyWindow <Boolean?>]`: 
+    - `[IsDoPreProcessing <Boolean?>]`: 
+    - `[IsEncryptDecrypt <Boolean?>]`: 
+    - `[IsFailIfFilesNotFound <Boolean?>]`: 
+    - `[IsFailOnAnyError <Boolean?>]`: 
+    - `[IsFollowSymbolicLinks <Boolean?>]`: 
+    - `[IsHighPriorityTaskQueue <Boolean?>]`: 
+    - `[IsIncludeSubfolders <Boolean?>]`: 
+    - `[IsIntegrityProtect <Boolean?>]`: 
+    - `[IsOnePassSignature <Boolean?>]`: 
+    - `[IsRecurseOrder <Boolean?>]`: 
+    - `[IsRecursive <Boolean?>]`: 
+    - `[IsRemoveAsciiArmoring <Boolean?>]`: 
+    - `[IsRemoveDestinationItems <Boolean?>]`: 
+    - `[IsRemoveSourceDate <Boolean?>]`: 
+    - `[IsRemoveSourceSequence <Boolean?>]`: 
+    - `[IsScheduleDisabled <Boolean?>]`: 
+    - `[IsSendDebugEmail <Boolean?>]`: 
+    - `[IsSendDebugMail <Boolean?>]`: 
+    - `[IsSkipPrimary <Boolean?>]`: 
+    - `[IsSlackNotify <Boolean?>]`: 
+    - `[IsStartTime <Boolean?>]`: 
+    - `[IsTeamsNotify <Boolean?>]`: 
+    - `[IsTranslateInvalidCharacters <Boolean?>]`: 
+    - `[IsUseAbbreviatedNotifications <Boolean?>]`: 
+    - `[IsZip <Boolean?>]`: 
+    - `[IscontinueOnFailure <Boolean?>]`: 
+    - `[ItAddendum <String>]`: 
+    - `[JobName <String>]`: 
+    - `[JobType <String>]`: 
+    - `[Location <String>]`: 
+    - `[Monday <Boolean?>]`: 
+    - `[Months <String>]`: 
+    - `[OverwriteType <String>]`: 
+    - `[PostCommandText <String>]`: 
+    - `[PostTimeout <Int32?>]`: 
+    - `[PostTransferAction <String>]`: 
+    - `[PostWorkingDir <String>]`: 
+    - `[Recurrence <Int32?>]`: 
+    - `[RecurrenceType <String>]`: 
+    - `[RetryAttempts <Int32?>]`: 
+    - `[RetryInterval <Int32?>]`: 
+    - `[RunAfterFileTransferJob <String>]`: 
+    - `[RunTaskUsing <String>]`: 
+    - `[RunlinkedDiplomatMftTransactionOnFileTransferJobFailure <Boolean?>]`: 
+    - `[Saturday <Boolean?>]`: 
+    - `[ScriptingAgentPassword <String>]`: 
+    - `[SelectedTimeOption <String>]`: 
+    - `[SignatureKeyId <String>]`: 
+    - `[SlackNotificationType <String>]`: 
+    - `[SlackWebhookUrl <String>]`: 
+    - `[SourceConnector <ISrtApiModelsApiServerParamsConnectorPoco>]`: 
+    - `[SourceConnectorId <String>]`: 
+    - `[SourceDateFormat <String>]`: 
+    - `[SourceDateRange <String>]`: 
+    - `[SourceFileFormat <String>]`: 
+    - `[SourceFiles <ISrtApiModelsSourceFile[]>]`: 
+      - `[DestinationFilename <String>]`: 
+      - `[IsIgnoreFileHandling <Boolean?>]`: 
+      - `[IsMatchCase <Boolean?>]`: 
+      - `[IsPatternRecursive <Boolean?>]`: 
+      - `[IsRequired <Boolean?>]`: 
+      - `[IsUseModifyDate <Boolean?>]`: 
+      - `[MatchType <String>]`: 
+      - `[NumberofFiles <Int32?>]`: 
+      - `[PatternType <String>]`: 
+      - `[SourceFilename <String>]`: 
+    - `[SourceTimeRange <String>]`: 
+    - `[StartDateTime <DateTime?>]`: 
+    - `[StartTime <String>]`: 
+    - `[Sunday <Boolean?>]`: 
+    - `[TeamsNotificationType <String>]`: 
+    - `[TeamsWebhookUrl <String>]`: 
+    - `[Thursday <Boolean?>]`: 
+    - `[Timeout <Int32?>]`: 
+    - `[TransferOrder <String>]`: 
+    - `[Trigger <String>]`: 
+    - `[Tuesday <Boolean?>]`: 
+    - `[Wednesday <Boolean?>]`: 
+    - `[WorkingDir <String>]`: 
+    - `[ZipDateFormat <String>]`: 
+    - `[ZipFile <String>]`: 
+    - `[ZipFilePath <String>]`: 
+    - `[ZipFilenameTemplate <String>]`: 
+    - `[ZipFolderPaths <String>]`: 
+    - `[ZipOverwrite <String>]`: 
+    - `[ZipPassword <String>]`: 
+    - `[ZipType <String>]`: 
   - `[Log <ISrtApiModelsApiServerParamsLogPoco>]`: 
     - `[EnableLogToFile <Int32?>]`: 
     - `[EnableSysLogServer <Int32?>]`: 
@@ -1380,6 +1788,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[LogFieldsW3C <String[]>]`: 
     - `[LogFormat <Int32?>]`: 
     - `[LogLevel <Int32?>]`: 
+    - `[LogMaxArchiveFiles <Int32?>]`: 
     - `[LogMaxSizeMb <Int32?>]`: 
     - `[LogNameUsePrefix <Int32?>]`: 
     - `[LogRotation <Int32?>]`: 
@@ -1524,6 +1933,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DataBaseProvider <String>]`: 
         - `[DatabaseDirPath <String>]`: 
         - `[DatabaseName <String>]`: 
+        - `[DatabaseType <String>]`: 
         - `[DateTime <Int32?>]`: 
         - `[Facility <Int32?>]`: 
         - `[HostAddress <Int32?>]`: 
@@ -1601,9 +2011,19 @@ To create the parameters described below, construct a hash table containing the 
     - `[UseCompression <Int32?>]`: 
   - `[Stats <ISrtApiModelsApiServerParamsStatsPoco>]`: 
     - `[ArchiveBeforePrune <Int32?>]`: 
+    - `[ArchiveCurrentTableEnabled <Int32?>]`: 
+    - `[ArchiveHistoryTableEnabled <Int32?>]`: 
+    - `[EnableViewerMessageHistory <Int32?>]`: 
     - `[Enabled <Int32?>]`: 
     - `[LastArchiveDate <Int64?>]`: 
+    - `[MaxArchiveDurationMonth <Int32?>]`: 
+    - `[MaxArchiveDurationMonthArc <Int32?>]`: 
+    - `[MaximumArchiveThreshold <Int32?>]`: 
+    - `[MaximumArchiveThresholdArc <Int32?>]`: 
+    - `[MinimumRecordsToKeep <Int32?>]`: 
+    - `[MinimumRecordsToKeepArc <Int32?>]`: 
     - `[RotationSchedule <Int32?>]`: 
+    - `[StatsArchiveCheckInterval <Int32?>]`: 
   - `[Unc <ISrtApiModelsApiServerParamsUncPoco[]>]`: 
     - `[BasicCreds <ISrtApiModelsApiCredentialsBasic>]`: 
       - `[Password <String>]`: 
@@ -1643,6 +2063,118 @@ To create the parameters described below, construct a hash table containing the 
 
 `CLUSTERPARAMS <ISrtApiModelsApiServerClusterParamsPoco>`: .
   - `[ClusteredIPAddress <String>]`: 
+
+`CONNECTOR <ISrtApiModelsApiServerParamsConnectorPoco[]>`: .
+  - `[AccessKey <String>]`: 
+  - `[AccessToken <String>]`: 
+  - `[AllowUsersToMapDrive <Boolean?>]`: 
+  - `[AutoCheckoutEnabled <Boolean?>]`: 
+  - `[AutoCheckoutFileTypes <String>]`: 
+  - `[BrowseDriveOnConnect <Boolean?>]`: 
+  - `[BucketList <String[]>]`: 
+  - `[BucketName <String>]`: 
+  - `[BypassProxyServer <Boolean?>]`: 
+  - `[CacheFolder <String>]`: 
+  - `[CacheParams <ISrtApiModelsApiServerCacheParamsPoco>]`: 
+    - `[CacheLimitUnit <Int32?>]`: 
+    - `[CacheSizeLimitMb <Int32?>]`: 
+    - `[CustomizeCacheSettings <Boolean?>]`: 
+    - `[Directory <ISrtApiModelsApiServerCacheFileParamsPoco>]`: 
+      - `[Enable <Boolean?>]`: 
+      - `[ExpireTime <Int32?>]`: 
+      - `[ExpireTimeUnit <Int32?>]`: 
+      - `[FlushOnConnect <Boolean?>]`: 
+      - `[MaxFileCount <Int32?>]`: 
+      - `[UpdateStaleFilesInBackground <Boolean?>]`: 
+      - `[ValidateMode <Int32?>]`: 
+      - `[ValidateThrottleIntervalSeconds <Int32?>]`: 
+      - `[ValidateThrottleIntervalUnit <Int32?>]`: 
+    - `[EnableCacheSizeLimit <Boolean?>]`: 
+    - `[File <ISrtApiModelsApiServerCacheFileParamsPoco>]`: 
+    - `[ServerChangeListEnable <Boolean?>]`: 
+    - `[ServerChangeListPollIntervalSeconds <Int32?>]`: 
+    - `[UseDirectoryListToValidate <Boolean?>]`: 
+  - `[CacheTemporaryOfficeFiles <Boolean?>]`: 
+  - `[CertificateAutoAccept <Boolean?>]`: 
+  - `[CertificateEnable <Boolean?>]`: 
+  - `[CertificateFile <String>]`: 
+  - `[CertificatePassword <String>]`: 
+  - `[CertificateToAcceptFromServer <String>]`: 
+  - `[ChangeTokenForSettings <String>]`: 
+  - `[CheckoutOwner <String>]`: 
+  - `[CheckoutTimeout <Int32?>]`: 
+  - `[ChooseBasicAuthAlways <Boolean?>]`: 
+  - `[ConnectAtLogin <Boolean?>]`: 
+  - `[ConnectBeforeLogin <Boolean?>]`: 
+  - `[ConnectionLimit <Int32?>]`: 
+  - `[ConnectionTimeout <Int32?>]`: 
+  - `[ConnectorConfig <String>]`: 
+  - `[ConnectorName <String>]`: 
+  - `[DefaultDirectory <String>]`: 
+  - `[DevicelessConnection <Boolean?>]`: 
+  - `[DriveLetter <String>]`: 
+  - `[DriveLetterGlobal <Boolean?>]`: 
+  - `[DriveLetterUsed <String>]`: 
+  - `[DriveReadOnly <Boolean?>]`: 
+  - `[EnableThumbnails <Boolean?>]`: 
+  - `[FileSpec <String>]`: 
+  - `[FlushCacheOnConnect <Boolean?>]`: 
+  - `[FtpAccount <String>]`: 
+  - `[FtpInitialCommands <String>]`: 
+  - `[FtpMlsdEnable <Boolean?>]`: 
+  - `[FtpPassive <Boolean?>]`: 
+  - `[FtpShowFilesStartingWithPeriod <Boolean?>]`: 
+  - `[FtpSslMode <Int32?>]`: 
+  - `[FtpUtf8Enable <Boolean?>]`: 
+  - `[GraphAuthV1 <Boolean?>]`: 
+  - `[GraphGovCloud <Boolean?>]`: 
+  - `[Guid <String>]`: 
+  - `[HostKeyAuthenticate <Boolean?>]`: 
+  - `[HostKeyFile <String>]`: 
+  - `[HostKeyPassword <String>]`: 
+  - `[HttpsSsl2 <Boolean?>]`: 
+  - `[HttpsSsl3 <Boolean?>]`: 
+  - `[HttpsTls1 <Boolean?>]`: 
+  - `[HttpsTls11 <Boolean?>]`: 
+  - `[HttpsTls12 <Boolean?>]`: 
+  - `[HttpsTls13 <Boolean?>]`: 
+  - `[IncludeSharedDrives <Boolean?>]`: 
+  - `[IncludeSharedWithMe <Boolean?>]`: 
+  - `[IncludeSubSites <Boolean?>]`: 
+  - `[LocalOnlyFilterList <String>]`: 
+  - `[LockOwner <String>]`: 
+  - `[ManualBucketMode <Boolean?>]`: 
+  - `[PassWord <String>]`: 
+  - `[PersistSessionCookies <Boolean?>]`: 
+  - `[PreservePermissions <Boolean?>]`: 
+  - `[ProjectId <String>]`: 
+  - `[PromptForCredentialsAlways <Boolean?>]`: 
+  - `[PromptForCredentialsWhenEmpty <Boolean?>]`: 
+  - `[QuotaDefault <Int32?>]`: 
+  - `[QuotaDefaultUnit <Int32?>]`: 
+  - `[QuotaEnable <Boolean?>]`: 
+  - `[RefreshToken <String>]`: 
+  - `[Region <String>]`: 
+  - `[RetryFailedTransferCount <Int32?>]`: 
+  - `[RootFolder <String>]`: 
+  - `[RootFolderEnable <Boolean?>]`: 
+  - `[RootFolderServerId <String>]`: 
+  - `[SecretKey <String>]`: 
+  - `[ServerHostKeyAlgorithm <String>]`: 
+  - `[ServerHostKeyAutoAccept <Boolean?>]`: 
+  - `[ServerHostKeyFingerprint <String>]`: 
+  - `[ServerHostKeyFingerprintToAccept <String>]`: 
+  - `[ServerPortEnable <Boolean?>]`: 
+  - `[ServerPortNumber <String>]`: 
+  - `[ServerUrl <String>]`: 
+  - `[SetFileInformationEnable <Boolean?>]`: 
+  - `[SharePointUrl <String>]`: 
+  - `[SiteName <String>]`: 
+  - `[StorageAuthMode <Int32?>]`: 
+  - `[SupportLegacyBucketNames <Boolean?>]`: 
+  - `[UncServerName <String>]`: 
+  - `[UncShareName <String>]`: 
+  - `[UserName <String>]`: 
 
 `COUNTRYACCESS <ISrtApiModelsApiServerParamsCountryAccessPoco>`: .
   - `[AccessKey <String>]`: 
@@ -1733,7 +2265,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DelPartFiles <Int32?>]`: 
   - `[FileCase <Int32?>]`: 
   - `[FolderCase <Int32?>]`: 
-  - `[HideInaccessibleDirs <Int32?>]`: 
+  - `[HideInaccessibleFolders <Int32?>]`: 
   - `[SecureFileDelete <Int32?>]`: 
   - `[ShowHiddenFiles <Int32?>]`: 
   - `[WriteCacheEnabled <Int32?>]`: 
@@ -1831,7 +2363,19 @@ To create the parameters described below, construct a hash table containing the 
   - `[WanHostName <String>]`: 
 
 `ICAPSVR <ISrtApiModelsApiServerParamsIcapSvrPoco>`: .
+  - `[ColumnsChooser <String[]>]`: 
+  - `[DlpCustomPrompt <Int32?>]`: 
+  - `[DlpCustomPromptText <String>]`: 
+  - `[DlpDetectionEnabled <Int32?>]`: 
+  - `[DlpFinancialInformation <Int32?>]`: 
+  - `[DlpMedicalInformation <Int32?>]`: 
+  - `[EnableScanHistory <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
+  - `[MaxPruneDurationMonth <Int32?>]`: 
+  - `[MaximumPruneThreshold <Int32?>]`: 
+  - `[MinimumRecordsToKeep <Int32?>]`: 
+  - `[PruneCheckInterval <Int32?>]`: 
+  - `[PruneScanHistoryEnabled <Int32?>]`: 
   - `[TlsCertGuid <String>]`: 
   - `[TlsEnabled <Int32?>]`: 
 
@@ -1846,7 +2390,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PgpKeyGuid <String>]`: The key to delete
   - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
-  - `[ServerGuid <String>]`: The server to list files for
+  - `[ServerGuid <String>]`: 
   - `[ServerNodeGuid <String>]`: Server Node GUID
   - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete
@@ -1874,6 +2418,263 @@ To create the parameters described below, construct a hash table containing the 
   - `[HackProtInterval <Int32?>]`: 
   - `[HackProtValue <Int32?>]`: 
 
+`JOB <ISrtApiModelsApiServerParamsJobPoco[]>`: .
+  - `[Addendum <String>]`: 
+  - `[AdditionalEncryptionKeyId <String>]`: 
+  - `[BeginTime <String>]`: 
+  - `[CacheParams <ISrtApiModelsApiServerCacheParamsPoco>]`: 
+    - `[CacheLimitUnit <Int32?>]`: 
+    - `[CacheSizeLimitMb <Int32?>]`: 
+    - `[CustomizeCacheSettings <Boolean?>]`: 
+    - `[Directory <ISrtApiModelsApiServerCacheFileParamsPoco>]`: 
+      - `[Enable <Boolean?>]`: 
+      - `[ExpireTime <Int32?>]`: 
+      - `[ExpireTimeUnit <Int32?>]`: 
+      - `[FlushOnConnect <Boolean?>]`: 
+      - `[MaxFileCount <Int32?>]`: 
+      - `[UpdateStaleFilesInBackground <Boolean?>]`: 
+      - `[ValidateMode <Int32?>]`: 
+      - `[ValidateThrottleIntervalSeconds <Int32?>]`: 
+      - `[ValidateThrottleIntervalUnit <Int32?>]`: 
+    - `[EnableCacheSizeLimit <Boolean?>]`: 
+    - `[File <ISrtApiModelsApiServerCacheFileParamsPoco>]`: 
+    - `[ServerChangeListEnable <Boolean?>]`: 
+    - `[ServerChangeListPollIntervalSeconds <Int32?>]`: 
+    - `[UseDirectoryListToValidate <Boolean?>]`: 
+  - `[CalendarId <String>]`: 
+  - `[CommandText <String>]`: 
+  - `[DayOfMonth <String>]`: 
+  - `[DayOfWeek <String>]`: 
+  - `[DeleteZippedFile <Boolean?>]`: 
+  - `[Description <String>]`: 
+  - `[DestinationConnectors <ISrtApiModelsDestinationConnector[]>]`: 
+    - `[Connector <ISrtApiModelsApiServerParamsConnectorPoco>]`: 
+      - `[AccessKey <String>]`: 
+      - `[AccessToken <String>]`: 
+      - `[AllowUsersToMapDrive <Boolean?>]`: 
+      - `[AutoCheckoutEnabled <Boolean?>]`: 
+      - `[AutoCheckoutFileTypes <String>]`: 
+      - `[BrowseDriveOnConnect <Boolean?>]`: 
+      - `[BucketList <String[]>]`: 
+      - `[BucketName <String>]`: 
+      - `[BypassProxyServer <Boolean?>]`: 
+      - `[CacheFolder <String>]`: 
+      - `[CacheParams <ISrtApiModelsApiServerCacheParamsPoco>]`: 
+      - `[CacheTemporaryOfficeFiles <Boolean?>]`: 
+      - `[CertificateAutoAccept <Boolean?>]`: 
+      - `[CertificateEnable <Boolean?>]`: 
+      - `[CertificateFile <String>]`: 
+      - `[CertificatePassword <String>]`: 
+      - `[CertificateToAcceptFromServer <String>]`: 
+      - `[ChangeTokenForSettings <String>]`: 
+      - `[CheckoutOwner <String>]`: 
+      - `[CheckoutTimeout <Int32?>]`: 
+      - `[ChooseBasicAuthAlways <Boolean?>]`: 
+      - `[ConnectAtLogin <Boolean?>]`: 
+      - `[ConnectBeforeLogin <Boolean?>]`: 
+      - `[ConnectionLimit <Int32?>]`: 
+      - `[ConnectionTimeout <Int32?>]`: 
+      - `[ConnectorConfig <String>]`: 
+      - `[ConnectorName <String>]`: 
+      - `[DefaultDirectory <String>]`: 
+      - `[DevicelessConnection <Boolean?>]`: 
+      - `[DriveLetter <String>]`: 
+      - `[DriveLetterGlobal <Boolean?>]`: 
+      - `[DriveLetterUsed <String>]`: 
+      - `[DriveReadOnly <Boolean?>]`: 
+      - `[EnableThumbnails <Boolean?>]`: 
+      - `[FileSpec <String>]`: 
+      - `[FlushCacheOnConnect <Boolean?>]`: 
+      - `[FtpAccount <String>]`: 
+      - `[FtpInitialCommands <String>]`: 
+      - `[FtpMlsdEnable <Boolean?>]`: 
+      - `[FtpPassive <Boolean?>]`: 
+      - `[FtpShowFilesStartingWithPeriod <Boolean?>]`: 
+      - `[FtpSslMode <Int32?>]`: 
+      - `[FtpUtf8Enable <Boolean?>]`: 
+      - `[GraphAuthV1 <Boolean?>]`: 
+      - `[GraphGovCloud <Boolean?>]`: 
+      - `[Guid <String>]`: 
+      - `[HostKeyAuthenticate <Boolean?>]`: 
+      - `[HostKeyFile <String>]`: 
+      - `[HostKeyPassword <String>]`: 
+      - `[HttpsSsl2 <Boolean?>]`: 
+      - `[HttpsSsl3 <Boolean?>]`: 
+      - `[HttpsTls1 <Boolean?>]`: 
+      - `[HttpsTls11 <Boolean?>]`: 
+      - `[HttpsTls12 <Boolean?>]`: 
+      - `[HttpsTls13 <Boolean?>]`: 
+      - `[IncludeSharedDrives <Boolean?>]`: 
+      - `[IncludeSharedWithMe <Boolean?>]`: 
+      - `[IncludeSubSites <Boolean?>]`: 
+      - `[LocalOnlyFilterList <String>]`: 
+      - `[LockOwner <String>]`: 
+      - `[ManualBucketMode <Boolean?>]`: 
+      - `[PassWord <String>]`: 
+      - `[PersistSessionCookies <Boolean?>]`: 
+      - `[PreservePermissions <Boolean?>]`: 
+      - `[ProjectId <String>]`: 
+      - `[PromptForCredentialsAlways <Boolean?>]`: 
+      - `[PromptForCredentialsWhenEmpty <Boolean?>]`: 
+      - `[QuotaDefault <Int32?>]`: 
+      - `[QuotaDefaultUnit <Int32?>]`: 
+      - `[QuotaEnable <Boolean?>]`: 
+      - `[RefreshToken <String>]`: 
+      - `[Region <String>]`: 
+      - `[RetryFailedTransferCount <Int32?>]`: 
+      - `[RootFolder <String>]`: 
+      - `[RootFolderEnable <Boolean?>]`: 
+      - `[RootFolderServerId <String>]`: 
+      - `[SecretKey <String>]`: 
+      - `[ServerHostKeyAlgorithm <String>]`: 
+      - `[ServerHostKeyAutoAccept <Boolean?>]`: 
+      - `[ServerHostKeyFingerprint <String>]`: 
+      - `[ServerHostKeyFingerprintToAccept <String>]`: 
+      - `[ServerPortEnable <Boolean?>]`: 
+      - `[ServerPortNumber <String>]`: 
+      - `[ServerUrl <String>]`: 
+      - `[SetFileInformationEnable <Boolean?>]`: 
+      - `[SharePointUrl <String>]`: 
+      - `[SiteName <String>]`: 
+      - `[StorageAuthMode <Int32?>]`: 
+      - `[SupportLegacyBucketNames <Boolean?>]`: 
+      - `[UncServerName <String>]`: 
+      - `[UncShareName <String>]`: 
+      - `[UserName <String>]`: 
+    - `[DestinationConnectorId <String>]`: 
+    - `[Isselected <Boolean?>]`: 
+    - `[SelectedConnection <ISrtApiModelsConnectorConnectionsModel>]`: 
+      - `[Icon <String>]`: 
+      - `[Name <String>]`: 
+    - `[SelectedConnector <ISrtApiModelsIdNameModel>]`: 
+      - `[Id <String>]`: 
+      - `[Name <String>]`: 
+  - `[DestinationDateFormat <String>]`: 
+  - `[DestinationDateType <String>]`: 
+  - `[DestinationFileFormat <String>]`: 
+  - `[EmailNotifications <ISrtApiModelsEmailNotification[]>]`: 
+    - `[Address <String>]`: 
+    - `[NotificationType <String>]`: 
+    - `[SelectedNotification <ISrtApiModelsKeyValueModel>]`: 
+      - `[Key <String>]`: 
+      - `[Value <String>]`: 
+  - `[EncryptionDecryptionKeyId <String>]`: 
+  - `[EncryptionType <String>]`: 
+  - `[EndTime <String>]`: 
+  - `[Exclude <ISrtApiModelsPattern[]>]`: 
+    - `[Id <String>]`: 
+    - `[Include <String>]`: 
+    - `[IsMatchCase <Boolean?>]`: 
+    - `[IsRecursive <Boolean?>]`: 
+    - `[MatchType <String>]`: 
+    - `[PatternName <String>]`: 
+    - `[PatternType <String>]`: 
+  - `[ExecuteCustomPostProcessOnFileTransferJobFailure <Boolean?>]`: 
+  - `[ExecuteUnzipProcessOnFileTransferJobFailure <Boolean?>]`: 
+  - `[Expiration <DateTime?>]`: 
+  - `[FileType <String>]`: 
+  - `[Friday <Boolean?>]`: 
+  - `[Guid <String>]`: 
+  - `[HolidayBehavior <String>]`: 
+  - `[IaAllowDaisyChained <Boolean?>]`: 
+  - `[Include <ISrtApiModelsPattern[]>]`: 
+  - `[IsAddTransactionSpecificSubDirectory <Boolean?>]`: 
+  - `[IsAdvancedTroubleShooting <Boolean?>]`: 
+  - `[IsAllowApi <Boolean?>]`: 
+  - `[IsAllowScriptingAgent <Boolean?>]`: 
+  - `[IsAllowZeroByteFiles <Boolean?>]`: 
+  - `[IsAuthenticate <Boolean?>]`: 
+  - `[IsCompression <Boolean?>]`: 
+  - `[IsConvertToCanonical <Boolean?>]`: 
+  - `[IsDailyWindow <Boolean?>]`: 
+  - `[IsDoPreProcessing <Boolean?>]`: 
+  - `[IsEncryptDecrypt <Boolean?>]`: 
+  - `[IsFailIfFilesNotFound <Boolean?>]`: 
+  - `[IsFailOnAnyError <Boolean?>]`: 
+  - `[IsFollowSymbolicLinks <Boolean?>]`: 
+  - `[IsHighPriorityTaskQueue <Boolean?>]`: 
+  - `[IsIncludeSubfolders <Boolean?>]`: 
+  - `[IsIntegrityProtect <Boolean?>]`: 
+  - `[IsOnePassSignature <Boolean?>]`: 
+  - `[IsRecurseOrder <Boolean?>]`: 
+  - `[IsRecursive <Boolean?>]`: 
+  - `[IsRemoveAsciiArmoring <Boolean?>]`: 
+  - `[IsRemoveDestinationItems <Boolean?>]`: 
+  - `[IsRemoveSourceDate <Boolean?>]`: 
+  - `[IsRemoveSourceSequence <Boolean?>]`: 
+  - `[IsScheduleDisabled <Boolean?>]`: 
+  - `[IsSendDebugEmail <Boolean?>]`: 
+  - `[IsSendDebugMail <Boolean?>]`: 
+  - `[IsSkipPrimary <Boolean?>]`: 
+  - `[IsSlackNotify <Boolean?>]`: 
+  - `[IsStartTime <Boolean?>]`: 
+  - `[IsTeamsNotify <Boolean?>]`: 
+  - `[IsTranslateInvalidCharacters <Boolean?>]`: 
+  - `[IsUseAbbreviatedNotifications <Boolean?>]`: 
+  - `[IsZip <Boolean?>]`: 
+  - `[IscontinueOnFailure <Boolean?>]`: 
+  - `[ItAddendum <String>]`: 
+  - `[JobName <String>]`: 
+  - `[JobType <String>]`: 
+  - `[Location <String>]`: 
+  - `[Monday <Boolean?>]`: 
+  - `[Months <String>]`: 
+  - `[OverwriteType <String>]`: 
+  - `[PostCommandText <String>]`: 
+  - `[PostTimeout <Int32?>]`: 
+  - `[PostTransferAction <String>]`: 
+  - `[PostWorkingDir <String>]`: 
+  - `[Recurrence <Int32?>]`: 
+  - `[RecurrenceType <String>]`: 
+  - `[RetryAttempts <Int32?>]`: 
+  - `[RetryInterval <Int32?>]`: 
+  - `[RunAfterFileTransferJob <String>]`: 
+  - `[RunTaskUsing <String>]`: 
+  - `[RunlinkedDiplomatMftTransactionOnFileTransferJobFailure <Boolean?>]`: 
+  - `[Saturday <Boolean?>]`: 
+  - `[ScriptingAgentPassword <String>]`: 
+  - `[SelectedTimeOption <String>]`: 
+  - `[SignatureKeyId <String>]`: 
+  - `[SlackNotificationType <String>]`: 
+  - `[SlackWebhookUrl <String>]`: 
+  - `[SourceConnector <ISrtApiModelsApiServerParamsConnectorPoco>]`: 
+  - `[SourceConnectorId <String>]`: 
+  - `[SourceDateFormat <String>]`: 
+  - `[SourceDateRange <String>]`: 
+  - `[SourceFileFormat <String>]`: 
+  - `[SourceFiles <ISrtApiModelsSourceFile[]>]`: 
+    - `[DestinationFilename <String>]`: 
+    - `[IsIgnoreFileHandling <Boolean?>]`: 
+    - `[IsMatchCase <Boolean?>]`: 
+    - `[IsPatternRecursive <Boolean?>]`: 
+    - `[IsRequired <Boolean?>]`: 
+    - `[IsUseModifyDate <Boolean?>]`: 
+    - `[MatchType <String>]`: 
+    - `[NumberofFiles <Int32?>]`: 
+    - `[PatternType <String>]`: 
+    - `[SourceFilename <String>]`: 
+  - `[SourceTimeRange <String>]`: 
+  - `[StartDateTime <DateTime?>]`: 
+  - `[StartTime <String>]`: 
+  - `[Sunday <Boolean?>]`: 
+  - `[TeamsNotificationType <String>]`: 
+  - `[TeamsWebhookUrl <String>]`: 
+  - `[Thursday <Boolean?>]`: 
+  - `[Timeout <Int32?>]`: 
+  - `[TransferOrder <String>]`: 
+  - `[Trigger <String>]`: 
+  - `[Tuesday <Boolean?>]`: 
+  - `[Wednesday <Boolean?>]`: 
+  - `[WorkingDir <String>]`: 
+  - `[ZipDateFormat <String>]`: 
+  - `[ZipFile <String>]`: 
+  - `[ZipFilePath <String>]`: 
+  - `[ZipFilenameTemplate <String>]`: 
+  - `[ZipFolderPaths <String>]`: 
+  - `[ZipOverwrite <String>]`: 
+  - `[ZipPassword <String>]`: 
+  - `[ZipType <String>]`: 
+
 `LOG <ISrtApiModelsApiServerParamsLogPoco>`: .
   - `[EnableLogToFile <Int32?>]`: 
   - `[EnableSysLogServer <Int32?>]`: 
@@ -1881,6 +2682,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LogFieldsW3C <String[]>]`: 
   - `[LogFormat <Int32?>]`: 
   - `[LogLevel <Int32?>]`: 
+  - `[LogMaxArchiveFiles <Int32?>]`: 
   - `[LogMaxSizeMb <Int32?>]`: 
   - `[LogNameUsePrefix <Int32?>]`: 
   - `[LogRotation <Int32?>]`: 
@@ -2052,6 +2854,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DataBaseProvider <String>]`: 
       - `[DatabaseDirPath <String>]`: 
       - `[DatabaseName <String>]`: 
+      - `[DatabaseType <String>]`: 
       - `[DateTime <Int32?>]`: 
       - `[Facility <Int32?>]`: 
       - `[HostAddress <Int32?>]`: 
@@ -2133,9 +2936,19 @@ To create the parameters described below, construct a hash table containing the 
 
 `STATS <ISrtApiModelsApiServerParamsStatsPoco>`: .
   - `[ArchiveBeforePrune <Int32?>]`: 
+  - `[ArchiveCurrentTableEnabled <Int32?>]`: 
+  - `[ArchiveHistoryTableEnabled <Int32?>]`: 
+  - `[EnableViewerMessageHistory <Int32?>]`: 
   - `[Enabled <Int32?>]`: 
   - `[LastArchiveDate <Int64?>]`: 
+  - `[MaxArchiveDurationMonth <Int32?>]`: 
+  - `[MaxArchiveDurationMonthArc <Int32?>]`: 
+  - `[MaximumArchiveThreshold <Int32?>]`: 
+  - `[MaximumArchiveThresholdArc <Int32?>]`: 
+  - `[MinimumRecordsToKeep <Int32?>]`: 
+  - `[MinimumRecordsToKeepArc <Int32?>]`: 
   - `[RotationSchedule <Int32?>]`: 
+  - `[StatsArchiveCheckInterval <Int32?>]`: 
 
 `UNC <ISrtApiModelsApiServerParamsUncPoco[]>`: .
   - `[BasicCreds <ISrtApiModelsApiCredentialsBasic>]`: 

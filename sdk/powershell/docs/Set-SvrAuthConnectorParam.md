@@ -323,6 +323,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AttrUserId <String>]`: 
   - `[AttrUserMemberOf <String>]`: 
   - `[AttrUserName <String>]`: 
+  - `[AttrUserPhoneNumber <String>]`: 
   - `[AttrUserPrimaryGid <String>]`: 
   - `[AuthDesc <String>]`: 
   - `[AuthGuid <String>]`: 
@@ -381,6 +382,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AttrUserId <String>]`: 
     - `[AttrUserMemberOf <String>]`: 
     - `[AttrUserName <String>]`: 
+    - `[AttrUserPhoneNumber <String>]`: 
     - `[AttrUserPrimaryGid <String>]`: 
     - `[AuthDesc <String>]`: 
     - `[AuthGuid <String>]`: 
@@ -430,6 +432,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AttrUserId <String>]`: 
     - `[AttrUserMemberOf <String>]`: 
     - `[AttrUserName <String>]`: 
+    - `[AttrUserPhoneNumber <String>]`: 
     - `[AttrUserPrimaryGid <String>]`: 
     - `[AuthDesc <String>]`: 
     - `[AuthGuid <String>]`: 
@@ -499,7 +502,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PgpKeyGuid <String>]`: The key to delete
   - `[RemoteDomainGuid <String>]`: the remote domain GUID to delete
   - `[ReportGuid <String>]`: The report GUID to export
-  - `[ServerGuid <String>]`: The server to list files for
+  - `[ServerGuid <String>]`: 
   - `[ServerNodeGuid <String>]`: Server Node GUID
   - `[SshKeyGuid <String>]`: The key to delete
   - `[TlsKeyGuid <String>]`: The key to delete
@@ -519,6 +522,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AttrUserId <String>]`: 
   - `[AttrUserMemberOf <String>]`: 
   - `[AttrUserName <String>]`: 
+  - `[AttrUserPhoneNumber <String>]`: 
   - `[AttrUserPrimaryGid <String>]`: 
   - `[AuthDesc <String>]`: 
   - `[AuthGuid <String>]`: 

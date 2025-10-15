@@ -524,6 +524,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Instance <String>]`: 
     - `[IntegratedSecurity <Boolean?>]`: 
     - `[Password <String>]`: 
+    - `[PortNo <Int32?>]`: 
     - `[Username <String>]`: 
   - `[SshParams <ISrtApiModelsApiServerParamsSshPoco>]`: 
     - `[AllowPasswordAuth <Int32?>]`: 
@@ -697,6 +698,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Instance <String>]`: 
   - `[IntegratedSecurity <Boolean?>]`: 
   - `[Password <String>]`: 
+  - `[PortNo <Int32?>]`: 
   - `[Username <String>]`: 
 
 `SSHPARAMS <ISrtApiModelsApiServerParamsSshPoco>`: .

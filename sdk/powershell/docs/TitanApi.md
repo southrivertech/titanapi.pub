@@ -1,6 +1,6 @@
 ---
 Module Name: TitanApi
-Module Guid: 1318c9a7-270f-4d39-8224-052d7ec2ef2f
+Module Guid: 6a91e577-667d-44f7-af0c-195a62e9494b
 Download Help Link: https://learn.microsoft.com/powershell/module/titanapi
 Help Version: 1.0.0.0
 Locale: en-US
@@ -58,6 +58,9 @@ You can pass in the poco object names for\r\nexample \"Acct\" to return just Acc
 Use the fields query string parameter to limit the results.
 You can pass in the poco object names for\r\nexample \"Acct\" to return just Acct poco settings or you can further refine it\r\nwith Acct.LockAcctForBadPassCnt to return just a single property.
 You can specify\r\nmultiple fields by using a comma as a delimeter.
+
+### [Get-JobId](Get-JobId.md)
+Retrieves all cached Job IDs.
 
 ### [Get-LicEntitlement](Get-LicEntitlement.md)
 Get license entitlements
@@ -236,6 +239,12 @@ Send login credentials and an optional ticket ID and receive an access token in 
 ### [Invoke-Logout](Invoke-Logout.md)
 Logout with access token
 
+### [Invoke-Monitor](Invoke-Monitor.md)
+Get AI Monitor command list
+
+### [Invoke-QueryAiNaturalLanguage](Invoke-QueryAiNaturalLanguage.md)
+Perform a natural language query on document content or data.
+
 ### [New-DomRemote](New-DomRemote.md)
 Create a new remote domain for remote administration
 
@@ -301,6 +310,9 @@ Specify the file id's to delete in the request body
 
 ### [Remove-Grp](Remove-Grp.md)
 Delete the specified group.
+
+### [Remove-JobId](Remove-JobId.md)
+Removes a specific cached Job ID.
 
 ### [Remove-Lic](Remove-Lic.md)
 Delete a license/regcode.
